@@ -1,0 +1,2243 @@
+{
+ "version": "v3",
+ "at": "2026-09-25T10:59:03.822Z",
+ "files": [
+  "Grade11_Physics_Exam.pdf"
+ ],
+ "settings": {
+  "accuracy": "Full check",
+  "level": "Student",
+  "math": "Working + symbols"
+ },
+ "pages": [
+  {
+   "page": 1,
+   "w": 1191,
+   "h": 1684,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     130,
+     157,
+     "Grade 11 Physics — Practice Exam"
+    ],
+    [
+     1,
+     180,
+     197,
+     "Thai Mattayom 5 (OBEC Curriculum) - 40 Multiple Choice Quest"
+    ],
+    [
+     2,
+     220,
+     237,
+     "Name: _____________________________ Class: _______ Date: ___"
+    ],
+    [
+     3,
+     250,
+     267,
+     "Instructions: Circle the letter of the correct answer for ea"
+    ],
+    [
+     4,
+     274,
+     291,
+     "points total). g = 10 m/s² unless otherwise noted."
+    ],
+    [
+     5,
+     353,
+     373,
+     "Work, Energy, and Power"
+    ],
+    [
+     6,
+     405,
+     422,
+     "1. A person pushes a box with a force of 50 N through a disp"
+    ],
+    [
+     7,
+     433,
+     450,
+     "force. How much work is done?"
+    ],
+    [
+     8,
+     469,
+     486,
+     "(A) 12.5 J"
+    ],
+    [
+     9,
+     499,
+     516,
+     "(B) 46 J"
+    ],
+    [
+     10,
+     529,
+     546,
+     "(C) 54 J"
+    ],
+    [
+     11,
+     559,
+     576,
+     "(D) 200 J"
+    ],
+    [
+     12,
+     601,
+     618,
+     "2. A force of 20 N acts at an angle of 60° to the direction "
+    ],
+    [
+     13,
+     629,
+     646,
+     "done?"
+    ],
+    [
+     14,
+     665,
+     682,
+     "(A) 100 J"
+    ],
+    [
+     15,
+     695,
+     712,
+     "(B) 86.6 J"
+    ],
+    [
+     16,
+     725,
+     742,
+     "(C) 50 J"
+    ],
+    [
+     17,
+     755,
+     772,
+     "(D) 0 J"
+    ],
+    [
+     18,
+     797,
+     814,
+     "3. A waiter carries a tray horizontally at constant velocity"
+    ],
+    [
+     19,
+     825,
+     842,
+     "upward force from the waiter's hand on the tray?"
+    ],
+    [
+     20,
+     861,
+     878,
+     "(A) Positive"
+    ],
+    [
+     21,
+     891,
+     908,
+     "(B) Negative"
+    ],
+    [
+     22,
+     921,
+     938,
+     "(C) Zero"
+    ],
+    [
+     23,
+     951,
+     968,
+     "(D) Cannot be determined"
+    ],
+    [
+     24,
+     993,
+     1010,
+     "4. A 2 kg object is lifted at constant velocity through a he"
+    ],
+    [
+     25,
+     1021,
+     1038,
+     "gravity. (g = 10 m/s²)"
+    ],
+    [
+     26,
+     1057,
+     1074,
+     "(A) 6 J"
+    ],
+    [
+     27,
+     1087,
+     1104,
+     "(B) 20 J"
+    ],
+    [
+     28,
+     1117,
+     1134,
+     "(C) 60 J"
+    ],
+    [
+     29,
+     1147,
+     1164,
+     "(D) 600 J"
+    ],
+    [
+     30,
+     1189,
+     1206,
+     "5. Power is best defined as:"
+    ],
+    [
+     31,
+     1225,
+     1242,
+     "(A) Work done × time"
+    ],
+    [
+     32,
+     1255,
+     1272,
+     "(B) Work done ÷ time"
+    ],
+    [
+     33,
+     1285,
+     1302,
+     "(C) Force ÷ time"
+    ],
+    [
+     34,
+     1315,
+     1332,
+     "(D) Energy ÷ distance"
+    ],
+    [
+     35,
+     1357,
+     1374,
+     "6. A motor lifts a 500 N load to a height of 10 m in 5 secon"
+    ],
+    [
+     36,
+     1385,
+     1402,
+     "(ignoring losses)?"
+    ],
+    [
+     37,
+     1421,
+     1438,
+     "(A) 100 W"
+    ],
+    [
+     38,
+     1451,
+     1468,
+     "(B) 250 W"
+    ],
+    [
+     39,
+     1481,
+     1498,
+     "(C) 1000 W"
+    ],
+    [
+     40,
+     1511,
+     1528,
+     "(D) 5000 W"
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "line",
+     771,
+     199,
+     166,
+     39
+    ],
+    [
+     2,
+     "line",
+     189,
+     201,
+     322,
+     37
+    ],
+    [
+     3,
+     "line",
+     606,
+     201,
+     77,
+     37
+    ],
+    [
+     4,
+     "space",
+     125,
+     301,
+     940,
+     49
+    ],
+    [
+     5,
+     "line",
+     170,
+     378,
+     61,
+     32
+    ],
+    [
+     6,
+     "space",
+     125,
+     1536,
+     940,
+     74
+    ]
+   ],
+   "owners": {
+    "1": "3 · short",
+    "2": "1 · short",
+    "3": "2 · short",
+    "4": "4 · short",
+    "5": "5 · short",
+    "6": "5 · short"
+   }
+  },
+  {
+   "page": 2,
+   "w": 1191,
+   "h": 1684,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     129,
+     149,
+     "Momentum and Collisions"
+    ],
+    [
+     1,
+     181,
+     198,
+     "7. Momentum is defined as the product of:"
+    ],
+    [
+     2,
+     217,
+     234,
+     "(A) Mass and acceleration"
+    ],
+    [
+     3,
+     247,
+     264,
+     "(B) Mass and velocity"
+    ],
+    [
+     4,
+     277,
+     294,
+     "(C) Force and time"
+    ],
+    [
+     5,
+     307,
+     324,
+     "(D) Force and displacement"
+    ],
+    [
+     6,
+     349,
+     366,
+     "8. A 1000 kg car traveling at 20 m/s collides with an identi"
+    ],
+    [
+     7,
+     377,
+     394,
+     "together. Find their common velocity after the collision."
+    ],
+    [
+     8,
+     413,
+     430,
+     "(A) 5 m/s"
+    ],
+    [
+     9,
+     443,
+     460,
+     "(B) 10 m/s"
+    ],
+    [
+     10,
+     473,
+     490,
+     "(C) 15 m/s"
+    ],
+    [
+     11,
+     503,
+     520,
+     "(D) 20 m/s"
+    ],
+    [
+     12,
+     545,
+     562,
+     "9. In a perfectly elastic collision between two objects:"
+    ],
+    [
+     13,
+     581,
+     598,
+     "(A) Only momentum is conserved"
+    ],
+    [
+     14,
+     611,
+     628,
+     "(B) Only kinetic energy is conserved"
+    ],
+    [
+     15,
+     641,
+     658,
+     "(C) Both momentum and kinetic energy are conserved"
+    ],
+    [
+     16,
+     671,
+     688,
+     "(D) Neither quantity is conserved"
+    ],
+    [
+     17,
+     713,
+     730,
+     "10. A 0.5 kg ball moving at 6 m/s hits a wall and bounces st"
+    ],
+    [
+     18,
+     741,
+     758,
+     "the magnitude of the change in momentum?"
+    ],
+    [
+     19,
+     777,
+     794,
+     "(A) 0 kg·m/s"
+    ],
+    [
+     20,
+     807,
+     824,
+     "(B) 3 kg·m/s"
+    ],
+    [
+     21,
+     837,
+     854,
+     "(C) 6 kg·m/s"
+    ],
+    [
+     22,
+     867,
+     884,
+     "(D) 12 kg·m/s"
+    ],
+    [
+     23,
+     909,
+     926,
+     "11. Impulse delivered to an object is equal to its:"
+    ],
+    [
+     24,
+     945,
+     962,
+     "(A) Change in kinetic energy"
+    ],
+    [
+     25,
+     975,
+     992,
+     "(B) Change in momentum"
+    ],
+    [
+     26,
+     1005,
+     1022,
+     "(C) Change in velocity"
+    ],
+    [
+     27,
+     1035,
+     1052,
+     "(D) Force divided by time"
+    ],
+    [
+     28,
+     1077,
+     1094,
+     "12. A 0.02 kg bullet is fired from a 5 kg gun initially at r"
+    ],
+    [
+     29,
+     1105,
+     1122,
+     "m/s, what is the recoil speed of the gun?"
+    ],
+    [
+     30,
+     1141,
+     1158,
+     "(A) 0.8 m/s"
+    ],
+    [
+     31,
+     1171,
+     1188,
+     "(B) 1.6 m/s"
+    ],
+    [
+     32,
+     1201,
+     1218,
+     "(C) 3.2 m/s"
+    ],
+    [
+     33,
+     1231,
+     1248,
+     "(D) 8 m/s"
+    ],
+    [
+     34,
+     1285,
+     1305,
+     "Rotational Motion and Equilibrium"
+    ],
+    [
+     35,
+     1337,
+     1354,
+     "13. The torque produced by a force F applied at a perpendicu"
+    ],
+    [
+     36,
+     1373,
+     1390,
+     "(A) τ = F / r"
+    ],
+    [
+     37,
+     1403,
+     1420,
+     "(B) τ = F × r"
+    ],
+    [
+     38,
+     1433,
+     1450,
+     "(C) τ = F + r"
+    ],
+    [
+     39,
+     1463,
+     1480,
+     "(D) τ = F² × r"
+    ],
+    [
+     40,
+     1505,
+     1522,
+     "14. Which condition must be satisfied for a rigid body to be"
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "line",
+     463,
+     629,
+     62,
+     17
+    ],
+    [
+     2,
+     "space",
+     125,
+     1532,
+     937,
+     78
+    ]
+   ],
+   "owners": {}
+  },
+  {
+   "page": 3,
+   "w": 1191,
+   "h": 1684,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     129,
+     146,
+     "(A) Net force = 0 only"
+    ],
+    [
+     1,
+     159,
+     176,
+     "(B) Net torque = 0 only"
+    ],
+    [
+     2,
+     189,
+     206,
+     "(C) Both net force = 0 and net torque = 0"
+    ],
+    [
+     3,
+     219,
+     236,
+     "(D) Net force equals net torque"
+    ],
+    [
+     4,
+     261,
+     278,
+     "15. A wrench is used to turn a bolt. Applying the same force"
+    ],
+    [
+     5,
+     297,
+     314,
+     "(A) Decrease the torque"
+    ],
+    [
+     6,
+     327,
+     344,
+     "(B) Increase the torque"
+    ],
+    [
+     7,
+     357,
+     374,
+     "(C) Have no effect on the torque"
+    ],
+    [
+     8,
+     387,
+     404,
+     "(D) Reverse the direction of rotation"
+    ],
+    [
+     9,
+     429,
+     446,
+     "16. The moment of inertia of an object depends on:"
+    ],
+    [
+     10,
+     465,
+     482,
+     "(A) Mass only"
+    ],
+    [
+     11,
+     495,
+     512,
+     "(B) Mass and how it is distributed relative to the axis of r"
+    ],
+    [
+     12,
+     525,
+     542,
+     "(C) Angular velocity only"
+    ],
+    [
+     13,
+     555,
+     572,
+     "(D) Torque only"
+    ],
+    [
+     14,
+     597,
+     614,
+     "17. A force of 15 N is applied perpendicular to a wrench at "
+    ],
+    [
+     15,
+     625,
+     642,
+     "torque is produced?"
+    ],
+    [
+     16,
+     661,
+     678,
+     "(A) 0.75 N·m"
+    ],
+    [
+     17,
+     691,
+     708,
+     "(B) 3 N·m"
+    ],
+    [
+     18,
+     721,
+     738,
+     "(C) 7.5 N·m"
+    ],
+    [
+     19,
+     751,
+     768,
+     "(D) 30 N·m"
+    ],
+    [
+     20,
+     793,
+     810,
+     "18. Two children sit on a seesaw. A 30 kg child sits 2 m fro"
+    ],
+    [
+     21,
+     821,
+     838,
+     "40 kg child sit on the other side for balance?"
+    ],
+    [
+     22,
+     857,
+     874,
+     "(A) 1.2 m"
+    ],
+    [
+     23,
+     887,
+     904,
+     "(B) 1.5 m"
+    ],
+    [
+     24,
+     917,
+     934,
+     "(C) 2.0 m"
+    ],
+    [
+     25,
+     947,
+     964,
+     "(D) 2.67 m"
+    ],
+    [
+     26,
+     1001,
+     1021,
+     "Gravitation"
+    ],
+    [
+     27,
+     1053,
+     1070,
+     "19. According to Newton's law of universal gravitation, the "
+    ],
+    [
+     28,
+     1089,
+     1106,
+     "(A) Directly proportional to the product of the masses and i"
+    ],
+    [
+     29,
+     1115,
+     1132,
+     "the distance between them"
+    ],
+    [
+     30,
+     1145,
+     1162,
+     "(B) Directly proportional to the distance between them"
+    ],
+    [
+     31,
+     1175,
+     1192,
+     "(C) Inversely proportional to the product of the masses"
+    ],
+    [
+     32,
+     1205,
+     1222,
+     "(D) Independent of mass and distance"
+    ],
+    [
+     33,
+     1247,
+     1264,
+     "20. If the distance between two objects is doubled, the grav"
+    ],
+    [
+     34,
+     1283,
+     1300,
+     "(A) Twice as strong"
+    ],
+    [
+     35,
+     1313,
+     1330,
+     "(B) Four times as strong"
+    ],
+    [
+     36,
+     1343,
+     1360,
+     "(C) One-half as strong"
+    ],
+    [
+     37,
+     1373,
+     1390,
+     "(D) One-quarter as strong"
+    ],
+    [
+     38,
+     1415,
+     1432,
+     "21. The acceleration due to gravity on the surface of a plan"
+    ],
+    [
+     39,
+     1451,
+     1468,
+     "(A) The mass of the planet only"
+    ],
+    [
+     40,
+     1481,
+     1498,
+     "(B) The radius of the planet only"
+    ],
+    [
+     41,
+     1511,
+     1528,
+     "(C) Both the mass and radius of the planet"
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "line",
+     597,
+     1163,
+     69,
+     17
+    ],
+    [
+     2,
+     "space",
+     125,
+     1537,
+     940,
+     73
+    ]
+   ],
+   "owners": {
+    "2": "21 · short"
+   }
+  },
+  {
+   "page": 4,
+   "w": 1191,
+   "h": 1684,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     129,
+     146,
+     "(D) The mass of the object placed on it"
+    ],
+    [
+     1,
+     171,
+     188,
+     "22. A satellite orbits Earth in a circular path. The gravita"
+    ],
+    [
+     2,
+     207,
+     224,
+     "(A) The force that slows it down"
+    ],
+    [
+     3,
+     237,
+     254,
+     "(B) The centripetal force keeping it in orbit"
+    ],
+    [
+     4,
+     267,
+     284,
+     "(C) A force with no effect on its motion"
+    ],
+    [
+     5,
+     297,
+     314,
+     "(D) The force that pushes it away from Earth"
+    ],
+    [
+     6,
+     339,
+     356,
+     "23. Weightlessness experienced by astronauts in an orbiting "
+    ],
+    [
+     7,
+     375,
+     392,
+     "(A) There is no gravity in space"
+    ],
+    [
+     8,
+     405,
+     422,
+     "(B) The spacecraft and astronauts are in continuous free fal"
+    ],
+    [
+     9,
+     435,
+     452,
+     "(C) The astronauts have zero mass"
+    ],
+    [
+     10,
+     465,
+     482,
+     "(D) Gravity acts only on the spacecraft, not the astronauts"
+    ],
+    [
+     11,
+     507,
+     524,
+     "24. If the mass of Earth were to double while its radius sta"
+    ],
+    [
+     12,
+     535,
+     552,
+     "at its surface would:"
+    ],
+    [
+     13,
+     571,
+     588,
+     "(A) Stay the same"
+    ],
+    [
+     14,
+     601,
+     618,
+     "(B) Double"
+    ],
+    [
+     15,
+     631,
+     648,
+     "(C) Quadruple"
+    ],
+    [
+     16,
+     661,
+     678,
+     "(D) Reduce by half"
+    ],
+    [
+     17,
+     715,
+     735,
+     "Periodic Motion (SHM)"
+    ],
+    [
+     18,
+     767,
+     784,
+     "25. Simple harmonic motion (SHM) is characterized by a resto"
+    ],
+    [
+     19,
+     803,
+     820,
+     "(A) Constant in magnitude and direction"
+    ],
+    [
+     20,
+     833,
+     850,
+     "(B) Directly proportional to displacement and directed towar"
+    ],
+    [
+     21,
+     863,
+     880,
+     "(C) Directly proportional to velocity"
+    ],
+    [
+     22,
+     893,
+     910,
+     "(D) Independent of displacement"
+    ],
+    [
+     23,
+     935,
+     952,
+     "26. At the equilibrium position of an object undergoing SHM:"
+    ],
+    [
+     24,
+     971,
+     988,
+     "(A) Velocity is maximum and acceleration is zero"
+    ],
+    [
+     25,
+     1001,
+     1018,
+     "(B) Velocity is zero and acceleration is maximum"
+    ],
+    [
+     26,
+     1031,
+     1048,
+     "(C) Both velocity and acceleration are zero"
+    ],
+    [
+     27,
+     1061,
+     1078,
+     "(D) Both velocity and acceleration are maximum"
+    ],
+    [
+     28,
+     1103,
+     1120,
+     "27. The period of a simple pendulum depends on:"
+    ],
+    [
+     29,
+     1139,
+     1156,
+     "(A) The mass of the bob and the length of the string"
+    ],
+    [
+     30,
+     1169,
+     1186,
+     "(B) The length of the string and gravitational acceleration"
+    ],
+    [
+     31,
+     1199,
+     1216,
+     "(C) The amplitude of swing only"
+    ],
+    [
+     32,
+     1229,
+     1246,
+     "(D) The mass of the bob only"
+    ],
+    [
+     33,
+     1271,
+     1288,
+     "28. A simple pendulum has a length of 1 m. Using g = 10 m/s²"
+    ],
+    [
+     34,
+     1307,
+     1324,
+     "(A) 1 s"
+    ],
+    [
+     35,
+     1337,
+     1354,
+     "(B) 2 s"
+    ],
+    [
+     36,
+     1367,
+     1384,
+     "(C) π s"
+    ],
+    [
+     37,
+     1397,
+     1414,
+     "(D) 4 s"
+    ],
+    [
+     38,
+     1439,
+     1456,
+     "29. If the length of a simple pendulum is quadrupled, its pe"
+    ],
+    [
+     39,
+     1475,
+     1492,
+     "(A) Double"
+    ],
+    [
+     40,
+     1505,
+     1522,
+     "(B) Quadruple"
+    ],
+    [
+     41,
+     1535,
+     1552,
+     "(C) Remain the same"
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "space",
+     125,
+     1561,
+     940,
+     49
+    ]
+   ],
+   "owners": {}
+  },
+  {
+   "page": 5,
+   "w": 1191,
+   "h": 1684,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     129,
+     146,
+     "(D) Become half"
+    ],
+    [
+     1,
+     171,
+     188,
+     "30. For a mass–spring system in SHM, increasing the spring c"
+    ],
+    [
+     2,
+     207,
+     224,
+     "(A) Increase the period"
+    ],
+    [
+     3,
+     237,
+     254,
+     "(B) Decrease the period"
+    ],
+    [
+     4,
+     267,
+     284,
+     "(C) Not affect the period"
+    ],
+    [
+     5,
+     297,
+     314,
+     "(D) Make the motion non-periodic"
+    ],
+    [
+     6,
+     339,
+     356,
+     "31. The amplitude of an oscillating system in SHM represents"
+    ],
+    [
+     7,
+     375,
+     392,
+     "(A) The maximum displacement from equilibrium"
+    ],
+    [
+     8,
+     405,
+     422,
+     "(B) The total distance traveled in one period"
+    ],
+    [
+     9,
+     435,
+     452,
+     "(C) The time for one complete oscillation"
+    ],
+    [
+     10,
+     465,
+     482,
+     "(D) The maximum velocity of the object"
+    ],
+    [
+     11,
+     507,
+     524,
+     "32. A mass on a spring completes 10 oscillations in 5 second"
+    ],
+    [
+     12,
+     543,
+     560,
+     "(A) T = 0.5 s, f = 2 Hz"
+    ],
+    [
+     13,
+     573,
+     590,
+     "(B) T = 2 s, f = 0.5 Hz"
+    ],
+    [
+     14,
+     603,
+     620,
+     "(C) T = 5 s, f = 10 Hz"
+    ],
+    [
+     15,
+     633,
+     650,
+     "(D) T = 0.2 s, f = 5 Hz"
+    ],
+    [
+     16,
+     687,
+     707,
+     "Mechanical Waves and Sound"
+    ],
+    [
+     17,
+     739,
+     756,
+     "33. In a transverse wave, the particles of the medium vibrat"
+    ],
+    [
+     18,
+     775,
+     792,
+     "(A) Parallel to the direction of wave propagation"
+    ],
+    [
+     19,
+     805,
+     822,
+     "(B) Perpendicular to the direction of wave propagation"
+    ],
+    [
+     20,
+     835,
+     852,
+     "(C) In circles around a fixed point"
+    ],
+    [
+     21,
+     865,
+     882,
+     "(D) They do not vibrate at all"
+    ],
+    [
+     22,
+     907,
+     924,
+     "34. Sound waves traveling through air are classified as:"
+    ],
+    [
+     23,
+     943,
+     960,
+     "(A) Transverse waves"
+    ],
+    [
+     24,
+     973,
+     990,
+     "(B) Longitudinal waves"
+    ],
+    [
+     25,
+     1003,
+     1020,
+     "(C) Electromagnetic waves"
+    ],
+    [
+     26,
+     1033,
+     1050,
+     "(D) Standing waves only"
+    ],
+    [
+     27,
+     1075,
+     1092,
+     "35. The speed of a wave is related to its wavelength (λ) and"
+    ],
+    [
+     28,
+     1111,
+     1128,
+     "(A) v = λ/f"
+    ],
+    [
+     29,
+     1141,
+     1158,
+     "(B) v = λf"
+    ],
+    [
+     30,
+     1171,
+     1188,
+     "(C) v = f/λ"
+    ],
+    [
+     31,
+     1201,
+     1218,
+     "(D) v = λ + f"
+    ],
+    [
+     32,
+     1243,
+     1260,
+     "36. A wave has a frequency of 250 Hz and a wavelength of 1.4"
+    ],
+    [
+     33,
+     1279,
+     1296,
+     "(A) 178.6 m/s"
+    ],
+    [
+     34,
+     1309,
+     1326,
+     "(B) 251.4 m/s"
+    ],
+    [
+     35,
+     1339,
+     1356,
+     "(C) 350 m/s"
+    ],
+    [
+     36,
+     1369,
+     1386,
+     "(D) 3500 m/s"
+    ],
+    [
+     37,
+     1411,
+     1428,
+     "37. The pitch of a sound is most closely related to its:"
+    ],
+    [
+     38,
+     1447,
+     1464,
+     "(A) Amplitude"
+    ],
+    [
+     39,
+     1477,
+     1494,
+     "(B) Frequency"
+    ],
+    [
+     40,
+     1507,
+     1524,
+     "(C) Wave speed"
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "space",
+     125,
+     1534,
+     938,
+     76
+    ]
+   ],
+   "owners": {
+    "1": "37 · short"
+   }
+  },
+  {
+   "page": 6,
+   "w": 1191,
+   "h": 1684,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     129,
+     146,
+     "(D) Wavelength, independent of medium"
+    ],
+    [
+     1,
+     171,
+     188,
+     "38. As a sound wave travels from air into water, which prope"
+    ],
+    [
+     2,
+     207,
+     224,
+     "(A) Speed"
+    ],
+    [
+     3,
+     237,
+     254,
+     "(B) Wavelength"
+    ],
+    [
+     4,
+     267,
+     284,
+     "(C) Frequency"
+    ],
+    [
+     5,
+     297,
+     314,
+     "(D) Amplitude"
+    ],
+    [
+     6,
+     339,
+     356,
+     "39. The loudness of a sound is primarily determined by the w"
+    ],
+    [
+     7,
+     375,
+     392,
+     "(A) Frequency"
+    ],
+    [
+     8,
+     405,
+     422,
+     "(B) Amplitude"
+    ],
+    [
+     9,
+     435,
+     452,
+     "(C) Wavelength"
+    ],
+    [
+     10,
+     465,
+     482,
+     "(D) Speed"
+    ],
+    [
+     11,
+     507,
+     524,
+     "40. Two sound waves interfere constructively when they meet:"
+    ],
+    [
+     12,
+     543,
+     560,
+     "(A) In phase, with crest aligning with crest"
+    ],
+    [
+     13,
+     573,
+     590,
+     "(B) Out of phase, with crest aligning with trough"
+    ],
+    [
+     14,
+     603,
+     620,
+     "(C) With different frequencies only"
+    ],
+    [
+     15,
+     633,
+     650,
+     "(D) With different amplitudes only"
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "space",
+     125,
+     660,
+     787,
+     950
+    ]
+   ],
+   "owners": {}
+  }
+ ],
+ "answers": [
+  {
+   "id": 1,
+   "num": "1",
+   "page": 1,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    2
+   ],
+   "spaceIds": [
+    2
+   ],
+   "placedBy": "marks",
+   "qy": 432.5358,
+   "lineId": 7,
+   "bbox": [
+    196,
+    209,
+    65,
+    38
+   ],
+   "flag": "",
+   "text": "200 J"
+  },
+  {
+   "id": 2,
+   "num": "2",
+   "page": 1,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    3
+   ],
+   "spaceIds": [
+    3
+   ],
+   "placedBy": "marks",
+   "qy": 628.5358,
+   "lineId": 13,
+   "bbox": [
+    613,
+    209,
+    52,
+    38
+   ],
+   "flag": "",
+   "text": "50 J"
+  },
+  {
+   "id": 3,
+   "num": "3",
+   "page": 1,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    1
+   ],
+   "spaceIds": [
+    1
+   ],
+   "placedBy": "marks",
+   "qy": 824.5358,
+   "lineId": 19,
+   "bbox": [
+    777,
+    208,
+    54,
+    39
+   ],
+   "flag": "",
+   "text": "Zero"
+  },
+  {
+   "id": 4,
+   "num": "4",
+   "page": 1,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    4
+   ],
+   "spaceIds": [
+    4
+   ],
+   "placedBy": "marks",
+   "qy": 1020.5358,
+   "lineId": 25,
+   "bbox": [
+    142,
+    309,
+    52,
+    39
+   ],
+   "flag": "",
+   "text": "60 J"
+  },
+  {
+   "id": 5,
+   "num": "5",
+   "page": 1,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    5,
+    6
+   ],
+   "spaceIds": [
+    5,
+    6
+   ],
+   "placedBy": "marks",
+   "qy": 1188.5358,
+   "lineId": 30,
+   "bbox": [
+    142,
+    384,
+    369,
+    1220
+   ],
+   "flag": "",
+   "text": "Energy transferred per unit time"
+  },
+  {
+   "id": 6,
+   "num": "6",
+   "page": 1,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 1384.5358,
+   "lineId": 36,
+   "bbox": [
+    null,
+    1424,
+    null,
+    43
+   ],
+   "flag": "",
+   "text": "1000 W"
+  },
+  {
+   "id": 7,
+   "num": "7",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 180.53580000000002,
+   "lineId": 1,
+   "bbox": [
+    1170,
+    235,
+    30,
+    23
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "m, v"
+  },
+  {
+   "id": 8,
+   "num": "8",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 376.5358,
+   "lineId": 7,
+   "bbox": [
+    1170,
+    456,
+    42,
+    20
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "10 m/s"
+  },
+  {
+   "id": 9,
+   "num": "9",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 544.5358,
+   "lineId": 12,
+   "bbox": [
+    1170,
+    639,
+    33,
+    23
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "Both"
+  },
+  {
+   "id": 10,
+   "num": "10",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 740.5358,
+   "lineId": 18,
+   "bbox": [
+    1170,
+    847,
+    40,
+    15
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "6 kg·m/s"
+  },
+  {
+   "id": 11,
+   "num": "11",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 908.5358,
+   "lineId": 23,
+   "bbox": [
+    1170,
+    1009,
+    25,
+    23
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "Δp"
+  },
+  {
+   "id": 12,
+   "num": "12",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 1104.5358,
+   "lineId": 29,
+   "bbox": [
+    1170,
+    1181,
+    39,
+    19
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "1.6 m/s"
+  },
+  {
+   "id": 13,
+   "num": "13",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 1336.5358,
+   "lineId": 35,
+   "bbox": [
+    1170,
+    1439,
+    37,
+    12
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "τ = F × r"
+  },
+  {
+   "id": 21,
+   "num": "21",
+   "page": 3,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    2
+   ],
+   "spaceIds": [
+    2
+   ],
+   "placedBy": "marks",
+   "qy": 1480.5359,
+   "lineId": 40,
+   "bbox": [
+    142,
+    1559,
+    600,
+    46
+   ],
+   "flag": "",
+   "text": "Both the mass and radius of the planet"
+  },
+  {
+   "id": 22,
+   "num": "22",
+   "page": 4,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 170.53580000000002,
+   "lineId": 1,
+   "bbox": [
+    122,
+    167,
+    23,
+    23
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "(B)"
+  },
+  {
+   "id": 23,
+   "num": "23",
+   "page": 4,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 338.5358,
+   "lineId": 6,
+   "bbox": [
+    122,
+    336,
+    44,
+    23
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "Falling"
+  },
+  {
+   "id": 24,
+   "num": "24",
+   "page": 4,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 534.5358,
+   "lineId": 12,
+   "bbox": [
+    122,
+    504,
+    42,
+    23
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "Double"
+  },
+  {
+   "id": 25,
+   "num": "25",
+   "page": 4,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 766.5358,
+   "lineId": 18,
+   "bbox": [
+    122,
+    757,
+    23,
+    23
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "(B)"
+  },
+  {
+   "id": 26,
+   "num": "26",
+   "page": 4,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 934.5358,
+   "lineId": 23,
+   "bbox": [
+    122,
+    925,
+    20,
+    23
+   ],
+   "flag": "Changed by the double-check (was \"(B) Velocity is zero and acceleration\"). At equilibrium position in SHM, displacement is zero so acceleration (a = -ω²x) is zero, b",
+   "text": "(A)"
+  },
+  {
+   "id": 27,
+   "num": "27",
+   "page": 4,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 1102.5358,
+   "lineId": 28,
+   "bbox": [
+    122,
+    1093,
+    58,
+    23
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "L and g"
+  },
+  {
+   "id": 28,
+   "num": "28",
+   "page": 4,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 1270.5358,
+   "lineId": 33,
+   "bbox": [
+    122,
+    1262,
+    55,
+    23
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "(B) 2 s"
+  },
+  {
+   "id": 29,
+   "num": "29",
+   "page": 4,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 1438.5358,
+   "lineId": 38,
+   "bbox": [
+    122,
+    1430,
+    42,
+    23
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "Double"
+  },
+  {
+   "id": 30,
+   "num": "30",
+   "page": 5,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 170.53580000000002,
+   "lineId": 1,
+   "bbox": [
+    122,
+    167,
+    53,
+    23
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "Lower L"
+  },
+  {
+   "id": 31,
+   "num": "31",
+   "page": 5,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 338.5358,
+   "lineId": 6,
+   "bbox": [
+    122,
+    338,
+    62,
+    18
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "The maximum displacement from equilib"
+  },
+  {
+   "id": 32,
+   "num": "32",
+   "page": 5,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 506.5358,
+   "lineId": 11,
+   "bbox": [
+    122,
+    504,
+    42,
+    23
+   ],
+   "flag": "The answer (2) does not match its own calculation (0.5).",
+   "text": "T=0.5s"
+  },
+  {
+   "id": 33,
+   "num": "33",
+   "page": 5,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 738.5358,
+   "lineId": 17,
+   "bbox": [
+    122,
+    672,
+    55,
+    23
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "⊥ wave"
+  },
+  {
+   "id": 34,
+   "num": "34",
+   "page": 5,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 906.5358,
+   "lineId": 22,
+   "bbox": [
+    122,
+    917,
+    63,
+    12
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "Longitudinal waves"
+  },
+  {
+   "id": 35,
+   "num": "35",
+   "page": 5,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 1074.5358,
+   "lineId": 27,
+   "bbox": [
+    122,
+    1077,
+    50,
+    23
+   ],
+   "flag": "Changed by the double-check (was \"v = f/λ\"). Wave speed formula is v = λf, not v = f/λ",
+   "text": "v = λf"
+  },
+  {
+   "id": 36,
+   "num": "36",
+   "page": 5,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 1242.5358,
+   "lineId": 32,
+   "bbox": [
+    122,
+    1245,
+    56,
+    23
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "350 m/s"
+  },
+  {
+   "id": 37,
+   "num": "37",
+   "page": 5,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    1
+   ],
+   "spaceIds": [
+    1
+   ],
+   "placedBy": "marks",
+   "qy": 1410.5358,
+   "lineId": 37,
+   "bbox": [
+    142,
+    1558,
+    128,
+    46
+   ],
+   "flag": "",
+   "text": "Frequency"
+  },
+  {
+   "id": 38,
+   "num": "38",
+   "page": 6,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 170.53580000000002,
+   "lineId": 1,
+   "bbox": [
+    123,
+    247,
+    96,
+    35
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "Frequency"
+  },
+  {
+   "id": 39,
+   "num": "39",
+   "page": 6,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 338.5358,
+   "lineId": 6,
+   "bbox": [
+    123,
+    416,
+    98,
+    35
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "Amplitude"
+  },
+  {
+   "id": 40,
+   "num": "40",
+   "page": 6,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 506.5358,
+   "lineId": 11,
+   "bbox": [
+    123,
+    584,
+    245,
+    35
+   ],
+   "flag": "No answer space was found by code, so this uses Claude's rough position. Check it.",
+   "text": "In phase, crests align"
+  }
+ ]
+}

@@ -1,0 +1,1015 @@
+{
+ "version": "v2",
+ "at": "2026-09-24T10:09:59.298Z",
+ "files": [
+  "M5_Ice_Cream_Lab_Better_Questions (1).docx"
+ ],
+ "settings": {
+  "accuracy": "Full check",
+  "level": "Student",
+  "math": "Show working"
+ },
+ "pages": [
+  {
+   "page": 1,
+   "w": 1632,
+   "h": 2112,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     124,
+     157,
+     "ICE CREAM IN A BAG LAB — M5"
+    ],
+    [
+     1,
+     172,
+     192,
+     "Chemistry Worksheet • Partner Lab • 20 points"
+    ],
+    [
+     2,
+     218,
+     234,
+     "Name(s): ____________ Section: ____________ Date: __________"
+    ],
+    [
+     3,
+     277,
+     297,
+     "LAB CHEMISTRY MODELS / EQUATIONS"
+    ],
+    [
+     4,
+     317,
+     338,
+     "__ C₁₂H₂₂O₁₁(s) + __ O₂(g) → __ CO₂(g) + __ H₂O(l)"
+    ],
+    [
+     5,
+     359,
+     379,
+     "NaCl(s) → Na⁺(aq) + Cl⁻(aq)"
+    ],
+    [
+     6,
+     402,
+     417,
+     "The sucrose combustion equation is quantitative practice usi"
+    ],
+    [
+     7,
+     462,
+     482,
+     "MEASUREMENTS FOR ONE PAIR"
+    ],
+    [
+     8,
+     505,
+     520,
+     "Ingredient / material Amount"
+    ],
+    [
+     9,
+     539,
+     553,
+     "Milk 1/2 cup (120 mL)"
+    ],
+    [
+     10,
+     571,
+     586,
+     "Heavy cream 1/2 cup (120 mL)"
+    ],
+    [
+     11,
+     604,
+     619,
+     "Sugar (sucrose) 2 tbsp (about 25.0 g)"
+    ],
+    [
+     12,
+     637,
+     651,
+     "Vanilla extract 1/2 tsp (2.5 mL)"
+    ],
+    [
+     13,
+     669,
+     684,
+     "Ice about 3 cups (about 700 mL)"
+    ],
+    [
+     14,
+     702,
+     717,
+     "Salt (NaCl) 1/3 cup (use 90.0 g for calculations)"
+    ],
+    [
+     15,
+     738,
+     758,
+     "PROCEDURE"
+    ],
+    [
+     16,
+     777,
+     793,
+     "• Measure 120 mL milk + 120 mL heavy cream + 25.0 g sugar + "
+    ],
+    [
+     17,
+     803,
+     819,
+     "• Place about 700 mL ice + 90.0 g salt into the LARGE bag."
+    ],
+    [
+     18,
+     829,
+     845,
+     "• Put the sealed small bag inside the large bag. Shake/turn "
+    ],
+    [
+     19,
+     855,
+     871,
+     "• Record observations. Keep salt water outside the food bag;"
+    ],
+    [
+     20,
+     889,
+     909,
+     "OBSERVATIONS"
+    ],
+    [
+     21,
+     954,
+     968,
+     "Stage Texture / appearance Coldness / temperature Approx. ti"
+    ],
+    [
+     22,
+     1027,
+     1041,
+     "Before shaking"
+    ],
+    [
+     23,
+     1100,
+     1114,
+     "Halfway"
+    ],
+    [
+     24,
+     1173,
+     1186,
+     "Finished"
+    ],
+    [
+     25,
+     1227,
+     1247,
+     "QUANTITATIVE + MOLECULAR ANALYSIS"
+    ],
+    [
+     26,
+     1264,
+     1283,
+     "1. Balance the sucrose combustion equation above using the s"
+    ],
+    [
+     27,
+     1297,
+     1310,
+     "____________________________________________________________"
+    ],
+    [
+     28,
+     1323,
+     1336,
+     "____________________________________________________________"
+    ],
+    [
+     29,
+     1349,
+     1368,
+     "2. Your group used 25.0 g sucrose. Calculate moles of sucros"
+    ],
+    [
+     30,
+     1382,
+     1395,
+     "____________________________________________________________"
+    ],
+    [
+     31,
+     1408,
+     1421,
+     "____________________________________________________________"
+    ],
+    [
+     32,
+     1434,
+     1447,
+     "____________________________________________________________"
+    ],
+    [
+     33,
+     1460,
+     1479,
+     "3. Using your balanced equation and Question 2, calculate th"
+    ],
+    [
+     34,
+     1488,
+     1506,
+     "sugar were completely combusted. [3 pt]"
+    ],
+    [
+     35,
+     1520,
+     1534,
+     "____________________________________________________________"
+    ],
+    [
+     36,
+     1546,
+     1560,
+     "____________________________________________________________"
+    ],
+    [
+     37,
+     1572,
+     1586,
+     "____________________________________________________________"
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "line",
+     206,
+     204,
+     151,
+     35
+    ],
+    [
+     2,
+     "line",
+     553,
+     204,
+     150,
+     35
+    ],
+    [
+     3,
+     "line",
+     843,
+     204,
+     151,
+     35
+    ],
+    [
+     4,
+     "line",
+     1214,
+     204,
+     151,
+     35
+    ],
+    [
+     5,
+     "line",
+     973,
+     247,
+     85,
+     35
+    ],
+    [
+     6,
+     "line",
+     108,
+     875,
+     101,
+     16
+    ],
+    [
+     7,
+     "space",
+     106,
+     979,
+     1420,
+     43
+    ],
+    [
+     8,
+     "space",
+     106,
+     1052,
+     1420,
+     43
+    ],
+    [
+     9,
+     "space",
+     106,
+     1121,
+     1420,
+     46
+    ],
+    [
+     10,
+     "line",
+     105,
+     1319,
+     1162,
+     21
+    ],
+    [
+     11,
+     "line",
+     105,
+     1377,
+     1162,
+     22
+    ],
+    [
+     12,
+     "line",
+     105,
+     1404,
+     1162,
+     21
+    ],
+    [
+     13,
+     "line",
+     105,
+     1429,
+     1162,
+     22
+    ],
+    [
+     14,
+     "line",
+     209,
+     1516,
+     1056,
+     22
+    ],
+    [
+     15,
+     "line",
+     105,
+     1543,
+     1162,
+     21
+    ],
+    [
+     16,
+     "line",
+     105,
+     1568,
+     1162,
+     22
+    ]
+   ],
+   "owners": {
+    "7": "Before shaking · short",
+    "8": "Halfway · short",
+    "9": "Finished · short",
+    "10": "1 · 1 sentence",
+    "11": "2 · few sentences",
+    "12": "2 · few sentences",
+    "13": "2 · few sentences",
+    "14": "3 · few sentences",
+    "15": "3 · few sentences",
+    "16": "3 · few sentences"
+   }
+  },
+  {
+   "page": 2,
+   "w": 1632,
+   "h": 2112,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     125,
+     145,
+     "LAB CHEMISTRY MODELS / EQUATIONS"
+    ],
+    [
+     1,
+     165,
+     186,
+     "NaCl(s) → Na⁺(aq) + Cl⁻(aq)"
+    ],
+    [
+     2,
+     207,
+     227,
+     "H₂O(l) ⇌ H₂O(s)"
+    ],
+    [
+     3,
+     250,
+     265,
+     "Use the outside ice-salt bath and the actual lab measurement"
+    ],
+    [
+     4,
+     305,
+     324,
+     "4. Assume the 1/3 cup salt used in the large bag had a mass "
+    ],
+    [
+     5,
+     338,
+     351,
+     "____________________________________________________________"
+    ],
+    [
+     6,
+     364,
+     378,
+     "____________________________________________________________"
+    ],
+    [
+     7,
+     390,
+     409,
+     "5. Each mole of NaCl produces approximately 1 mol Na⁺ and 1 "
+    ],
+    [
+     8,
+     418,
+     436,
+     "dissolved ions produced. [2 pt]"
+    ],
+    [
+     9,
+     450,
+     464,
+     "____________________________________________________________"
+    ],
+    [
+     10,
+     476,
+     490,
+     "____________________________________________________________"
+    ],
+    [
+     11,
+     503,
+     521,
+     "6. Explain why dissolved salt lowers the freezing point of t"
+    ],
+    [
+     12,
+     530,
+     549,
+     "enough to freeze. [2 pt]"
+    ],
+    [
+     13,
+     563,
+     577,
+     "____________________________________________________________"
+    ],
+    [
+     14,
+     589,
+     603,
+     "____________________________________________________________"
+    ],
+    [
+     15,
+     615,
+     629,
+     "____________________________________________________________"
+    ],
+    [
+     16,
+     641,
+     660,
+     "7. Milk/cream and dissolved sugar contain polar molecules. I"
+    ],
+    [
+     17,
+     669,
+     687,
+     "explain what cooling does to molecular motion and texture. ["
+    ],
+    [
+     18,
+     701,
+     715,
+     "____________________________________________________________"
+    ],
+    [
+     19,
+     727,
+     741,
+     "____________________________________________________________"
+    ],
+    [
+     20,
+     753,
+     767,
+     "____________________________________________________________"
+    ],
+    [
+     21,
+     780,
+     799,
+     "8. Vanilla extract was only 2.5 mL. Is vanilla acting mainly"
+    ],
+    [
+     22,
+     808,
+     826,
+     "this lab? Explain why there is no new 'vanilla product' in t"
+    ],
+    [
+     23,
+     840,
+     854,
+     "____________________________________________________________"
+    ],
+    [
+     24,
+     866,
+     880,
+     "____________________________________________________________"
+    ],
+    [
+     25,
+     893,
+     911,
+     "9. If a group doubled the sugar but kept the milk, cream, va"
+    ],
+    [
+     26,
+     920,
+     939,
+     "sweetness and one likely effect on freezing/texture. Explain"
+    ],
+    [
+     27,
+     953,
+     966,
+     "____________________________________________________________"
+    ],
+    [
+     28,
+     979,
+     992,
+     "____________________________________________________________"
+    ],
+    [
+     29,
+     1005,
+     1018,
+     "____________________________________________________________"
+    ],
+    [
+     30,
+     1031,
+     1050,
+     "10. Choose ONE controlled variable (milk/cream amount, sugar"
+    ],
+    [
+     31,
+     1059,
+     1077,
+     "constant makes the experiment more reliable. [1 pt]"
+    ],
+    [
+     32,
+     1091,
+     1105,
+     "____________________________________________________________"
+    ],
+    [
+     33,
+     1117,
+     1131,
+     "____________________________________________________________"
+    ],
+    [
+     34,
+     1141,
+     1156,
+     "Participation: 20 points | Completed worksheet: 20 points | "
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "line",
+     904,
+     36,
+     153,
+     92
+    ]
+   ],
+   "owners": {}
+  }
+ ],
+ "answers": [
+  {
+   "id": 1,
+   "num": "Before shaking",
+   "page": 1,
+   "kind": "cell",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": [
+    7
+   ],
+   "placedBy": "marks",
+   "qy": 953.9202868649865,
+   "lineId": 21,
+   "bbox": [
+    121,
+    986,
+    244,
+    35
+   ],
+   "flag": "Two answers were given the same question number Before shaking. Check both.",
+   "text": "Liquid, separate layers"
+  },
+  {
+   "id": 2,
+   "num": "Before shaking",
+   "page": 1,
+   "kind": "cell",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 953.9202868649865,
+   "lineId": 21,
+   "bbox": [
+    827,
+    927,
+    302,
+    263
+   ],
+   "flag": "Two answers were given the same question number Before shaking. Check both.",
+   "text": "Room temperature is the initial temperature of the milk mixture before shaking b"
+  },
+  {
+   "id": 3,
+   "num": "Before shaking",
+   "page": 1,
+   "kind": "cell",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 953.9202868649865,
+   "lineId": 21,
+   "bbox": [
+    1182,
+    927,
+    259,
+    173
+   ],
+   "flag": "Two answers were given the same question number Before shaking. Check both.",
+   "text": "0 minutes represents the starting time before any shaking occurs. This is when t"
+  },
+  {
+   "id": 4,
+   "num": "Halfway",
+   "page": 1,
+   "kind": "cell",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": [
+    8
+   ],
+   "placedBy": "marks",
+   "qy": 1099.7546906652312,
+   "lineId": 23,
+   "bbox": [
+    121,
+    1059,
+    322,
+    35
+   ],
+   "flag": "Two answers were given the same question number Halfway. Check both.",
+   "text": "Thick, slushy, partially frozen"
+  },
+  {
+   "id": 5,
+   "num": "Halfway",
+   "page": 1,
+   "kind": "cell",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 1099.7546906652312,
+   "lineId": 23,
+   "bbox": [
+    827,
+    976,
+    304,
+    181
+   ],
+   "flag": "Two answers were given the same question number Halfway. Check both.",
+   "text": "Very cold, with ice crystals forming throughout the mixture. The temperature has"
+  },
+  {
+   "id": 6,
+   "num": "Halfway",
+   "page": 1,
+   "kind": "cell",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 1099.7546906652312,
+   "lineId": 23,
+   "bbox": [
+    1182,
+    1006,
+    267,
+    119
+   ],
+   "flag": "Two answers were given the same question number Halfway. Check both.",
+   "text": "Approximately 5 to 7 minutes have elapsed, depending on the vigor of shaking and"
+  },
+  {
+   "id": 7,
+   "num": "Finished",
+   "page": 1,
+   "kind": "cell",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": [
+    9
+   ],
+   "placedBy": "marks",
+   "qy": 1172.6719698364395,
+   "lineId": 24,
+   "bbox": [
+    121,
+    1129,
+    416,
+    37
+   ],
+   "flag": "Two answers were given the same question number Finished. Check both.",
+   "text": "Thick, creamy, soft-serve consistency"
+  },
+  {
+   "id": 8,
+   "num": "Finished",
+   "page": 1,
+   "kind": "cell",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 1172.6719698364395,
+   "lineId": 24,
+   "bbox": [
+    393,
+    1162,
+    851,
+    56
+   ],
+   "flag": "Two answers were given the same question number Finished. Check both.",
+   "text": "Very cold and frozen but still scoopable, meaning it has reached a solid state w"
+  },
+  {
+   "id": 10,
+   "num": "1",
+   "page": 1,
+   "kind": "box",
+   "atype": "sentence",
+   "zone": [
+    10
+   ],
+   "spaceIds": [
+    10
+   ],
+   "placedBy": "marks",
+   "qy": 1264.2837406453198,
+   "lineId": 26,
+   "bbox": [
+    111,
+    1323,
+    374,
+    21
+   ],
+   "flag": "",
+   "text": "1. C₁₂H₂₂O₁₁(s) + 12 O₂(g) → 12 CO₂(g) + 11 H₂O(l)"
+  },
+  {
+   "id": 11,
+   "num": "2",
+   "page": 1,
+   "kind": "box",
+   "atype": "sentences",
+   "zone": [
+    11,
+    12,
+    13
+   ],
+   "spaceIds": [
+    11,
+    12,
+    13
+   ],
+   "placedBy": "marks",
+   "qy": 1349.26693453003,
+   "lineId": 29,
+   "bbox": [
+    111,
+    1381,
+    222,
+    75
+   ],
+   "flag": "",
+   "text": "2. moles = mass ÷ molar mass\nmoles = 25.0 g ÷ 342.30 g/mol\nmoles = 0.0730 mol su"
+  },
+  {
+   "id": 12,
+   "num": "3",
+   "page": 1,
+   "kind": "box",
+   "atype": "sentences",
+   "zone": [
+    14,
+    15,
+    16
+   ],
+   "spaceIds": [
+    14,
+    15,
+    16
+   ],
+   "placedBy": "marks",
+   "qy": 1460.2921647566607,
+   "lineId": 33,
+   "bbox": [
+    111,
+    1521,
+    587,
+    75
+   ],
+   "flag": "",
+   "text": "3. From the balanced equation, 1 mol sucrose produces 12 mol CO₂.\nmoles CO₂ = 0."
+  },
+  {
+   "id": 13,
+   "num": "4",
+   "page": 2,
+   "kind": "box",
+   "atype": null,
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 305.3357577269141,
+   "lineId": 4,
+   "bbox": [
+    129,
+    1179,
+    635,
+    99
+   ],
+   "flag": "",
+   "text": "4. moles = mass ÷ molar mass\nmoles = 90.0 g ÷ 58.44 g/mol = 1.54 mol NaCl"
+  },
+  {
+   "id": 14,
+   "num": "5",
+   "page": 2,
+   "kind": "box",
+   "atype": null,
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 390.3188438227322,
+   "lineId": 7,
+   "bbox": [
+    129,
+    1296,
+    890,
+    99
+   ],
+   "flag": "",
+   "text": "5. Each mole of NaCl produces 2 moles of ions (1 Na⁺ + 1 Cl⁻).\nTotal moles of io"
+  },
+  {
+   "id": 15,
+   "num": "6",
+   "page": 2,
+   "kind": "box",
+   "atype": null,
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 502.8848713408177,
+   "lineId": 11,
+   "bbox": [
+    129,
+    1413,
+    1286,
+    99
+   ],
+   "flag": "",
+   "text": "Dissolved salt ions lower water's freezing point, keeping the ice-salt bath liqu"
+  },
+  {
+   "id": 16,
+   "num": "7",
+   "page": 2,
+   "kind": "box",
+   "atype": null,
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 641.4925975518136,
+   "lineId": 16,
+   "bbox": [
+    129,
+    1529,
+    1306,
+    99
+   ],
+   "flag": "",
+   "text": "Hydrogen bonding holds water, sugar, and milk molecules together. Cooling slows "
+  },
+  {
+   "id": 17,
+   "num": "8",
+   "page": 2,
+   "kind": "box",
+   "atype": null,
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 780.1005679052607,
+   "lineId": 21,
+   "bbox": [
+    129,
+    1648,
+    1325,
+    96
+   ],
+   "flag": "",
+   "text": "8. Vanilla acts mainly as a flavor mixture, not a reactant. It is a small additi"
+  },
+  {
+   "id": 18,
+   "num": "9",
+   "page": 2,
+   "kind": "box",
+   "atype": null,
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 892.666351280895,
+   "lineId": 25,
+   "bbox": [
+    129,
+    1763,
+    1309,
+    99
+   ],
+   "flag": "",
+   "text": "Doubling sugar would increase sweetness and lower the freezing point further, po"
+  },
+  {
+   "id": 19,
+   "num": "10",
+   "page": 2,
+   "kind": "box",
+   "atype": null,
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 1031.274321634342,
+   "lineId": 30,
+   "bbox": [
+    129,
+    1880,
+    1206,
+    99
+   ],
+   "flag": "",
+   "text": "Keeping salt constant ensures the freezing point depression stays the same, so o"
+  }
+ ]
+}

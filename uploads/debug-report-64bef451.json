@@ -1,0 +1,2814 @@
+{
+ "version": "v3",
+ "at": "2026-09-25T14:33:19.243Z",
+ "files": [
+  "polygraph.pdf"
+ ],
+ "settings": {
+  "accuracy": "Full check",
+  "level": "Student",
+  "math": "Working + symbols"
+ },
+ "pages": [
+  {
+   "page": 1,
+   "w": 1224,
+   "h": 1584,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     35,
+     53,
+     "M5 Mathematics Polynomial End Behavior"
+    ],
+    [
+     1,
+     103,
+     132,
+     "Polynomial Graphs: End Behavior and Turning Points"
+    ],
+    [
+     2,
+     148,
+     167,
+     "A reasoning worksheet for analyzing the general shape of pol"
+    ],
+    [
+     3,
+     242,
+     263,
+     "Big Idea"
+    ],
+    [
+     4,
+     293,
+     311,
+     "For a polynomial function, the leading term tells us the lon"
+    ],
+    [
+     5,
+     343,
+     356,
+     "n n−1"
+    ],
+    [
+     6,
+     347,
+     365,
+     "f(x) = anx + an−1x + · · · + a1x + a0"
+    ],
+    [
+     7,
+     387,
+     406,
+     "The key features are:"
+    ],
+    [
+     8,
+     438,
+     457,
+     "• the degree, n"
+    ],
+    [
+     9,
+     483,
+     502,
+     "• whether n is even or odd"
+    ],
+    [
+     10,
+     528,
+     547,
+     "• whether the leading coefficient, an, is positive or negati"
+    ],
+    [
+     11,
+     579,
+     598,
+     "Lower-degree terms may change the middle of the graph, but t"
+    ],
+    [
+     12,
+     638,
+     658,
+     "The Four Main End-Behavior Cases"
+    ],
+    [
+     13,
+     819,
+     831,
+     "Even degree, positive leading coefficient Even degree, negat"
+    ],
+    [
+     14,
+     975,
+     987,
+     "Odd degree, positive leading coefficient Odd degree, negativ"
+    ],
+    [
+     15,
+     1037,
+     1057,
+     "End Behavior Summary"
+    ],
+    [
+     16,
+     1090,
+     1109,
+     "Degree Leading Coefficient As x → −∞ As x → ∞"
+    ],
+    [
+     17,
+     1118,
+     1137,
+     "Even Positive f(x) → ∞ f(x) → ∞"
+    ],
+    [
+     18,
+     1146,
+     1165,
+     "Even Negative f(x) → −∞ f(x) → −∞"
+    ],
+    [
+     19,
+     1174,
+     1193,
+     "Odd Positive f(x) → −∞ f(x) → ∞"
+    ],
+    [
+     20,
+     1202,
+     1220,
+     "Odd Negative f(x) → ∞ f(x) → −∞"
+    ],
+    [
+     21,
+     1263,
+     1284,
+     "Important Fact"
+    ],
+    [
+     22,
+     1314,
+     1333,
+     "A polynomial of degree n can have at most"
+    ],
+    [
+     23,
+     1368,
+     1387,
+     "n − 1"
+    ],
+    [
+     24,
+     1408,
+     1427,
+     "turning points."
+    ],
+    [
+     25,
+     1435,
+     1454,
+     "This does not mean it must have n − 1 turning points. It mea"
+    ],
+    [
+     26,
+     1517,
+     1536,
+     "1"
+    ]
+   ],
+   "spaces": [],
+   "owners": {}
+  },
+  {
+   "page": 2,
+   "w": 1224,
+   "h": 1584,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     35,
+     53,
+     "M5 Mathematics Polynomial End Behavior"
+    ],
+    [
+     1,
+     110,
+     130,
+     "Part A: Warm-Up"
+    ],
+    [
+     2,
+     160,
+     179,
+     "For each polynomial, identify the degree, the sign of the le"
+    ],
+    [
+     3,
+     192,
+     210,
+     "1. f(x) = 3x5 − 2x2 + 1"
+    ],
+    [
+     4,
+     234,
+     253,
+     "Degree: Leading coefficient sign:"
+    ],
+    [
+     5,
+     268,
+     287,
+     "Left end: Right end:"
+    ],
+    [
+     6,
+     323,
+     342,
+     "2. g(x) = −4x8 + x3 − 7"
+    ],
+    [
+     7,
+     365,
+     384,
+     "Degree: Leading coefficient sign:"
+    ],
+    [
+     8,
+     400,
+     418,
+     "Left end: Right end:"
+    ],
+    [
+     9,
+     455,
+     473,
+     "3. h(x) = −x7 + 5x6 − 3"
+    ],
+    [
+     10,
+     497,
+     515,
+     "Degree: Leading coefficient sign:"
+    ],
+    [
+     11,
+     531,
+     550,
+     "Left end: Right end:"
+    ],
+    [
+     12,
+     586,
+     605,
+     "4. p(x) = 9x4 − 12x + 1"
+    ],
+    [
+     13,
+     628,
+     647,
+     "Degree: Leading coefficient sign:"
+    ],
+    [
+     14,
+     663,
+     681,
+     "Left end: Right end:"
+    ],
+    [
+     15,
+     720,
+     740,
+     "Part B: Match the Polynomial"
+    ],
+    [
+     16,
+     770,
+     789,
+     "Match each polynomial to one of the four end-behavior types."
+    ],
+    [
+     17,
+     802,
+     821,
+     "1. f(x) = x9 − 2x4 + 3"
+    ],
+    [
+     18,
+     843,
+     862,
+     "2. g(x) = −3x10 + 7x"
+    ],
+    [
+     19,
+     885,
+     903,
+     "3. h(x) = 5x6 − 2x5 + 1"
+    ],
+    [
+     20,
+     926,
+     944,
+     "4. p(x) = −2x3 + 9"
+    ],
+    [
+     21,
+     974,
+     992,
+     "Type Description"
+    ],
+    [
+     22,
+     1001,
+     1020,
+     "A Both ends up"
+    ],
+    [
+     23,
+     1029,
+     1048,
+     "B Both ends down"
+    ],
+    [
+     24,
+     1057,
+     1076,
+     "C Left down, right up"
+    ],
+    [
+     25,
+     1085,
+     1104,
+     "D Left up, right down"
+    ],
+    [
+     26,
+     1179,
+     1200,
+     "Part C: Reverse Thinking"
+    ],
+    [
+     27,
+     1230,
+     1248,
+     "A polynomial has both ends rising and exactly three turning "
+    ],
+    [
+     28,
+     1270,
+     1288,
+     "a) What can you determine about the degree?"
+    ],
+    [
+     29,
+     1311,
+     1329,
+     "b) What are the possible degrees?"
+    ],
+    [
+     30,
+     1352,
+     1371,
+     "c) Explain your reasoning."
+    ],
+    [
+     31,
+     1517,
+     1536,
+     "2"
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "line",
+     627,
+     213,
+     102,
+     40
+    ],
+    [
+     2,
+     "line",
+     244,
+     221,
+     102,
+     32
+    ],
+    [
+     3,
+     "line",
+     258,
+     257,
+     102,
+     31
+    ],
+    [
+     4,
+     "line",
+     514,
+     258,
+     102,
+     30
+    ],
+    [
+     5,
+     "line",
+     244,
+     353,
+     102,
+     32
+    ],
+    [
+     6,
+     "line",
+     258,
+     389,
+     102,
+     30
+    ],
+    [
+     7,
+     "line",
+     514,
+     389,
+     102,
+     30
+    ],
+    [
+     8,
+     "line",
+     244,
+     484,
+     102,
+     33
+    ],
+    [
+     9,
+     "line",
+     258,
+     521,
+     102,
+     30
+    ],
+    [
+     10,
+     "line",
+     514,
+     521,
+     102,
+     30
+    ],
+    [
+     11,
+     "line",
+     244,
+     616,
+     102,
+     32
+    ],
+    [
+     12,
+     "line",
+     258,
+     652,
+     102,
+     30
+    ],
+    [
+     13,
+     "line",
+     514,
+     652,
+     102,
+     30
+    ],
+    [
+     14,
+     "line",
+     468,
+     931,
+     286,
+     40
+    ],
+    [
+     15,
+     "line",
+     226,
+     1148,
+     69,
+     40
+    ],
+    [
+     16,
+     "line",
+     375,
+     796,
+     680,
+     36
+    ],
+    [
+     17,
+     "line",
+     362,
+     837,
+     693,
+     36
+    ],
+    [
+     18,
+     "line",
+     385,
+     879,
+     670,
+     36
+    ],
+    [
+     19,
+     "line",
+     341,
+     920,
+     714,
+     36
+    ],
+    [
+     20,
+     "line",
+     599,
+     1264,
+     456,
+     36
+    ],
+    [
+     21,
+     "line",
+     481,
+     1305,
+     574,
+     36
+    ],
+    [
+     22,
+     "space",
+     133,
+     1381,
+     922,
+     150
+    ]
+   ],
+   "owners": {
+    "1": "1. · short",
+    "2": "1. · short",
+    "3": "1. · short",
+    "4": "1. · short",
+    "5": "2. · short",
+    "6": "2. · short",
+    "7": "2. · short",
+    "8": "3. · short",
+    "9": "3. · short",
+    "10": "3. · short",
+    "11": "4. · short",
+    "12": "4. · short",
+    "13": "4. · short",
+    "20": "C.a. · short",
+    "21": "C.b. · short",
+    "22": "C.c. · few sentences"
+   }
+  },
+  {
+   "page": 3,
+   "w": 1224,
+   "h": 1584,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     35,
+     53,
+     "M5 Mathematics Polynomial End Behavior"
+    ],
+    [
+     1,
+     110,
+     130,
+     "Part D: Possible or Impossible?"
+    ],
+    [
+     2,
+     160,
+     179,
+     "For each statement, decide whether it is possible. If possib"
+    ],
+    [
+     3,
+     211,
+     230,
+     "1. A polynomial has odd degree and both ends up."
+    ],
+    [
+     4,
+     322,
+     340,
+     "2. A polynomial has even degree and exactly one turning poin"
+    ],
+    [
+     5,
+     432,
+     451,
+     "3. A polynomial has degree 3 and four turning points."
+    ],
+    [
+     6,
+     543,
+     561,
+     "4. A polynomial has negative leading coefficient and left en"
+    ],
+    [
+     7,
+     1517,
+     1536,
+     "3"
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "space",
+     108,
+     240,
+     1008,
+     78
+    ],
+    [
+     2,
+     "space",
+     108,
+     350,
+     1008,
+     79
+    ],
+    [
+     3,
+     "space",
+     108,
+     462,
+     1008,
+     78
+    ],
+    [
+     4,
+     "space",
+     135,
+     571,
+     993,
+     192
+    ]
+   ],
+   "owners": {
+    "1": "D.1. · 1 sentence",
+    "2": "D.2. · 1 sentence",
+    "3": "D.3. · 1 sentence",
+    "4": "D.4. · paragraph"
+   }
+  },
+  {
+   "page": 4,
+   "w": 1224,
+   "h": 1584,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     35,
+     53,
+     "M5 Mathematics Polynomial End Behavior"
+    ],
+    [
+     1,
+     110,
+     130,
+     "Part E: Mystery Polynomial"
+    ],
+    [
+     2,
+     160,
+     179,
+     "A polynomial has opposite end behaviors and at most four tur"
+    ],
+    [
+     3,
+     211,
+     230,
+     "a) Must the degree be even or odd?"
+    ],
+    [
+     4,
+     256,
+     275,
+     "b) What are the possible degrees?"
+    ],
+    [
+     5,
+     301,
+     320,
+     "c) Explain why."
+    ],
+    [
+     6,
+     493,
+     513,
+     "Part F: Graph Detective"
+    ],
+    [
+     7,
+     544,
+     562,
+     "Study the four graphs below."
+    ],
+    [
+     8,
+     721,
+     733,
+     "Graph A Graph B"
+    ],
+    [
+     9,
+     921,
+     933,
+     "Graph C Graph D"
+    ],
+    [
+     10,
+     971,
+     989,
+     "Answer the questions."
+    ],
+    [
+     11,
+     1022,
+     1040,
+     "1. Which graph or graphs could have even degree?"
+    ],
+    [
+     12,
+     1111,
+     1129,
+     "2. Which graph or graphs could have odd degree?"
+    ],
+    [
+     13,
+     1199,
+     1218,
+     "3. Which graph or graphs have positive leading coefficient?"
+    ],
+    [
+     14,
+     1288,
+     1306,
+     "4. Which graph or graphs have negative leading coefficient?"
+    ],
+    [
+     15,
+     1377,
+     1395,
+     "5. Which graph could represent a polynomial of degree 5?"
+    ],
+    [
+     16,
+     1517,
+     1536,
+     "4"
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "space",
+     108,
+     330,
+     1008,
+     159
+    ],
+    [
+     2,
+     "box",
+     437,
+     664,
+     146,
+     182
+    ],
+    [
+     3,
+     "space",
+     108,
+     743,
+     1008,
+     44
+    ],
+    [
+     4,
+     "space",
+     108,
+     1051,
+     1008,
+     56
+    ],
+    [
+     5,
+     "space",
+     108,
+     1140,
+     1008,
+     56
+    ],
+    [
+     6,
+     "space",
+     108,
+     1317,
+     1008,
+     56
+    ],
+    [
+     7,
+     "line",
+     498,
+     205,
+     630,
+     36
+    ],
+    [
+     8,
+     "line",
+     481,
+     250,
+     647,
+     36
+    ],
+    [
+     9,
+     "space",
+     135,
+     1228,
+     993,
+     55
+    ],
+    [
+     10,
+     "space",
+     135,
+     1405,
+     993,
+     107
+    ]
+   ],
+   "owners": {
+    "1": "E.c. · few sentences",
+    "4": "F.1. · 1 sentence",
+    "5": "F.2. · 1 sentence",
+    "6": "F.4. · 1 sentence",
+    "7": "E.a. · short",
+    "8": "E.b. · short",
+    "9": "F.3. · 1 sentence",
+    "10": "F.5. · few sentences"
+   }
+  },
+  {
+   "page": 5,
+   "w": 1224,
+   "h": 1584,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     35,
+     53,
+     "M5 Mathematics Polynomial End Behavior"
+    ],
+    [
+     1,
+     110,
+     130,
+     "Part G: Find the Error"
+    ],
+    [
+     2,
+     160,
+     179,
+     "A student says:"
+    ],
+    [
+     3,
+     211,
+     230,
+     "“This graph has three turning points, so the polynomial must"
+    ],
+    [
+     4,
+     262,
+     281,
+     "Is the student correct? Explain carefully."
+    ],
+    [
+     5,
+     452,
+     472,
+     "Part H: Create Your Own"
+    ],
+    [
+     6,
+     502,
+     521,
+     "Construct examples of polynomial functions with the requeste"
+    ],
+    [
+     7,
+     553,
+     572,
+     "1. An even-degree polynomial with positive leading coefficie"
+    ],
+    [
+     8,
+     686,
+     704,
+     "2. An odd-degree polynomial with negative leading coefficien"
+    ],
+    [
+     9,
+     832,
+     852,
+     "Part I: Reasoning Challenge"
+    ],
+    [
+     10,
+     883,
+     901,
+     "Can a polynomial have both ends up and cross the x-axis exac"
+    ],
+    [
+     11,
+     910,
+     928,
+     "Explain. If possible, give an example."
+    ],
+    [
+     12,
+     1121,
+     1142,
+     "Part J: The Big Synthesis"
+    ],
+    [
+     13,
+     1172,
+     1190,
+     "Four polynomials are hidden. For each one, sketch a possible"
+    ],
+    [
+     14,
+     1222,
+     1240,
+     "Polynomial Degree Parity Leading Coefficient Sign Maximum Tu"
+    ],
+    [
+     15,
+     1250,
+     1268,
+     "A Odd Positive 4"
+    ],
+    [
+     16,
+     1278,
+     1296,
+     "B Even Negative 5"
+    ],
+    [
+     17,
+     1305,
+     1324,
+     "C Odd Negative 6"
+    ],
+    [
+     18,
+     1333,
+     1352,
+     "D Even Positive 7"
+    ],
+    [
+     19,
+     1517,
+     1536,
+     "5"
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "space",
+     108,
+     291,
+     1008,
+     157
+    ],
+    [
+     2,
+     "space",
+     108,
+     715,
+     1008,
+     114
+    ],
+    [
+     3,
+     "space",
+     108,
+     939,
+     1008,
+     179
+    ],
+    [
+     4,
+     "line",
+     204,
+     1192,
+     817,
+     28
+    ],
+    [
+     5,
+     "space",
+     135,
+     582,
+     993,
+     99
+    ],
+    [
+     6,
+     "line",
+     911,
+     1244,
+     217,
+     36
+    ],
+    [
+     7,
+     "line",
+     911,
+     1272,
+     217,
+     36
+    ],
+    [
+     8,
+     "line",
+     911,
+     1299,
+     217,
+     36
+    ],
+    [
+     9,
+     "space",
+     262,
+     1362,
+     866,
+     150
+    ]
+   ],
+   "owners": {
+    "1": "G. · few sentences",
+    "2": "H.2. · few sentences",
+    "3": "I. · few sentences",
+    "5": "H.1. · few sentences"
+   }
+  },
+  {
+   "page": 6,
+   "w": 1224,
+   "h": 1584,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     35,
+     53,
+     "M5 Mathematics Polynomial End Behavior"
+    ],
+    [
+     1,
+     111,
+     130,
+     "1. Sketch a possible graph for Polynomial A. Write a possibl"
+    ],
+    [
+     2,
+     265,
+     284,
+     "2. Sketch a possible graph for Polynomial B. Write a possibl"
+    ],
+    [
+     3,
+     420,
+     438,
+     "3. Sketch a possible graph for Polynomial C. Write a possibl"
+    ],
+    [
+     4,
+     574,
+     592,
+     "4. Sketch a possible graph for Polynomial D. Write a possibl"
+    ],
+    [
+     5,
+     1517,
+     1536,
+     "6"
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "space",
+     108,
+     141,
+     1008,
+     122
+    ],
+    [
+     2,
+     "space",
+     108,
+     295,
+     1008,
+     122
+    ],
+    [
+     3,
+     "space",
+     108,
+     449,
+     1008,
+     122
+    ],
+    [
+     4,
+     "space",
+     135,
+     603,
+     993,
+     192
+    ]
+   ],
+   "owners": {}
+  },
+  {
+   "page": 7,
+   "w": 1224,
+   "h": 1584,
+   "ocr": false,
+   "ocrConf": null,
+   "ocrFailed": false,
+   "prep": null,
+   "lines": [
+    [
+     0,
+     35,
+     53,
+     "M5 Mathematics Polynomial End Behavior"
+    ],
+    [
+     1,
+     110,
+     130,
+     "Extension: Minimum Possible Degree"
+    ],
+    [
+     2,
+     160,
+     179,
+     "For each graph description, determine the minimum possible d"
+    ],
+    [
+     3,
+     210,
+     229,
+     "Description Minimum Possible Degree Reason"
+    ],
+    [
+     4,
+     238,
+     256,
+     "Both ends up, 2 turning points"
+    ],
+    [
+     5,
+     266,
+     284,
+     "Both ends down, 5 turning points"
+    ],
+    [
+     6,
+     294,
+     312,
+     "Left down, right up, 4 turning points"
+    ],
+    [
+     7,
+     322,
+     340,
+     "Left up, right down, 3 turning points"
+    ],
+    [
+     8,
+     349,
+     368,
+     "Both ends up, 0 turning points"
+    ],
+    [
+     9,
+     377,
+     396,
+     "Opposite end behavior, 6 turning points"
+    ],
+    [
+     10,
+     550,
+     570,
+     "Final Reflection"
+    ],
+    [
+     11,
+     601,
+     619,
+     "A polynomial has degree 20."
+    ],
+    [
+     12,
+     652,
+     670,
+     "a) What can you determine with certainty about its graph?"
+    ],
+    [
+     13,
+     697,
+     715,
+     "b) What can you not determine?"
+    ],
+    [
+     14,
+     1517,
+     1536,
+     "7"
+    ]
+   ],
+   "spaces": [
+    [
+     1,
+     "line",
+     224,
+     184,
+     776,
+     23
+    ],
+    [
+     2,
+     "space",
+     108,
+     412,
+     1008,
+     135
+    ],
+    [
+     3,
+     "line",
+     599,
+     232,
+     529,
+     36
+    ],
+    [
+     4,
+     "line",
+     727,
+     646,
+     401,
+     36
+    ],
+    [
+     5,
+     "space",
+     131,
+     725,
+     997,
+     192
+    ],
+    [
+     6,
+     "space",
+     131,
+     725,
+     997,
+     86
+    ],
+    [
+     7,
+     "space",
+     131,
+     821,
+     997,
+     86
+    ]
+   ],
+   "owners": {
+    "3": "Ext.1. · short",
+    "6": "Ref.a. · 1 sentence",
+    "7": "Ref.b. · 1 sentence"
+   }
+  }
+ ],
+ "answers": [
+  {
+   "id": 1,
+   "num": "1.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    2
+   ],
+   "spaceIds": [
+    2
+   ],
+   "placedBy": "marks",
+   "qy": 233.9785299999999,
+   "lineId": 4,
+   "bbox": [
+    250,
+    230,
+    12,
+    30
+   ],
+   "flag": "Two answers were given the same question number 1.. Check both.",
+   "text": "5"
+  },
+  {
+   "id": 2,
+   "num": "1.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    1
+   ],
+   "spaceIds": [
+    1
+   ],
+   "placedBy": "marks",
+   "qy": 233.9785299999999,
+   "lineId": 4,
+   "bbox": [
+    634,
+    225,
+    43,
+    36
+   ],
+   "flag": "Two answers were given the same question number 1.. Check both.",
+   "text": "pos."
+  },
+  {
+   "id": 3,
+   "num": "1.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    3
+   ],
+   "spaceIds": [
+    3
+   ],
+   "placedBy": "marks",
+   "qy": 268.16253000000006,
+   "lineId": 5,
+   "bbox": [
+    265,
+    266,
+    46,
+    29
+   ],
+   "flag": "Two answers were given the same question number 1.. Check both.",
+   "text": "down"
+  },
+  {
+   "id": 4,
+   "num": "1.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    4
+   ],
+   "spaceIds": [
+    4
+   ],
+   "placedBy": "marks",
+   "qy": 268.16253000000006,
+   "lineId": 5,
+   "bbox": [
+    520,
+    266,
+    19,
+    28
+   ],
+   "flag": "Two answers were given the same question number 1.. Check both.",
+   "text": "up"
+  },
+  {
+   "id": 5,
+   "num": "2.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    5
+   ],
+   "spaceIds": [
+    5
+   ],
+   "placedBy": "marks",
+   "qy": 365.4305300000001,
+   "lineId": 7,
+   "bbox": [
+    250,
+    362,
+    12,
+    30
+   ],
+   "flag": "Two answers were given the same question number 2.. Check both.",
+   "text": "8"
+  },
+  {
+   "id": 6,
+   "num": "2.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 365.4305300000001,
+   "lineId": 7,
+   "bbox": [
+    638,
+    358,
+    73,
+    29
+   ],
+   "flag": "Two answers were given the same question number 2.. Check both.",
+   "text": "negative"
+  },
+  {
+   "id": 7,
+   "num": "2.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    6
+   ],
+   "spaceIds": [
+    6
+   ],
+   "placedBy": "marks",
+   "qy": 399.61453000000006,
+   "lineId": 8,
+   "bbox": [
+    265,
+    398,
+    44,
+    28
+   ],
+   "flag": "Two answers were given the same question number 2.. Check both.",
+   "text": "down"
+  },
+  {
+   "id": 8,
+   "num": "2.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    7
+   ],
+   "spaceIds": [
+    7
+   ],
+   "placedBy": "marks",
+   "qy": 399.61453000000006,
+   "lineId": 8,
+   "bbox": [
+    520,
+    398,
+    44,
+    28
+   ],
+   "flag": "Two answers were given the same question number 2.. Check both.",
+   "text": "down"
+  },
+  {
+   "id": 9,
+   "num": "3.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    8
+   ],
+   "spaceIds": [
+    8
+   ],
+   "placedBy": "marks",
+   "qy": 496.8825300000001,
+   "lineId": 10,
+   "bbox": [
+    250,
+    493,
+    13,
+    31
+   ],
+   "flag": "Two answers were given the same question number 3.. Check both.",
+   "text": "7"
+  },
+  {
+   "id": 10,
+   "num": "3.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 496.8825300000001,
+   "lineId": 10,
+   "bbox": [
+    645,
+    486,
+    73,
+    29
+   ],
+   "flag": "Two answers were given the same question number 3.. Check both.",
+   "text": "negative"
+  },
+  {
+   "id": 11,
+   "num": "3.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    9
+   ],
+   "spaceIds": [
+    9
+   ],
+   "placedBy": "marks",
+   "qy": 531.0665300000001,
+   "lineId": 11,
+   "bbox": [
+    265,
+    529,
+    19,
+    28
+   ],
+   "flag": "Two answers were given the same question number 3.. Check both.",
+   "text": "up"
+  },
+  {
+   "id": 12,
+   "num": "3.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    10
+   ],
+   "spaceIds": [
+    10
+   ],
+   "placedBy": "marks",
+   "qy": 531.0665300000001,
+   "lineId": 11,
+   "bbox": [
+    520,
+    529,
+    44,
+    28
+   ],
+   "flag": "Two answers were given the same question number 3.. Check both.",
+   "text": "down"
+  },
+  {
+   "id": 13,
+   "num": "4.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    11
+   ],
+   "spaceIds": [
+    11
+   ],
+   "placedBy": "marks",
+   "qy": 628.33453,
+   "lineId": 13,
+   "bbox": [
+    250,
+    625,
+    12,
+    30
+   ],
+   "flag": "Two answers were given the same question number 4.. Check both.",
+   "text": "4"
+  },
+  {
+   "id": 14,
+   "num": "4.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 628.33453,
+   "lineId": 13,
+   "bbox": [
+    644,
+    626,
+    65,
+    29
+   ],
+   "flag": "Two answers were given the same question number 4.. Check both.",
+   "text": "positive"
+  },
+  {
+   "id": 15,
+   "num": "4.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    12
+   ],
+   "spaceIds": [
+    12
+   ],
+   "placedBy": "marks",
+   "qy": 662.5185299999999,
+   "lineId": 14,
+   "bbox": [
+    265,
+    660,
+    19,
+    28
+   ],
+   "flag": "Two answers were given the same question number 4.. Check both.",
+   "text": "up"
+  },
+  {
+   "id": 16,
+   "num": "4.",
+   "page": 2,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [
+    13
+   ],
+   "spaceIds": [
+    13
+   ],
+   "placedBy": "marks",
+   "qy": 662.5185299999999,
+   "lineId": 14,
+   "bbox": [
+    520,
+    660,
+    22,
+    28
+   ],
+   "flag": "Two answers were given the same question number 4.. Check both.",
+   "text": "Up"
+  },
+  {
+   "id": 17,
+   "num": "B.1.",
+   "page": 2,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    16
+   ],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 802.0245299999998,
+   "lineId": 17,
+   "bbox": [
+    382,
+    796,
+    15,
+    33
+   ],
+   "flag": "",
+   "text": "C"
+  },
+  {
+   "id": 18,
+   "num": "B.2.",
+   "page": 2,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    17
+   ],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 843.2905299999999,
+   "lineId": 18,
+   "bbox": [
+    369,
+    837,
+    16,
+    33
+   ],
+   "flag": "",
+   "text": "B"
+  },
+  {
+   "id": 19,
+   "num": "B.3.",
+   "page": 2,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    18
+   ],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 884.5585299999999,
+   "lineId": 19,
+   "bbox": [
+    392,
+    879,
+    16,
+    33
+   ],
+   "flag": "",
+   "text": "A"
+  },
+  {
+   "id": 20,
+   "num": "B.4.",
+   "page": 2,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    19
+   ],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 925.8265299999999,
+   "lineId": 20,
+   "bbox": [
+    348,
+    920,
+    18,
+    33
+   ],
+   "flag": "",
+   "text": "D"
+  },
+  {
+   "id": 21,
+   "num": "C.a.",
+   "page": 2,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    20
+   ],
+   "spaceIds": [
+    20
+   ],
+   "placedBy": "marks",
+   "qy": 1269.57053,
+   "lineId": 28,
+   "bbox": [
+    607,
+    1264,
+    258,
+    33
+   ],
+   "flag": "",
+   "text": "The degree must be even."
+  },
+  {
+   "id": 22,
+   "num": "C.b.",
+   "page": 2,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    21
+   ],
+   "spaceIds": [
+    21
+   ],
+   "placedBy": "marks",
+   "qy": 1310.83853,
+   "lineId": 29,
+   "bbox": [
+    488,
+    1305,
+    336,
+    33
+   ],
+   "flag": "",
+   "text": "4, 6, 8, or any even number ≥ 4"
+  },
+  {
+   "id": 23,
+   "num": "C.c.",
+   "page": 2,
+   "kind": "box",
+   "atype": "sentences",
+   "zone": [
+    22
+   ],
+   "spaceIds": [
+    22
+   ],
+   "placedBy": "marks",
+   "qy": 1352.10653,
+   "lineId": 30,
+   "bbox": [
+    153,
+    1393,
+    896,
+    136
+   ],
+   "flag": "",
+   "text": "Both ends rising means the degree is even with a positive leading coefficient. A"
+  },
+  {
+   "id": 24,
+   "num": "D.1.",
+   "page": 3,
+   "kind": "box",
+   "atype": "sentence",
+   "zone": [
+    1
+   ],
+   "spaceIds": [
+    1
+   ],
+   "placedBy": "marks",
+   "qy": 211.0845299999999,
+   "lineId": 3,
+   "bbox": [
+    125,
+    268,
+    693,
+    43
+   ],
+   "flag": "",
+   "text": "Impossible; odd degrees have opposite end behaviors."
+  },
+  {
+   "id": 25,
+   "num": "D.2.",
+   "page": 3,
+   "kind": "box",
+   "atype": "sentence",
+   "zone": [
+    2
+   ],
+   "spaceIds": [
+    2
+   ],
+   "placedBy": "marks",
+   "qy": 321.57052999999996,
+   "lineId": 4,
+   "bbox": [
+    125,
+    379,
+    722,
+    43
+   ],
+   "flag": "",
+   "text": "Possible; f(x) = x² + 1 has one turning point at (0, 1)."
+  },
+  {
+   "id": 26,
+   "num": "D.3.",
+   "page": 3,
+   "kind": "box",
+   "atype": "sentence",
+   "zone": [
+    3
+   ],
+   "spaceIds": [
+    3
+   ],
+   "placedBy": "marks",
+   "qy": 432.05653000000007,
+   "lineId": 5,
+   "bbox": [
+    125,
+    490,
+    844,
+    43
+   ],
+   "flag": "",
+   "text": "Impossible; degree 3 polynomials have at most 2 turning points."
+  },
+  {
+   "id": 27,
+   "num": "D.4.",
+   "page": 3,
+   "kind": "box",
+   "atype": "paragraph",
+   "zone": [
+    4
+   ],
+   "spaceIds": [
+    4
+   ],
+   "placedBy": "marks",
+   "qy": 542.54253,
+   "lineId": 6,
+   "bbox": [
+    154,
+    583,
+    964,
+    178
+   ],
+   "flag": "",
+   "text": "Possible; for example, f(x) = −x⁷ + 5x⁶ − 3 has a negative leading coefficient, "
+  },
+  {
+   "id": 28,
+   "num": "E.a.",
+   "page": 4,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    7
+   ],
+   "spaceIds": [
+    7
+   ],
+   "placedBy": "marks",
+   "qy": 211.0845299999999,
+   "lineId": 3,
+   "bbox": [
+    506,
+    205,
+    40,
+    33
+   ],
+   "flag": "",
+   "text": "Odd"
+  },
+  {
+   "id": 29,
+   "num": "E.b.",
+   "page": 4,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    8
+   ],
+   "spaceIds": [
+    8
+   ],
+   "placedBy": "marks",
+   "qy": 256.1165299999998,
+   "lineId": 4,
+   "bbox": [
+    488,
+    250,
+    383,
+    33
+   ],
+   "flag": "",
+   "text": "5, 7, 9, 11, ... (any odd number ≥ 5)"
+  },
+  {
+   "id": 30,
+   "num": "E.c.",
+   "page": 4,
+   "kind": "box",
+   "atype": "sentences",
+   "zone": [
+    1
+   ],
+   "spaceIds": [
+    1
+   ],
+   "placedBy": "marks",
+   "qy": 301.1485299999997,
+   "lineId": 5,
+   "bbox": [
+    125,
+    343,
+    997,
+    91
+   ],
+   "flag": "Changed by the double-check (was \"Opposite end behaviors occur only when degree is odd. At most 4 turning points means degree ≤ 5, but could be higher odd degrees. Therefore possible degrees are 5, 7, 9, and all greater odd integers.\"). A polynomial of degree n has at most n-1 turning points. If there are at most 4 turning po",
+   "text": "Opposite end behaviors require odd degree. At most 4 turning points means degree"
+  },
+  {
+   "id": 31,
+   "num": "F.1.",
+   "page": 4,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    4
+   ],
+   "spaceIds": [
+    4
+   ],
+   "placedBy": "marks",
+   "qy": 1021.9045299999998,
+   "lineId": 11,
+   "bbox": [
+    125,
+    1064,
+    205,
+    40
+   ],
+   "flag": "",
+   "text": "Graphs A and B"
+  },
+  {
+   "id": 32,
+   "num": "F.2.",
+   "page": 4,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    5
+   ],
+   "spaceIds": [
+    5
+   ],
+   "placedBy": "marks",
+   "qy": 1110.57053,
+   "lineId": 12,
+   "bbox": [
+    125,
+    1153,
+    206,
+    40
+   ],
+   "flag": "",
+   "text": "Graphs C and D"
+  },
+  {
+   "id": 33,
+   "num": "F.3.",
+   "page": 4,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    9
+   ],
+   "spaceIds": [
+    9
+   ],
+   "placedBy": "marks",
+   "qy": 1199.2385299999999,
+   "lineId": 13,
+   "bbox": [
+    154,
+    1241,
+    201,
+    39
+   ],
+   "flag": "",
+   "text": "Graphs A and D"
+  },
+  {
+   "id": 34,
+   "num": "F.4.",
+   "page": 4,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    6
+   ],
+   "spaceIds": [
+    6
+   ],
+   "placedBy": "marks",
+   "qy": 1287.90653,
+   "lineId": 14,
+   "bbox": [
+    125,
+    1330,
+    204,
+    40
+   ],
+   "flag": "",
+   "text": "Graphs B and C"
+  },
+  {
+   "id": 35,
+   "num": "F.5.",
+   "page": 4,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    10
+   ],
+   "spaceIds": [
+    10
+   ],
+   "placedBy": "marks",
+   "qy": 1376.5745299999999,
+   "lineId": 15,
+   "bbox": [
+    154,
+    1418,
+    955,
+    92
+   ],
+   "flag": "",
+   "text": "Graph C or Graph D could represent a polynomial of degree 5 because both show od"
+  },
+  {
+   "id": 36,
+   "num": "G.",
+   "page": 5,
+   "kind": "box",
+   "atype": "sentences",
+   "zone": [
+    1
+   ],
+   "spaceIds": [
+    1
+   ],
+   "placedBy": "marks",
+   "qy": 262.09452999999985,
+   "lineId": 4,
+   "bbox": [
+    125,
+    304,
+    996,
+    142
+   ],
+   "flag": "",
+   "text": "No, the student is incorrect. A polynomial of degree n has at most n−1 turning p"
+  },
+  {
+   "id": 37,
+   "num": "H.1.",
+   "page": 5,
+   "kind": "box",
+   "atype": "sentences",
+   "zone": [
+    5
+   ],
+   "spaceIds": [
+    5
+   ],
+   "placedBy": "marks",
+   "qy": 553.4905299999998,
+   "lineId": 7,
+   "bbox": [
+    154,
+    594,
+    983,
+    85
+   ],
+   "flag": "",
+   "text": "f(x) = x⁴ − 2x² + 1 → Even degree (4), positive leading coefficient (1), exactly"
+  },
+  {
+   "id": 38,
+   "num": "H.2.",
+   "page": 5,
+   "kind": "box",
+   "atype": "sentences",
+   "zone": [
+    2
+   ],
+   "spaceIds": [
+    2
+   ],
+   "placedBy": "marks",
+   "qy": 685.7945299999998,
+   "lineId": 8,
+   "bbox": [
+    125,
+    729,
+    930,
+    97
+   ],
+   "flag": "",
+   "text": "f(x) = −x⁵ + 5x³ − 4x → Odd degree (5), negative leading coefficient (−1), exact"
+  },
+  {
+   "id": 39,
+   "num": "I.",
+   "page": 5,
+   "kind": "box",
+   "atype": "sentences",
+   "zone": [
+    3
+   ],
+   "spaceIds": [
+    3
+   ],
+   "placedBy": "marks",
+   "qy": 909.6445299999997,
+   "lineId": 11,
+   "bbox": [
+    125,
+    949,
+    997,
+    167
+   ],
+   "flag": "",
+   "text": "No, this is impossible. If both ends go up, the polynomial has even degree and p"
+  },
+  {
+   "id": 40,
+   "num": "J.A.",
+   "page": 5,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    928,
+    1244,
+    173,
+    34
+   ],
+   "flag": "Drawn by Claude: \"Odd degree (5), positive leading coefficient. Graph: starts bottom-left, rises t\". Check the drawing.",
+   "text": ""
+  },
+  {
+   "id": "40-t1",
+   "num": "J.A.",
+   "page": 5,
+   "kind": "box",
+   "qy": null,
+   "bbox": [
+    1079,
+    1161,
+    109,
+    24
+   ],
+   "flag": "",
+   "text": "f(x)=x⁵−3x³+x"
+  },
+  {
+   "id": 41,
+   "num": "J.B.",
+   "page": 5,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    928,
+    1278,
+    173,
+    27
+   ],
+   "flag": "Drawn by Claude: \"Even degree (6), negative leading coefficient. Graph: starts top-left, ends bott\". Check the drawing.",
+   "text": ""
+  },
+  {
+   "id": "41-t1",
+   "num": "J.B.",
+   "page": 5,
+   "kind": "box",
+   "qy": null,
+   "bbox": [
+    1020,
+    1261,
+    141,
+    24
+   ],
+   "flag": "",
+   "text": "g(x)=−x⁶+4x⁴−3x²"
+  },
+  {
+   "id": 42,
+   "num": "J.C.",
+   "page": 5,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    928,
+    1301,
+    179,
+    30
+   ],
+   "flag": "Drawn by Claude: \"Odd degree (7), negative leading coefficient. Graph: starts top-left, ends botto\". Check the drawing.",
+   "text": ""
+  },
+  {
+   "id": "42-t1",
+   "num": "J.C.",
+   "page": 5,
+   "kind": "box",
+   "qy": null,
+   "bbox": [
+    1020,
+    1289,
+    160,
+    24
+   ],
+   "flag": "",
+   "text": "h(x)=−x⁷+5x⁵−4x³+x"
+  },
+  {
+   "id": 43,
+   "num": "J.D.",
+   "page": 5,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    343,
+    1380,
+    660,
+    88
+   ],
+   "flag": "Drawn by Claude: \"Even degree polynomial with both ends up and seven turning points; p(x) = x⁸ − 6\". Check the drawing.",
+   "text": ""
+  },
+  {
+   "id": "43-t1",
+   "num": "J.D.",
+   "page": 5,
+   "kind": "box",
+   "qy": null,
+   "bbox": [
+    565,
+    1466,
+    212,
+    24
+   ],
+   "flag": "",
+   "text": "p(x) = x⁸ − 6x⁶ + 9x⁴ − 2x²"
+  },
+  {
+   "id": 44,
+   "num": "J.1.a.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    153,
+    142,
+    816,
+    109
+   ],
+   "flag": "Drawn by Claude: \"The graph starts low on the left, rises to a peak, dips down, rises again, then \". Check the drawing.",
+   "text": ""
+  },
+  {
+   "id": "44-d1",
+   "num": "J.1.a.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    350,
+    205,
+    21,
+    21
+   ],
+   "flag": "",
+   "text": ""
+  },
+  {
+   "id": "44-d2",
+   "num": "J.1.a.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    551,
+    199,
+    21,
+    21
+   ],
+   "flag": "",
+   "text": ""
+  },
+  {
+   "id": "44-d3",
+   "num": "J.1.a.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    854,
+    149,
+    21,
+    21
+   ],
+   "flag": "",
+   "text": ""
+  },
+  {
+   "id": 45,
+   "num": "J.2.b.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    153,
+    296,
+    816,
+    119
+   ],
+   "flag": "Drawn by Claude: \"The graph starts high on the left, descends through several turns, and ends low \". Check the drawing.",
+   "text": ""
+  },
+  {
+   "id": "45-d1",
+   "num": "J.2.b.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    350,
+    315,
+    21,
+    21
+   ],
+   "flag": "",
+   "text": ""
+  },
+  {
+   "id": "45-d2",
+   "num": "J.2.b.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    551,
+    347,
+    21,
+    21
+   ],
+   "flag": "",
+   "text": ""
+  },
+  {
+   "id": "45-d3",
+   "num": "J.2.b.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    753,
+    374,
+    21,
+    21
+   ],
+   "flag": "",
+   "text": ""
+  },
+  {
+   "id": 46,
+   "num": "J.3.c.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    153,
+    451,
+    816,
+    118
+   ],
+   "flag": "Drawn by Claude: \"The graph starts high on the left, falls and rises through multiple turning poin\". Check the drawing.",
+   "text": ""
+  },
+  {
+   "id": "46-d1",
+   "num": "J.3.c.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    350,
+    464,
+    21,
+    21
+   ],
+   "flag": "",
+   "text": ""
+  },
+  {
+   "id": "46-d2",
+   "num": "J.3.c.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    551,
+    482,
+    21,
+    21
+   ],
+   "flag": "",
+   "text": ""
+  },
+  {
+   "id": "46-d3",
+   "num": "J.3.c.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    753,
+    520,
+    21,
+    21
+   ],
+   "flag": "",
+   "text": ""
+  },
+  {
+   "id": 47,
+   "num": "J.4.d.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    179,
+    627,
+    874,
+    149
+   ],
+   "flag": "Drawn by Claude: \"The graph starts low on the left, rises and falls through multiple peaks and val\". Check the drawing.",
+   "text": ""
+  },
+  {
+   "id": "47-d1",
+   "num": "J.4.d.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    402,
+    682,
+    21,
+    21
+   ],
+   "flag": "",
+   "text": ""
+  },
+  {
+   "id": "47-d2",
+   "num": "J.4.d.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    561,
+    676,
+    21,
+    21
+   ],
+   "flag": "",
+   "text": ""
+  },
+  {
+   "id": "47-d3",
+   "num": "J.4.d.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    720,
+    696,
+    21,
+    21
+   ],
+   "flag": "",
+   "text": ""
+  },
+  {
+   "id": "47-d4",
+   "num": "J.4.d.",
+   "page": 6,
+   "kind": "draw",
+   "qy": null,
+   "bbox": [
+    879,
+    676,
+    21,
+    21
+   ],
+   "flag": "",
+   "text": ""
+  },
+  {
+   "id": 48,
+   "num": "Ext.1.",
+   "page": 7,
+   "kind": "box",
+   "atype": "short",
+   "zone": [
+    3
+   ],
+   "spaceIds": [
+    3
+   ],
+   "placedBy": "marks",
+   "qy": 237.88253000000012,
+   "lineId": 4,
+   "bbox": [
+    606,
+    232,
+    14,
+    33
+   ],
+   "flag": "",
+   "text": "3"
+  },
+  {
+   "id": 50,
+   "num": "Ext.2.",
+   "page": 7,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 265.77853000000005,
+   "lineId": 5,
+   "bbox": [
+    612,
+    257,
+    16,
+    36
+   ],
+   "flag": "",
+   "text": "6"
+  },
+  {
+   "id": 52,
+   "num": "Ext.3.",
+   "page": 7,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 293.67453,
+   "lineId": 6,
+   "bbox": [
+    628,
+    285,
+    15,
+    36
+   ],
+   "flag": "",
+   "text": "5"
+  },
+  {
+   "id": 54,
+   "num": "Ext.4.",
+   "page": 7,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 321.56853,
+   "lineId": 7,
+   "bbox": [
+    628,
+    313,
+    15,
+    36
+   ],
+   "flag": "",
+   "text": "4"
+  },
+  {
+   "id": 56,
+   "num": "Ext.5.",
+   "page": 7,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 349.46452999999997,
+   "lineId": 8,
+   "bbox": [
+    299,
+    394,
+    16,
+    38
+   ],
+   "flag": "",
+   "text": "2"
+  },
+  {
+   "id": 58,
+   "num": "Ext.6.",
+   "page": 7,
+   "kind": "blank",
+   "atype": "short",
+   "zone": [],
+   "spaceIds": null,
+   "placedBy": null,
+   "qy": 377.3605299999999,
+   "lineId": 9,
+   "bbox": [
+    255,
+    419,
+    13,
+    32
+   ],
+   "flag": "",
+   "text": "7"
+  },
+  {
+   "id": 60,
+   "num": "Ref.a.",
+   "page": 7,
+   "kind": "box",
+   "atype": "sentence",
+   "zone": [
+    6
+   ],
+   "spaceIds": [
+    6
+   ],
+   "placedBy": "marks",
+   "qy": 651.58053,
+   "lineId": 12,
+   "bbox": [
+    150,
+    731,
+    943,
+    80
+   ],
+   "flag": "Changed by the double-check (was \"Both ends go up because the degree is even.\"). Degree 20 being even means both ends go the same direction, but we cannot determine if the",
+   "text": "The degree is even (20), so both ends go in the same direction. It has at most 1"
+  },
+  {
+   "id": 61,
+   "num": "Ref.b.",
+   "page": 7,
+   "kind": "box",
+   "atype": "sentence",
+   "zone": [
+    7
+   ],
+   "spaceIds": [
+    7
+   ],
+   "placedBy": "marks",
+   "qy": 696.61253,
+   "lineId": 13,
+   "bbox": [
+    150,
+    852,
+    744,
+    47
+   ],
+   "flag": "Code and Claude picked different answer spaces for this question. Check the position.",
+   "text": "The exact number of turning points and the zeros."
+  }
+ ]
+}
