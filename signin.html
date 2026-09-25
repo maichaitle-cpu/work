@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Parline Sign In</title>
-<meta name="description" content="Sign in to Parline to count inventory and review drafted orders.">
+<title>Legible Sign In</title>
+<meta name="description" content="Sign in to Legible to turn handwriting into text.">
 <meta name="robots" content="noindex">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231D5B86'/%3E%3Cpath d='M9 22V10h7a4 4 0 010 8H9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231D5B86'/%3E%3Cpath d='M11 9v14h10' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
@@ -144,12 +144,12 @@
 </style>
 </head>
 <body>
-<div class="draft">Draft page. Sign in is not connected to a server, so nothing you type here is sent or stored.</div>
+<div class="draft">Demo sign in. It isn't connected to a server, so nothing you type here is sent or stored. Any email and password lets you in.</div>
 
 <header class="top">
-  <a class="brand" href="index.html" aria-label="Parline home">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M9 22V10h7a4 4 0 010 8H9" fill="none" stroke="var(--accent-ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Parline
+  <a class="brand" href="index.html" aria-label="Legible home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M11 9v14h10" fill="none" stroke="var(--accent-ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Legible
   </a>
   <a href="index.html#start">Start free trial</a>
 </header>
@@ -159,8 +159,8 @@
     <!-- Sign in view -->
     <section class="card" id="signinView" aria-labelledby="signin-h">
       <div class="card-head">
-        <h1 id="signin-h">Sign in to Parline</h1>
-        <p>Pick up your count where you left off.</p>
+        <h1 id="signin-h">Sign in to Legible</h1>
+        <p>Pick up where you left off.</p>
       </div>
 
       <form id="signinForm" novalidate>
@@ -194,7 +194,7 @@
 
       <div class="divider">or</div>
       <button class="btn btn-secondary" type="button" id="magicBtn">Email me a sign in link</button>
-      <p class="hint">Handy for staff who count on a shared kitchen phone and don't want to type a password in the cooler.</p>
+      <p class="hint">Easier on a phone: no password to type.</p>
     </section>
 
     <!-- Reset view -->
@@ -216,12 +216,12 @@
     </section>
 
     <div class="after">
-      <p>New to Parline? <a href="index.html#start">Start a 14 day free trial</a></p>
+      <p>New here? <a href="index.html#start">Start a free trial</a></p>
     </div>
   </div>
 </main>
 
-<footer>Parline. Placeholder product for this draft.</footer>
+<footer>Legible. Draft product.</footer>
 
 <script>
 (function () {
@@ -274,8 +274,12 @@
     btn.setAttribute("aria-busy", "true"); btn.disabled = true; btn.textContent = "Signing in…";
     setTimeout(function () {
       btn.removeAttribute("aria-busy"); btn.disabled = false; btn.textContent = "Sign in";
-      showMsg(msg, "Details look complete. " + DEMO + " Connect this form to your auth service to sign people in.");
       pw.value = "";
+      msg.textContent = "Demo sign in accepted. ";
+      var a = document.createElement("a");
+      a.href = "app.html"; a.textContent = "Open your workspace";
+      msg.appendChild(a); msg.classList.remove("bad"); msg.hidden = false;
+      a.focus();
     }, 700);
   });
 
