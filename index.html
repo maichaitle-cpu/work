@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Parline</title>
+<meta name="description" content="Parline turns your phone into a count sheet that knows your par levels. Count the cooler in 15 minutes and get a drafted order. Built for independent restaurants.">
+<meta property="og:title" content="Parline: inventory counts in 15 minutes">
+<meta property="og:description" content="Count by shelf, get a drafted order, see food cost every week. 14 days free, no card needed.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231D5B86'/%3E%3Cpath d='M9 22V10h7a4 4 0 010 8H9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #F5F6F3;
+    --surface: #FFFFFF;
+    --sunk: #ECEEEA;
+    --ink: #141613;
+    --muted: #596058;
+    --line: #D9DDD6;
+    --accent: #1D5B86;
+    --accent-hover: #174B6F;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #E3ECF3;
+    --good: #2F6B3A;
+    --h1-from: #000000;
+    --h1-to: #666666;
+    --glass: rgba(255, 255, 255, 0.72);
+    --overlay: rgba(255, 255, 255, 0.8);
+    --ease: cubic-bezier(0.32, 0.72, 0, 1);
+    --sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #131209; --surface: #1F1F1F; --sunk: #181818; --ink: #F1F1EC; --muted: #A3A69E;
+      --line: #313131; --accent: #8DB9DE; --accent-hover: #A7CAE7; --accent-ink: #0E1A24;
+      --accent-soft: #272727; --good: #8CC79A; --h1-from: #FFFFFF; --h1-to: #9B9B9B;
+      --glass: rgba(31, 31, 31, 0.72); --overlay: rgba(0, 0, 0, 0.8);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #131209; --surface: #1F1F1F; --sunk: #181818; --ink: #F1F1EC; --muted: #A3A69E;
+    --line: #313131; --accent: #8DB9DE; --accent-hover: #A7CAE7; --accent-ink: #0E1A24;
+    --accent-soft: #272727; --good: #8CC79A; --h1-from: #FFFFFF; --h1-to: #9B9B9B;
+    --glass: rgba(31, 31, 31, 0.72); --overlay: rgba(0, 0, 0, 0.8);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { margin: 0; font-weight: 700; text-wrap: balance; letter-spacing: -0.01em; }
+  p { margin: 0; text-wrap: pretty; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+  .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+  .skip { position: absolute; left: 16px; top: -64px; padding: 8px 12px; background: var(--accent); color: var(--accent-ink); border-radius: 8px; font-weight: 600; z-index: 100; text-decoration: none; }
+  .skip:focus { top: 16px; }
+
+  .draft {
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 0.75rem; line-height: 1rem;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding-inline: 24px; }
+  @media (max-width: 480px) { .wrap { padding-inline: 16px; } }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 12px; border-radius: 8px; border: 1px solid transparent;
+    font: 600 1rem/1.5rem var(--sans); text-decoration: none; cursor: pointer;
+    transition: background-color 700ms var(--ease), transform 700ms var(--ease), border-color 700ms var(--ease);
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
+  .btn-primary:active { transform: scale(0.98); }
+  .btn-sm { font-size: 0.875rem; line-height: 1.25rem; }
+  .btn svg { width: 16px; height: 16px; }
+
+  /* Fluid island nav */
+  .nav-shell {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
+    padding-top: 24px; pointer-events: none;
+    display: flex; justify-content: center; padding-inline: 16px;
+  }
+  .nav {
+    pointer-events: auto;
+    display: flex; align-items: center; gap: 24px;
+    width: max-content; max-width: 100%;
+    padding: 8px 8px 8px 16px;
+    border-radius: 9999px; border: 1px solid var(--line);
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  }
+  .brand { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-decoration: none; }
+  .brand svg { width: 24px; height: 24px; }
+  .nav-links { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
+  .nav-links a {
+    display: block; padding: 4px 12px; border-radius: 9999px;
+    font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; color: var(--muted); text-decoration: none;
+    transition: background-color 700ms var(--ease), color 700ms var(--ease);
+  }
+  .nav-links a:hover { background: var(--sunk); color: var(--ink); }
+  .nav-links a[aria-current="true"] { color: var(--ink); background: var(--sunk); }
+  .nav .btn { border-radius: 9999px; }
+
+  .burger {
+    display: none; position: relative; width: 40px; height: 40px;
+    border: 0; border-radius: 9999px; background: var(--sunk); cursor: pointer; color: var(--ink);
+  }
+  .burger span {
+    position: absolute; left: 12px; width: 16px; height: 2px; border-radius: 2px; background: currentColor;
+    transition: transform 700ms var(--ease), top 700ms var(--ease);
+  }
+  .burger span:nth-child(1) { top: 15px; }
+  .burger span:nth-child(2) { top: 23px; }
+  .menu-open .burger span:nth-child(1) { top: 19px; transform: rotate(45deg); }
+  .menu-open .burger span:nth-child(2) { top: 19px; transform: rotate(-45deg); }
+
+  .overlay {
+    position: fixed; inset: 0; z-index: 40;
+    background: var(--overlay);
+    -webkit-backdrop-filter: blur(64px); backdrop-filter: blur(64px);
+    padding: calc(env(safe-area-inset-top, 0px) + 112px) 24px 48px;
+    opacity: 0; visibility: hidden;
+    transition: opacity 700ms var(--ease), visibility 0s linear 700ms;
+  }
+  .menu-open .overlay { opacity: 1; visibility: visible; transition: opacity 700ms var(--ease), visibility 0s; }
+  .overlay ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+  .overlay li { opacity: 0; transform: translateY(48px); transition: transform 700ms var(--ease), opacity 700ms var(--ease); }
+  .menu-open .overlay li { opacity: 1; transform: none; }
+  .menu-open .overlay li:nth-child(2) { transition-delay: 100ms; }
+  .menu-open .overlay li:nth-child(3) { transition-delay: 150ms; }
+  .menu-open .overlay li:nth-child(4) { transition-delay: 200ms; }
+  .overlay a:not(.btn) { font-size: 1.875rem; line-height: 2.25rem; font-weight: 600; text-decoration: none; }
+
+  @media (max-width: 760px) {
+    .nav-links, .nav > .btn { display: none; }
+    .burger { display: block; }
+    .nav { gap: 48px; }
+  }
+
+  /* Hero */
+  .hero { padding-block: 64px 80px; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 48px; } .hero { padding-block: 48px 64px; } }
+  .eyebrow { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); }
+  .hero-copy { display: grid; gap: 24px; justify-items: start; }
+  .hero h1 {
+    max-width: 680px;
+    font-size: 3rem; line-height: 1;
+    background: linear-gradient(to right, var(--h1-from), var(--h1-to));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    padding-bottom: 4px;
+  }
+  .hero h1 .line { display: block; }
+  @media (max-width: 480px) { .hero h1 { font-size: 2.25rem; line-height: 2.5rem; } .hero h1 .line { display: inline; } }
+  .hero .sub { max-width: 680px; font-size: 1.125rem; line-height: 1.75rem; color: var(--muted); }
+  .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+  .fine { font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+  .proof-line { display: flex; flex-wrap: wrap; gap: 8px 24px; padding-top: 8px; font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+  .proof-line strong { color: var(--ink); font-weight: 600; }
+
+  /* Count sheet mock */
+  .sheet {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 16px; display: grid; gap: 12px;
+    box-shadow: 0 24px 48px -24px rgba(20, 30, 25, 0.25);
+  }
+  .sheet-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .sheet-head h2 { font-size: 1rem; line-height: 1.5rem; }
+  .sheet-head span { font-size: 0.75rem; line-height: 1rem; color: var(--muted); }
+  .sheet-table { overflow-x: auto; }
+  .sheet table { width: 100%; border-collapse: collapse; font-size: 0.875rem; line-height: 1.25rem; }
+  .sheet th { text-align: right; font-weight: 500; color: var(--muted); font-size: 0.75rem; line-height: 1rem; padding: 4px 8px; white-space: nowrap; }
+  .sheet th:first-child { text-align: left; padding-left: 0; }
+  .sheet td { padding: 8px; border-top: 1px solid var(--line); text-align: right; white-space: nowrap; }
+  .sheet td:first-child { text-align: left; padding-left: 0; white-space: normal; }
+  .item-name { font-weight: 600; display: block; }
+  .item-unit { font-size: 0.75rem; line-height: 1rem; color: var(--muted); }
+  .stepper { display: inline-flex; align-items: center; gap: 4px; }
+  .stepper button {
+    width: 24px; height: 24px; border-radius: 6px; border: 1px solid var(--line);
+    background: var(--sunk); color: var(--ink); font: 600 0.875rem/1 var(--mono); cursor: pointer;
+    transition: background-color 700ms var(--ease), transform 700ms var(--ease);
+  }
+  .stepper button:hover { background: var(--accent-soft); }
+  .stepper button:active { transform: scale(0.94); }
+  .stepper output { min-width: 40px; text-align: center; }
+  .order-cell { font-weight: 600; }
+  .order-cell.zero { color: var(--muted); font-weight: 400; }
+  .sheet-foot {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding: 12px; border-radius: 8px; background: var(--sunk);
+    font-size: 0.875rem; line-height: 1.25rem;
+  }
+  .sheet-foot strong { font-size: 1.125rem; line-height: 1.75rem; }
+
+  /* Sections */
+  section { padding-block: 80px; }
+  @media (max-width: 640px) { section { padding-block: 64px; } }
+  .section-head { display: grid; gap: 12px; max-width: 680px; margin-bottom: 48px; }
+  .section-head h2 { font-size: 2.25rem; line-height: 2.5rem; }
+  @media (max-width: 480px) { .section-head h2 { font-size: 1.875rem; line-height: 2.25rem; } }
+  .section-head p { font-size: 1.125rem; line-height: 1.75rem; color: var(--muted); }
+  .band { background: var(--surface); border-block: 1px solid var(--line); }
+
+  /* Before / after */
+  .compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  @media (max-width: 760px) { .compare { grid-template-columns: 1fr; } }
+  .compare-col { border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: grid; gap: 16px; align-content: start; }
+  .compare-col.after { border-color: var(--accent); }
+  .compare-col h3 { font-size: 1.125rem; line-height: 1.75rem; }
+  .compare-col dl { margin: 0; display: grid; gap: 0; }
+  .compare-col dl div { display: flex; justify-content: space-between; gap: 16px; padding-block: 12px; border-top: 1px solid var(--line); }
+  .compare-col dt { color: var(--muted); }
+  .compare-col dd { margin: 0; font-weight: 600; text-align: right; }
+  .compare-col.after dd { color: var(--good); }
+
+  /* Benefits */
+  .benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 64px; }
+  @media (max-width: 760px) { .benefits { grid-template-columns: 1fr; gap: 32px; } }
+  .benefit { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 16px; }
+  .benefit-icon { width: 40px; height: 40px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+  .benefit-icon svg { width: 24px; height: 24px; }
+  .benefit h3 { font-size: 1.25rem; line-height: 1.75rem; margin-bottom: 8px; }
+  .benefit p { color: var(--muted); }
+
+  /* Tagline reveal */
+  .tagline { padding-block: 96px; }
+  .tagline p {
+    max-width: 880px; font-size: 3rem; line-height: 1; font-weight: 700; letter-spacing: -0.015em; text-wrap: balance;
+  }
+  @media (max-width: 760px) { .tagline p { font-size: 2.25rem; line-height: 2.5rem; } }
+  .tagline .w { opacity: 0.3; transition: opacity 700ms var(--ease); }
+  .tagline .w.on { opacity: 1; }
+
+  /* Steps */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; counter-reset: step; }
+  @media (max-width: 860px) { .steps { grid-template-columns: 1fr; } }
+  .steps li { background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: grid; gap: 12px; align-content: start; }
+  .step-num { font-family: var(--mono); font-size: 0.875rem; line-height: 1.25rem; color: var(--accent); }
+  .steps h3 { font-size: 1.25rem; line-height: 1.75rem; }
+  .steps p { color: var(--muted); }
+
+  /* Proof */
+  .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  @media (max-width: 900px) { .quotes { grid-template-columns: 1fr; } }
+  .quote { margin: 0; display: grid; gap: 24px; align-content: space-between; padding: 24px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+  .quote blockquote { margin: 0; font-size: 1.125rem; line-height: 1.75rem; }
+  .quote figcaption { display: flex; align-items: center; gap: 12px; font-size: 0.875rem; line-height: 1.25rem; }
+  .avatar { width: 40px; height: 40px; border-radius: 9999px; display: grid; place-items: center; font-weight: 700; font-size: 0.875rem; flex: none; }
+  .quote figcaption span { display: block; color: var(--muted); }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 9999px; background: var(--sunk); color: var(--muted); font-size: 0.75rem; line-height: 1rem; font-weight: 600; }
+
+  /* Pricing */
+  .price-card {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center;
+    padding: 48px; border-radius: 24px; background: var(--surface); border: 1px solid var(--line);
+  }
+  @media (max-width: 760px) { .price-card { grid-template-columns: 1fr; padding: 24px; gap: 32px; } }
+  .price { display: flex; align-items: baseline; gap: 8px; }
+  .price strong { font-size: 3.75rem; line-height: 1; font-weight: 700; }
+  .price span { color: var(--muted); }
+  .price-card h2 { font-size: 1.875rem; line-height: 2.25rem; margin-bottom: 12px; }
+  .price-card > div:first-child { display: grid; gap: 16px; justify-items: start; }
+  .checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .checks li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 12px; }
+  .checks svg { width: 20px; height: 20px; color: var(--good); margin-top: 2px; }
+
+  /* FAQ */
+  .faq { max-width: 760px; display: grid; }
+  .faq details { border-top: 1px solid var(--line); }
+  .faq details:last-child { border-bottom: 1px solid var(--line); }
+  .faq summary {
+    list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 16px;
+    padding-block: 24px; font-size: 1.125rem; line-height: 1.75rem; font-weight: 600;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary svg { width: 20px; height: 20px; flex: none; margin-top: 4px; transition: transform 700ms var(--ease); }
+  .faq details[open] summary svg { transform: rotate(45deg); }
+  .faq details p { padding-bottom: 24px; color: var(--muted); max-width: 640px; }
+
+  /* Final CTA */
+  .final { text-align: left; }
+  .final-card { display: grid; gap: 24px; justify-items: start; max-width: 680px; }
+  .final h2 { font-size: 2.25rem; line-height: 2.5rem; }
+  .signup { display: flex; flex-wrap: wrap; gap: 12px; width: 100%; max-width: 520px; }
+  .field { flex: 1 1 240px; display: grid; gap: 4px; }
+  .field label { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; }
+  .field input {
+    width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--ink); font: 400 1rem/1.5rem var(--sans);
+    transition: border-color 700ms var(--ease);
+  }
+  .field input:hover { border-color: var(--muted); }
+  .field input[aria-invalid="true"] { border-color: #B3261E; }
+  .signup .btn { align-self: end; }
+  .form-msg { font-size: 0.875rem; line-height: 1.25rem; min-height: 20px; width: 100%; }
+  .form-msg.err { color: #B3261E; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .form-msg.err { color: #F2B8B5; } }
+  :root[data-theme="dark"] .form-msg.err { color: #F2B8B5; }
+
+  footer { padding-block: 48px; border-top: 1px solid var(--line); font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+
+  /* Scroll reveal: only applied by script to elements below the first screen */
+  [data-reveal] { transition: transform 900ms var(--ease), opacity 900ms var(--ease), filter 900ms var(--ease); }
+  [data-reveal].pre { transform: translateY(32px); opacity: 0.35; filter: blur(4px); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0ms !important; transition-delay: 0ms !important; scroll-behavior: auto !important; }
+    [data-reveal].pre { transform: none; opacity: 1; filter: none; }
+    .tagline .w { opacity: 1; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="draft">Draft page. Parline is a placeholder product: replace the copy, numbers and sample quotes before launch.</div>
+
+<div class="nav-shell" id="navShell">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="#top" aria-label="Parline home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M9 22V10h7a4 4 0 010 8H9" fill="none" stroke="var(--accent-ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Parline
+    </a>
+    <ul class="nav-links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#proof">Kitchens</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn btn-primary btn-sm" href="#start">Start free trial</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="overlay" aria-label="Open menu"><span></span><span></span></button>
+  </nav>
+</div>
+<div class="overlay" id="overlay" aria-hidden="true">
+  <ul>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#proof">Kitchens</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a class="btn btn-primary" href="#start">Start free trial</a></li>
+  </ul>
+</div>
+
+<main id="main">
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">For independent restaurants</p>
+        <h1><span class="line">Inventory counts in 15 minutes.</span> <span class="line">Orders that write themselves.</span></h1>
+        <p class="sub">Parline turns your phone into a count sheet that knows your par levels. Count the cooler shelf by shelf and your next order is drafted before you close the door.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#start">Start 14 day free trial
+            <svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M221.66 133.66l-72 72a8 8 0 01-11.32-11.32L196.69 136H40a8 8 0 010-16h156.69l-58.35-58.34a8 8 0 0111.32-11.32l72 72a8 8 0 010 11.32z"/></svg>
+          </a>
+          <span class="fine">No card needed. Cancel anytime.</span>
+        </div>
+        <div class="proof-line">
+          <span><strong class="mono">312</strong> kitchens counting weekly</span>
+          <span>Median count time <strong class="mono">14 min 20 s</strong></span>
+        </div>
+      </div>
+
+      <div class="sheet" aria-label="Example count sheet you can try">
+        <div class="sheet-head">
+          <h2>Walk in cooler, shelf 2</h2>
+          <span>Try it: adjust on hand</span>
+        </div>
+        <div class="sheet-table">
+          <table>
+            <thead><tr><th scope="col">Item</th><th scope="col">On hand</th><th scope="col">Par</th><th scope="col">Order</th></tr></thead>
+            <tbody id="sheetRows"></tbody>
+          </table>
+        </div>
+        <div class="sheet-foot">
+          <span>Drafted order, <span id="orderCases" class="mono">0</span> cases</span>
+          <strong class="mono" id="orderTotal">$0.00</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="band" aria-labelledby="problem-h">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <h2 id="problem-h">The clipboard is costing you a night a week</h2>
+        <p>Most owners we talk to count on paper, retype it into a spreadsheet, then build the order from memory. The food cost number shows up a month late.</p>
+      </div>
+      <div class="compare" data-reveal>
+        <div class="compare-col">
+          <h3>Clipboard and spreadsheet</h3>
+          <dl>
+            <div><dt>Full count</dt><dd class="mono">1 h 32 min</dd></div>
+            <div><dt>Retyping</dt><dd class="mono">35 min</dd></div>
+            <div><dt>Building the order</dt><dd>From memory</dd></div>
+            <div><dt>Food cost visibility</dt><dd>Monthly</dd></div>
+          </dl>
+        </div>
+        <div class="compare-col after">
+          <h3>Parline</h3>
+          <dl>
+            <div><dt>Full count</dt><dd class="mono">14 min 20 s</dd></div>
+            <div><dt>Retyping</dt><dd>None</dd></div>
+            <div><dt>Building the order</dt><dd>Drafted from par</dd></div>
+            <div><dt>Food cost visibility</dt><dd>Every week</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="benefits-h">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <h2 id="benefits-h">What changes in your first month</h2>
+      </div>
+      <div class="benefits">
+        <div class="benefit" data-reveal>
+          <div class="benefit-icon"><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M128 24a104 104 0 10104 104A104.11 104.11 0 00128 24zm0 192a88 88 0 1188-88 88.1 88.1 0 01-88 88zm64-88a8 8 0 01-8 8h-56a8 8 0 01-8-8V72a8 8 0 0116 0v48h48a8 8 0 018 8z"/></svg></div>
+          <div><h3>Your Sunday night back</h3><p>Count by shelf in the order you walk it. Tap, don't type. A two person count becomes a one person job.</p></div>
+        </div>
+        <div class="benefit" data-reveal>
+          <div class="benefit-icon"><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M213.66 82.34l-56-56A8 8 0 00152 24H56a16 16 0 00-16 16v176a16 16 0 0016 16h144a16 16 0 0016-16V88a8 8 0 00-2.34-5.66zM160 51.31L188.69 80H160zM200 216H56V40h88v48a8 8 0 008 8h48v120zm-32-80a8 8 0 01-8 8H96a8 8 0 010-16h64a8 8 0 018 8zm0 32a8 8 0 01-8 8H96a8 8 0 010-16h64a8 8 0 018 8z"/></svg></div>
+          <div><h3>Orders drafted to par</h3><p>Parline rounds each item up to your supplier's case size. You review, change what you want, and send.</p></div>
+        </div>
+        <div class="benefit" data-reveal>
+          <div class="benefit-icon"><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M232 208a8 8 0 01-8 8H32a8 8 0 01-8-8V48a8 8 0 0116 0v108.69l50.34-50.35a8 8 0 0111.32 0L128 132.69 180.69 80H160a8 8 0 010-16h40a8 8 0 018 8v40a8 8 0 01-16 0V91.31l-58.34 58.35a8 8 0 01-11.32 0L96 123.31l-56 56V200h184a8 8 0 018 8z"/></svg></div>
+          <div><h3>Food cost every week</h3><p>Counts plus invoice prices give you a real COGS percentage each Monday, not four weeks after the damage.</p></div>
+        </div>
+        <div class="benefit" data-reveal>
+          <div class="benefit-icon"><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M216 48h-40v-8a24 24 0 00-24-24h-48a24 24 0 00-24 24v8H40a8 8 0 000 16h8v144a16 16 0 0016 16h128a16 16 0 0016-16V64h8a8 8 0 000-16zM96 40a8 8 0 018-8h48a8 8 0 018 8v8H96zm96 168H64V64h128zm-80-104v64a8 8 0 01-16 0v-64a8 8 0 0116 0zm48 0v64a8 8 0 01-16 0v-64a8 8 0 0116 0z"/></svg></div>
+          <div><h3>Waste you can see</h3><p>Log what you toss in two taps. The weekly report shows which items you keep over ordering, in dollars.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tagline" aria-label="Summary">
+    <div class="wrap">
+      <p id="taglineText">Know what's on your shelves. Order what you'll actually use. Stop paying for what ends up in the bin.</p>
+    </div>
+  </section>
+
+  <section class="band" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <h2 id="how-h">How it works</h2>
+        <p>Most kitchens finish setup and their first full count in a single shift.</p>
+      </div>
+      <ol class="steps">
+        <li data-reveal>
+          <span class="step-num">Step 1</span>
+          <h3>Photograph last month's invoices</h3>
+          <p>Parline reads items, case sizes and prices from printed or PDF invoices. Import takes about 20 minutes.</p>
+        </li>
+        <li data-reveal>
+          <span class="step-num">Step 2</span>
+          <h3>Count shelf by shelf</h3>
+          <p>Items appear in the order they sit in your cooler, dry storage and freezer. Counts save offline and sync later.</p>
+        </li>
+        <li data-reveal>
+          <span class="step-num">Step 3</span>
+          <h3>Review and send the order</h3>
+          <p>Each supplier gets its own drafted order. Edit any line, then email or text it straight to your rep.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="proof" aria-labelledby="proof-h">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <h2 id="proof-h">From kitchens using it</h2>
+        <p><span class="tag">Sample quotes</span> Replace with real customer quotes before launch.</p>
+      </div>
+      <div class="quotes">
+        <figure class="quote" data-reveal>
+          <blockquote>“Sunday counts used to take me and Luis most of the afternoon. Now I do it alone before family meal.”</blockquote>
+          <figcaption><div class="avatar" style="background:#DCE8DF;color:#2F5A3A">RO</div><div>Renata Obi<span>Chef owner, Two Pines Kitchen</span></div></figcaption>
+        </figure>
+        <figure class="quote" data-reveal>
+          <blockquote>“Our food cost went from <span class="mono">34.1%</span> to <span class="mono">29.6%</span> in about ten weeks. Mostly we stopped over ordering dairy.”</blockquote>
+          <figcaption><div class="avatar" style="background:#E3ECF3;color:#1D5B86">TP</div><div>Thanh Pham<span>General manager, Nhà Bếp</span></div></figcaption>
+        </figure>
+        <figure class="quote" data-reveal>
+          <blockquote>“The order list is right about nine times out of ten. The tenth time I change one line and send it.”</blockquote>
+          <figcaption><div class="avatar" style="background:#F1E4D3;color:#7A4A12">GL</div><div>Garrett Lindqvist<span>Owner, Lindqvist Deli</span></div></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="pricing" aria-labelledby="pricing-h">
+    <div class="wrap">
+      <div class="price-card" data-reveal>
+        <div>
+          <h2 id="pricing-h">One plan, priced per location</h2>
+          <div class="price"><strong class="mono">$79</strong><span>per location, per month</span></div>
+          <a class="btn btn-primary" href="#start">Start 14 day free trial</a>
+          <p class="fine">No card needed. If you don't pick a plan, your account goes read only. We never charge you by surprise.</p>
+        </div>
+        <ul class="checks">
+          <li><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M229.66 77.66l-128 128a8 8 0 01-11.32 0l-56-56a8 8 0 0111.32-11.32L96 188.69 218.34 66.34a8 8 0 0111.32 11.32z"/></svg><span>Unlimited counters and suppliers</span></li>
+          <li><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M229.66 77.66l-128 128a8 8 0 01-11.32 0l-56-56a8 8 0 0111.32-11.32L96 188.69 218.34 66.34a8 8 0 0111.32 11.32z"/></svg><span>Invoice import and price history</span></li>
+          <li><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M229.66 77.66l-128 128a8 8 0 01-11.32 0l-56-56a8 8 0 0111.32-11.32L96 188.69 218.34 66.34a8 8 0 0111.32 11.32z"/></svg><span>Weekly food cost and waste report</span></li>
+          <li><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M229.66 77.66l-128 128a8 8 0 01-11.32 0l-56-56a8 8 0 0111.32-11.32L96 188.69 218.34 66.34a8 8 0 0111.32 11.32z"/></svg><span>CSV export of everything, anytime</span></li>
+          <li><svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M229.66 77.66l-128 128a8 8 0 01-11.32 0l-56-56a8 8 0 0111.32-11.32L96 188.69 218.34 66.34a8 8 0 0111.32 11.32z"/></svg><span>Setup call with a person who has worked a line</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <h2 id="faq-h">Questions owners ask</h2>
+      </div>
+      <div class="faq" data-reveal>
+        <details><summary>Which suppliers can it read invoices from?<svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M224 128a8 8 0 01-8 8h-80v80a8 8 0 01-16 0v-80H40a8 8 0 010-16h80V40a8 8 0 0116 0v80h80a8 8 0 018 8z"/></svg></summary><p>Any printed or PDF invoice. Broadline distributors, cash and carry receipts and most local produce and meat vendors import cleanly. If a line doesn't read, you fix it once and Parline remembers.</p></details>
+        <details><summary>Do I need to set par levels before I start?<svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M224 128a8 8 0 01-8 8h-80v80a8 8 0 01-16 0v-80H40a8 8 0 010-16h80V40a8 8 0 0116 0v80h80a8 8 0 018 8z"/></svg></summary><p>No. Parline suggests pars from your first four weeks of counts and invoices. You can override any of them at any time.</p></details>
+        <details><summary>Does it work with no signal in the cooler?<svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M224 128a8 8 0 01-8 8h-80v80a8 8 0 01-16 0v-80H40a8 8 0 010-16h80V40a8 8 0 0116 0v80h80a8 8 0 018 8z"/></svg></summary><p>Yes. Counts save on the phone and sync when you're back in range.</p></details>
+        <details><summary>Can my staff count without seeing costs?<svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M224 128a8 8 0 01-8 8h-80v80a8 8 0 01-16 0v-80H40a8 8 0 010-16h80V40a8 8 0 0116 0v80h80a8 8 0 018 8z"/></svg></summary><p>Yes. Counters see items and quantities only. Prices, food cost and orders stay with owners and managers.</p></details>
+        <details><summary>Does it connect to my POS?<svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M224 128a8 8 0 01-8 8h-80v80a8 8 0 01-16 0v-80H40a8 8 0 010-16h80V40a8 8 0 0116 0v80h80a8 8 0 018 8z"/></svg></summary><p>It works without one. Connecting your POS adds sales data, which makes par suggestions sharper for items that swing with the menu.</p></details>
+        <details><summary>What happens when the trial ends?<svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M224 128a8 8 0 01-8 8h-80v80a8 8 0 01-16 0v-80H40a8 8 0 010-16h80V40a8 8 0 0116 0v80h80a8 8 0 018 8z"/></svg></summary><p>You pick the plan or your account goes read only. We never took a card, so nothing is charged automatically.</p></details>
+        <details><summary>Can I get my data out?<svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M224 128a8 8 0 01-8 8h-80v80a8 8 0 01-16 0v-80H40a8 8 0 010-16h80V40a8 8 0 0116 0v80h80a8 8 0 018 8z"/></svg></summary><p>Every count, order and price history exports to CSV from settings, whenever you want it.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band final" id="start" aria-labelledby="start-h">
+    <div class="wrap">
+      <div class="final-card" data-reveal>
+        <h2 id="start-h">Count your cooler in 15 minutes this week</h2>
+        <p class="fine">14 days free. No card needed. Cancel anytime.</p>
+        <form class="signup" id="signup" novalidate>
+          <div class="field">
+            <label for="email">Work email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@yourrestaurant.com" aria-describedby="formMsg">
+          </div>
+          <button class="btn btn-primary" type="submit">Start 14 day free trial</button>
+          <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>Parline. Placeholder product for this draft.</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Count sheet demo
+  var items = [
+    { name: "Yellow onions", unit: "50 lb sack", onHand: 1.5, par: 4, step: 0.5, price: 31.40 },
+    { name: "Heavy cream", unit: "case of 12 qt", onHand: 0.5, par: 2, step: 0.25, price: 58.20 },
+    { name: "Chicken thighs", unit: "40 lb case", onHand: 0.75, par: 2, step: 0.25, price: 98.60 },
+    { name: "Lemons", unit: "115 ct case", onHand: 1, par: 1, step: 0.25, price: 62.10 },
+    { name: "Fryer oil", unit: "35 lb jug", onHand: 2, par: 5, step: 1, price: 41.75 }
+  ];
+  var tbody = document.getElementById("sheetRows");
+  var fmt = function (n) { return (Math.round(n * 100) / 100).toString(); };
+  var money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+
+  function orderQty(it) { return Math.max(0, Math.ceil(it.par - it.onHand)); }
+
+  function render() {
+    var total = 0, cases = 0;
+    items.forEach(function (it, i) {
+      var q = orderQty(it);
+      total += q * it.price; cases += q;
+      var row = tbody.children[i];
+      row.querySelector("output").textContent = fmt(it.onHand);
+      var oc = row.querySelector(".order-cell");
+      oc.textContent = q;
+      oc.classList.toggle("zero", q === 0);
+    });
+    document.getElementById("orderTotal").textContent = money.format(total);
+    document.getElementById("orderCases").textContent = cases;
+  }
+
+  items.forEach(function (it, i) {
+    var tr = document.createElement("tr");
+    tr.innerHTML =
+      '<td><span class="item-name"></span><span class="item-unit"></span></td>' +
+      '<td><span class="stepper mono"><button type="button" data-d="-1"></button><output></output><button type="button" data-d="1">+</button></span></td>' +
+      '<td class="mono">' + it.par + '</td>' +
+      '<td class="mono order-cell"></td>';
+    tr.querySelector(".item-name").textContent = it.name;
+    tr.querySelector(".item-unit").textContent = it.unit;
+    var btns = tr.querySelectorAll("button");
+    btns[0].textContent = "−";
+    btns[0].setAttribute("aria-label", "Decrease " + it.name);
+    btns[1].setAttribute("aria-label", "Increase " + it.name);
+    btns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        it.onHand = Math.max(0, it.onHand + it.step * Number(b.dataset.d));
+        render();
+      });
+    });
+    tbody.appendChild(tr);
+  });
+  render();
+
+  // Island nav menu
+  var burger = document.querySelector(".burger");
+  var overlay = document.getElementById("overlay");
+  function setMenu(open) {
+    document.body.classList.toggle("menu-open", open);
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    overlay.setAttribute("aria-hidden", String(!open));
+  }
+  burger.addEventListener("click", function () { setMenu(!document.body.classList.contains("menu-open")); });
+  overlay.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+
+  // Current section in nav
+  var navLinks = document.querySelectorAll(".nav-links a");
+  if ("IntersectionObserver" in window) {
+    var secObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        navLinks.forEach(function (a) { a.setAttribute("aria-current", String(a.getAttribute("href") === "#" + e.target.id)); });
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    ["how", "proof", "pricing", "faq"].forEach(function (id) { secObs.observe(document.getElementById(id)); });
+  }
+
+  // Scroll reveal: only for elements that start below the first screen
+  if (!reduce && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.remove("pre"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -10% 0px" });
+    document.querySelectorAll("[data-reveal]").forEach(function (el) {
+      if (el.getBoundingClientRect().top > window.innerHeight) { el.classList.add("pre"); io.observe(el); }
+    });
+  }
+
+  // Tagline: words light up one at a time as they cross a trigger line
+  var tag = document.getElementById("taglineText");
+  tag.innerHTML = tag.textContent.trim().split(/\s+/).map(function (w) {
+    var s = document.createElement("span"); s.className = "w"; s.textContent = w; return s.outerHTML;
+  }).join(" ");
+  var words = tag.querySelectorAll(".w");
+  var ticking = false;
+  function updateWords() {
+    var line = window.innerHeight * 0.65;
+    words.forEach(function (w) { w.classList.toggle("on", w.getBoundingClientRect().top < line); });
+    ticking = false;
+  }
+  if (!reduce) {
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(updateWords); }
+    }, { passive: true });
+    window.addEventListener("resize", updateWords);
+    updateWords();
+  }
+
+  // Signup form (no backend yet)
+  var form = document.getElementById("signup");
+  var input = document.getElementById("email");
+  var msg = document.getElementById("formMsg");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var v = input.value.trim();
+    msg.classList.remove("err");
+    if (!v) {
+      input.setAttribute("aria-invalid", "true"); msg.classList.add("err");
+      msg.textContent = "Enter your work email to start the trial."; input.focus(); return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
+      input.setAttribute("aria-invalid", "true"); msg.classList.add("err");
+      msg.textContent = "That email is missing something. Check for a typo, like name@restaurant.com."; input.focus(); return;
+    }
+    input.removeAttribute("aria-invalid");
+    msg.textContent = "Email looks good. This form isn't connected to a signup service yet, so nothing was sent.";
+  });
+  input.addEventListener("input", function () { input.removeAttribute("aria-invalid"); msg.textContent = ""; msg.classList.remove("err"); });
+})();
+</script>
+</body>
+</html>
