@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Legible Workspace</title>
-<meta name="description" content="Turn a photo of handwriting into editable text.">
+<title>Keysheet Workspace</title>
+<meta name="description" content="Upload a worksheet, get it solved, and export a typed answer key as a PDF.">
 <meta name="robots" content="noindex">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231D5B86'/%3E%3Cpath d='M11 9v14h10' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231D5B86'/%3E%3Cpath d='M10 16l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Caveat:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
 <style>
   :root {
     --bg: #F5F6F3;
@@ -53,13 +53,13 @@
     -webkit-font-smoothing: antialiased;
     padding-inline: 16px;
   }
-  h1, h2 { margin: 0; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
+  h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
   p { margin: 0; text-wrap: pretty; }
   a { color: var(--accent); text-underline-offset: 3px; }
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
 
   .draft { margin-inline: -16px; padding: 8px 16px; text-align: center; font-size: 0.75rem; line-height: 1rem; color: var(--muted); border-bottom: 1px solid var(--line); }
-  .shell { max-width: 1200px; margin: 0 auto; }
+  .shell { max-width: 1280px; margin: 0 auto; }
 
   .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 16px; border-bottom: 1px solid var(--line); }
   .brand { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--ink); text-decoration: none; }
@@ -67,17 +67,17 @@
   .who { display: flex; align-items: center; gap: 16px; font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
   .who a { font-weight: 600; }
 
-  .intro { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 32px; padding-block: 32px 24px; }
+  .intro { display: grid; gap: 16px; padding-block: 32px 24px; }
   .intro h1 { font-size: 1.875rem; line-height: 2.25rem; }
-  .intro p { color: var(--muted); margin-top: 8px; max-width: 560px; }
+  .intro p { color: var(--muted); margin-top: 8px; max-width: 640px; }
 
-  /* Workflow steps: a real sequence, so numbered */
+  /* The workflow is a real sequence, so the steps are numbered */
   .steps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
   .steps li {
     display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px 4px 4px;
     border-radius: 9999px; border: 1px solid var(--line); background: var(--surface);
     font-size: 0.875rem; line-height: 1.25rem; color: var(--muted);
-    transition: border-color 700ms var(--ease), color 700ms var(--ease), background-color 700ms var(--ease);
+    transition: border-color 700ms var(--ease), color 700ms var(--ease);
   }
   .steps .n { width: 24px; height: 24px; border-radius: 9999px; display: grid; place-items: center; background: var(--sunk); font: 500 0.75rem/1 var(--mono); }
   .steps li.done { color: var(--ink); }
@@ -85,24 +85,46 @@
   .steps li.now { color: var(--ink); border-color: var(--accent); }
   .steps li.now .n { background: var(--accent); color: var(--accent-ink); }
 
-  .work { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; padding-bottom: 48px; }
-  @media (max-width: 900px) { .work { grid-template-columns: 1fr; } }
+  .work { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(320px, 1fr); gap: 24px; padding-bottom: 32px; align-items: start; }
+  @media (max-width: 960px) { .work { grid-template-columns: 1fr; } }
 
   .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px; display: grid; gap: 16px; align-content: start; min-width: 0; }
   .panel-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
   .panel-head h2 { font-size: 1.125rem; line-height: 1.75rem; }
   .tag { display: inline-block; padding: 2px 8px; border-radius: 9999px; background: var(--sunk); color: var(--muted); font-size: 0.75rem; line-height: 1rem; font-weight: 600; }
+  .side { display: grid; gap: 16px; min-width: 0; }
+  @media (min-width: 961px) { .sheet-panel { position: sticky; top: 16px; } }
 
-  .drop {
-    position: relative; display: grid; place-items: center; min-height: 320px;
-    border: 1px dashed var(--line); border-radius: 8px; background: var(--sunk); overflow: hidden;
+  /* Worksheet stage: canvas plus draggable answer boxes */
+  .stage { position: relative; border-radius: 8px; overflow: hidden; background: var(--sunk); border: 1px solid var(--line); }
+  .stage canvas { display: block; width: 100%; height: auto; }
+  .overlay { position: absolute; inset: 0; }
+  .abox {
+    position: absolute; border: 2px dashed rgba(29, 91, 134, 0.55); border-radius: 4px;
+    cursor: move; touch-action: none; background: rgba(29, 91, 134, 0.04);
     transition: border-color 700ms var(--ease), background-color 700ms var(--ease);
   }
-  .drop.over { border-color: var(--accent); background: var(--accent-soft); }
-  .drop img { display: block; max-width: 100%; max-height: 560px; object-fit: contain; }
-  .drop-empty { display: grid; gap: 8px; justify-items: center; text-align: center; padding: 32px 16px; color: var(--muted); }
-  .drop-empty svg { width: 32px; height: 32px; color: var(--accent); }
-  .drop-empty strong { color: var(--ink); }
+  .abox:hover { border-color: rgba(29, 91, 134, 0.9); }
+  .abox.sel { border-style: solid; border-color: #1D5B86; background: rgba(29, 91, 134, 0.08); }
+  .abox.off { border-color: rgba(89, 96, 88, 0.45); background: transparent; }
+  .abox .num {
+    position: absolute; left: -2px; top: -22px; padding: 0 6px; border-radius: 4px;
+    background: #1D5B86; color: #FFFFFF; font: 500 0.75rem/1.25rem var(--mono); pointer-events: none;
+  }
+  .abox .handle {
+    position: absolute; right: -6px; bottom: -6px; width: 14px; height: 14px; border-radius: 4px;
+    background: #FFFFFF; border: 2px solid #1D5B86; cursor: nwse-resize;
+  }
+  @media (max-width: 600px) {
+    .abox .num { top: -14px; padding: 0 4px; font-size: 0.625rem; line-height: 0.875rem; }
+    .abox .handle { width: 12px; height: 12px; right: -6px; bottom: -6px; }
+  }
+  .hide-guides .abox { border-color: transparent; background: transparent; }
+  .hide-guides .abox .num, .hide-guides .abox .handle { display: none; }
+  .stage-empty { display: grid; place-items: center; gap: 8px; text-align: center; min-height: 420px; padding: 32px 16px; color: var(--muted); }
+  .stage-empty strong { color: var(--ink); }
+  .stage.over { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .stage-foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 0.75rem; line-height: 1rem; color: var(--muted); }
 
   .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
   .btn {
@@ -118,40 +140,51 @@
   .btn-secondary { background: var(--surface); color: var(--ink); border-color: var(--line); }
   .btn-secondary:hover:not(:disabled) { background: var(--sunk); border-color: var(--muted); }
   .btn-sm { font-size: 0.875rem; line-height: 1.25rem; }
-
-  .opt { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; line-height: 1.25rem; }
-  .opt input { width: 16px; height: 16px; margin: 0; accent-color: var(--accent); }
+  .btn-ghost { background: transparent; color: var(--muted); padding: 4px 8px; font-size: 0.875rem; line-height: 1.25rem; }
+  .btn-ghost:hover:not(:disabled) { background: var(--sunk); color: var(--ink); }
 
   .status { font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); min-height: 20px; }
   .status.bad { color: var(--error); }
   .status.ok { color: var(--good); }
 
-  textarea {
-    width: 100%; min-height: 320px; resize: vertical;
-    padding: 12px; border-radius: 8px; border: 1px solid var(--line);
-    background: var(--surface); color: var(--ink);
-    font: 400 1rem/1.5rem var(--sans);
-    transition: border-color 700ms var(--ease);
+  /* Answer list */
+  .items { display: grid; gap: 8px; }
+  .item {
+    display: grid; gap: 8px; padding: 12px; border-radius: 8px; border: 1px solid var(--line);
+    transition: border-color 700ms var(--ease), background-color 700ms var(--ease);
   }
-  textarea:hover { border-color: var(--muted); }
-  .meta { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 0.75rem; line-height: 1rem; color: var(--muted); }
-
-  .unclear { display: grid; gap: 8px; padding: 12px; border-radius: 8px; background: var(--flag-bg); color: var(--flag-ink); }
-  .unclear p { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .chip {
-    padding: 2px 8px; border-radius: 9999px; border: 1px solid currentColor; background: transparent;
-    color: inherit; font: 500 0.875rem/1.25rem var(--sans); cursor: pointer;
-    transition: background-color 700ms var(--ease);
+  .item.sel { border-color: var(--accent); background: var(--accent-soft); }
+  .item-top { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px; align-items: start; }
+  .item .num { font: 500 0.75rem/1.25rem var(--mono); color: var(--accent); padding-top: 2px; }
+  .item .q { font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); overflow-wrap: anywhere; }
+  .item input[type="text"] {
+    width: 100%; padding: 4px 8px; border-radius: 6px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--ink); font: 600 1rem/1.5rem var(--sans);
   }
-  .chip:hover { background: var(--surface); }
+  .item input[type="text"]:hover { border-color: var(--muted); }
+  .item details { font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+  .item summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+  .item details p { padding-top: 4px; }
+  .item-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .flag { font-size: 0.75rem; line-height: 1rem; padding: 2px 8px; border-radius: 9999px; background: var(--flag-bg); color: var(--flag-ink); font-weight: 600; }
+  .items-empty { padding: 16px; border-radius: 8px; background: var(--sunk); color: var(--muted); font-size: 0.875rem; line-height: 1.25rem; }
 
-  .skeleton { display: grid; gap: 12px; padding: 12px; }
-  .skeleton span { height: 16px; border-radius: 4px; background: var(--sunk); animation: pulse 1.6s var(--ease) infinite; }
-  .skeleton span:nth-child(2) { width: 84%; } .skeleton span:nth-child(3) { width: 92%; } .skeleton span:nth-child(4) { width: 61%; }
+  .opt { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; line-height: 1.25rem; }
+  .opt input { width: 16px; height: 16px; margin: 0; accent-color: var(--accent); }
+  .field { display: grid; gap: 4px; }
+  .field label { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; }
+  select {
+    padding: 4px 8px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface);
+    color: var(--ink); font: 500 0.875rem/1.25rem var(--sans);
+  }
+  .style-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+
+  .skeleton { display: grid; gap: 8px; }
+  .skeleton span { height: 56px; border-radius: 8px; background: var(--sunk); animation: pulse 1.6s var(--ease) infinite; }
   @keyframes pulse { 50% { opacity: 0.45; } }
 
-  .privacy { font-size: 0.75rem; line-height: 1rem; color: var(--muted); padding-bottom: 32px; max-width: 720px; }
+  .note { font-size: 0.75rem; line-height: 1rem; color: var(--muted); }
+  .privacy { font-size: 0.75rem; line-height: 1rem; color: var(--muted); padding-bottom: 32px; max-width: 760px; }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { transition-duration: 0ms !important; animation: none !important; }
@@ -159,12 +192,12 @@
 </style>
 </head>
 <body>
-<div class="draft">Draft app. Sign in is a demo, but reading handwriting is real when this page runs as a Claude artifact.</div>
+<div class="draft">Draft app. Sign in is a demo. Solving is real when this page runs as a Claude artifact.</div>
 <div class="shell">
   <header class="top">
-    <a class="brand" href="app.html" aria-label="Legible workspace">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M11 9v14h10" fill="none" stroke="var(--accent-ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Legible
+    <a class="brand" href="app.html" aria-label="Keysheet workspace">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M10 16l4 4 8-9" fill="none" stroke="var(--accent-ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Keysheet
     </a>
     <div class="who"><span>Demo account</span><a href="signin.html" id="signOut">Sign out</a></div>
   </header>
@@ -172,306 +205,608 @@
   <main>
     <div class="intro">
       <div>
-        <h1>Handwriting to text</h1>
-        <p>Upload a photo of handwritten notes. Legible reads it, flags words it isn't sure about, and gives you text you can edit and export.</p>
+        <h1>Worksheet to answer key</h1>
+        <p>Upload a worksheet. Keysheet reads it, solves each question, and types the answers into the answer spaces. Check every answer, adjust the boxes, then export a PDF.</p>
       </div>
       <ol class="steps" aria-label="Progress">
-        <li id="st1"><span class="n">1</span>Upload</li>
-        <li id="st2"><span class="n">2</span>Read</li>
-        <li id="st3"><span class="n">3</span>Review</li>
-        <li id="st4"><span class="n">4</span>Export</li>
+        <li id="st1"><span class="n">1</span>Upload worksheet</li>
+        <li id="st2"><span class="n">2</span>Read and solve</li>
+        <li id="st3"><span class="n">3</span>Check answers</li>
+        <li id="st4"><span class="n">4</span>Place text</li>
+        <li id="st5"><span class="n">5</span>Export PDF</li>
       </ol>
     </div>
 
     <div class="work">
-      <section class="panel" aria-labelledby="hw-h">
+      <section class="panel sheet-panel" aria-labelledby="sheet-h">
         <div class="panel-head">
-          <h2 id="hw-h">Handwriting</h2>
-          <span class="tag" id="imgTag">Example</span>
+          <h2 id="sheet-h">Worksheet</h2>
+          <span class="tag" id="sheetTag">Example</span>
         </div>
-
-        <label class="drop" id="drop" for="file">
-          <img id="preview" alt="" hidden>
-          <div class="drop-empty" id="dropEmpty">
-            <svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M208 40H48a16 16 0 00-16 16v144a16 16 0 0016 16h160a16 16 0 0016-16V56a16 16 0 00-16-16zm0 16v102.75l-26.07-26.06a16 16 0 00-22.63 0l-20 20-44-44a16 16 0 00-22.62 0L48 133.37V56zM48 156l52-52 80 80H48zm160 44h-5.37l-36-36 20-20L208 181.38V200zm-64-100a12 12 0 1112 12 12 12 0 01-12-12z"/></svg>
-            <strong>Drop a photo here, or click to choose</strong>
-            <span>JPEG, PNG or WebP. You can also paste an image.</span>
+        <div class="stage" id="stage">
+          <canvas id="canvas" width="10" height="10" role="img" aria-label="Worksheet preview with typed answers"></canvas>
+          <div class="overlay" id="overlay"></div>
+          <div class="stage-empty" id="stageEmpty" hidden>
+            <strong>Drop a worksheet photo here</strong>
+            <span>JPEG, PNG or WebP, one page at a time. You can also paste an image.</span>
           </div>
-        </label>
-        <input id="file" type="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
-
-        <div class="row">
-          <button class="btn btn-secondary btn-sm" type="button" id="chooseBtn">Choose photo</button>
-          <button class="btn btn-secondary btn-sm" type="button" id="sampleBtn">Use sample note</button>
         </div>
-
-        <label class="opt"><input type="checkbox" id="keepLines" checked> Keep line breaks as written</label>
-
-        <div class="row">
-          <button class="btn btn-primary" type="button" id="readBtn" disabled>Read handwriting</button>
-          <button class="btn btn-secondary" type="button" id="stopBtn" hidden>Stop</button>
+        <div class="stage-foot">
+          <span>Drag a box to move it. Drag its corner to resize. With a box selected, arrow keys move it and Shift plus arrows resize it.</span>
+          <label class="opt"><input type="checkbox" id="guides" checked> Show boxes</label>
         </div>
-        <p class="status" id="status" role="status" aria-live="polite">Checking whether reading is available here…</p>
       </section>
 
-      <section class="panel" aria-labelledby="txt-h">
-        <div class="panel-head">
-          <h2 id="txt-h">Text</h2>
-          <span class="tag" id="txtTag">Example</span>
-        </div>
+      <div class="side">
+        <section class="panel" aria-labelledby="up-h">
+          <div class="panel-head"><h2 id="up-h">1. Upload and solve</h2></div>
+          <div class="row">
+            <button class="btn btn-secondary btn-sm" type="button" id="chooseBtn">Choose photo</button>
+            <button class="btn btn-secondary btn-sm" type="button" id="sampleBtn">Use sample worksheet</button>
+            <input id="file" type="file" accept="image/jpeg,image/png,image/webp,image/gif" hidden>
+          </div>
+          <div class="row">
+            <button class="btn btn-primary" type="button" id="solveBtn" disabled>Read and solve</button>
+            <button class="btn btn-secondary" type="button" id="stopBtn" hidden>Stop</button>
+          </div>
+          <p class="status" id="status" role="status" aria-live="polite">Checking whether solving is available here…</p>
+        </section>
 
-        <div class="skeleton" id="skeleton" aria-hidden="true" hidden><span></span><span></span><span></span><span></span></div>
-        <textarea id="out" spellcheck="true" aria-label="Transcribed text"></textarea>
-        <div class="meta"><span id="count">0 words</span><span>Edit freely. Nothing is saved until you export.</span></div>
+        <section class="panel" aria-labelledby="ans-h">
+          <div class="panel-head">
+            <h2 id="ans-h">2. Check answers</h2>
+            <button class="btn btn-ghost" type="button" id="addBtn">Add answer box</button>
+          </div>
+          <div class="skeleton" id="skeleton" aria-hidden="true" hidden><span></span><span></span><span></span></div>
+          <div class="items" id="items"></div>
+        </section>
 
-        <div class="unclear" id="unclear" hidden>
-          <p>Check these words. Click one to find it in the text.</p>
-          <div class="chips" id="chips"></div>
-        </div>
+        <section class="panel" aria-labelledby="style-h">
+          <div class="panel-head"><h2 id="style-h">3. Text style</h2></div>
+          <div class="style-grid">
+            <div class="field">
+              <label for="fontSel">Font</label>
+              <select id="fontSel">
+                <option value="sans">Clean sans</option>
+                <option value="serif">Serif</option>
+                <option value="mono">Monospace</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="colorSel">Color</label>
+              <select id="colorSel">
+                <option value="#C0392B">Marking red</option>
+                <option value="#1D4ED8">Blue</option>
+                <option value="#111111">Black</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="sizeSel">Largest size</label>
+              <select id="sizeSel">
+                <option value="0.022">Small</option>
+                <option value="0.03" selected>Medium</option>
+                <option value="0.04">Large</option>
+              </select>
+            </div>
+          </div>
+          <p class="note">Text shrinks to fit each box. Every page carries a small “Answer key” label.</p>
+        </section>
 
-        <div class="row">
-          <button class="btn btn-primary" type="button" id="copyBtn">Copy text</button>
-          <button class="btn btn-secondary" type="button" id="dlBtn" hidden>Download .txt</button>
-        </div>
-        <p class="status" id="exportStatus" role="status" aria-live="polite"></p>
-      </section>
+        <section class="panel" aria-labelledby="exp-h">
+          <div class="panel-head"><h2 id="exp-h">4. Export</h2></div>
+          <div class="row">
+            <button class="btn btn-primary" type="button" id="pdfBtn">Export PDF</button>
+            <button class="btn btn-secondary" type="button" id="pngBtn">Export image</button>
+          </div>
+          <p class="status" id="exportStatus" role="status" aria-live="polite"></p>
+        </section>
+      </div>
     </div>
 
-    <p class="privacy">Your photo is sent to Claude, on the account of whoever is viewing this page, only when you press Read handwriting. This page doesn't store photos or text. Legible transcribes what is written. It doesn't answer, rewrite or complete anything.</p>
+    <p class="privacy">Your worksheet is sent to Claude, on the account of whoever is viewing this page, only when you press Read and solve. This page doesn't store worksheets or answers. Claude can get questions wrong and can misplace boxes, so check every answer before you use the key.</p>
   </main>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
 (function () {
   var $ = function (id) { return document.getElementById(id); };
-  var fileInput = $("file"), drop = $("drop"), preview = $("preview"), dropEmpty = $("dropEmpty");
-  var readBtn = $("readBtn"), stopBtn = $("stopBtn"), status = $("status");
-  var out = $("out"), count = $("count"), chips = $("chips"), unclearBox = $("unclear");
-  var imgTag = $("imgTag"), txtTag = $("txtTag"), skeleton = $("skeleton");
+  var canvas = $("canvas"), ctx = canvas.getContext("2d");
+  var stage = $("stage"), overlay = $("overlay"), stageEmpty = $("stageEmpty");
+  var itemsEl = $("items"), status = $("status"), exportStatus = $("exportStatus");
+  var solveBtn = $("solveBtn"), stopBtn = $("stopBtn"), sheetTag = $("sheetTag");
 
-  var sample = null, downloads = null, imageLimits = null;
-  var currentFile = null, currentName = "handwriting", previewUrl = null, ctl = null;
-  var canRead = false;
+  var MAX_SIDE = 2000;
+  var FONTS = {
+    sans: '600 {s}px Manrope, ui-sans-serif, system-ui, sans-serif',
+    serif: '600 {s}px Georgia, "Times New Roman", serif',
+    mono: '500 {s}px "Geist Mono", ui-monospace, Menlo, monospace'
+  };
 
-  var EXAMPLE_TEXT = "Thurs 3 Oct\nCall Dr. Amari about blood results\nPick up prescription before 6pm\nMum's birthday Sat: order cake (lemon, no nuts)\nFix bike brake cable\nReturn library books, 2 overdue";
-  var EXAMPLE_UNCLEAR = [{ guess: "Amari" }];
+  var state = {
+    img: null,         // HTMLImageElement or canvas of the clean worksheet
+    file: null,        // Blob sent to Claude
+    name: "worksheet",
+    items: [],         // {id, q, answer, why, box:{x,y,w,h}, on, flag}
+    sel: null
+  };
+  var sample = null, downloads = null, imageLimits = null, canSolve = false, ctl = null;
+  var nextId = 1;
 
-  // Steps indicator
+  // ---------- helpers ----------
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+  function num(v, d) { v = Number(v); return isFinite(v) ? v : d; }
+  function setStatus(el, text, kind) { el.textContent = text; el.className = "status" + (kind ? " " + kind : ""); }
   function setStep(n) {
-    for (var i = 1; i <= 4; i++) {
+    for (var i = 1; i <= 5; i++) {
       var li = $("st" + i);
       li.classList.toggle("done", i < n);
       li.classList.toggle("now", i === n);
-      li.setAttribute("aria-current", i === n ? "step" : "false");
+      if (i === n) li.setAttribute("aria-current", "step"); else li.removeAttribute("aria-current");
     }
   }
 
-  function setStatus(text, kind) {
-    status.textContent = text;
-    status.className = "status" + (kind ? " " + kind : "");
+  // ---------- drawing ----------
+  function wrap(text, maxW) {
+    var words = String(text).split(/\s+/).filter(Boolean), lines = [], line = "";
+    for (var i = 0; i < words.length; i++) {
+      var t = line ? line + " " + words[i] : words[i];
+      if (ctx.measureText(t).width <= maxW || !line) line = t; else { lines.push(line); line = words[i]; }
+    }
+    if (line) lines.push(line);
+    return lines;
   }
 
-  function updateCount() {
-    var n = out.value.trim() ? out.value.trim().split(/\s+/).length : 0;
-    count.textContent = n + (n === 1 ? " word" : " words");
+  function drawAnswer(item) {
+    var W = canvas.width, H = canvas.height;
+    var x = item.box.x * W, y = item.box.y * H, w = item.box.w * W, h = item.box.h * H;
+    var pad = Math.min(8, h * 0.12);
+    var maxSize = Math.max(8, Math.min(h * 0.8, Number($("sizeSel").value) * Math.max(W, H)));
+    var family = FONTS[$("fontSel").value] || FONTS.sans;
+    var size = Math.floor(maxSize), lines;
+    for (; size >= 7; size--) {
+      ctx.font = family.replace("{s}", size);
+      lines = wrap(item.answer, w - pad * 2);
+      var widest = Math.max.apply(null, lines.map(function (l) { return ctx.measureText(l).width; }));
+      if (lines.length * size * 1.2 <= h - pad * 2 + 1 && widest <= w - pad * 2 + 1) break;
+    }
+    ctx.fillStyle = $("colorSel").value;
+    ctx.textBaseline = "middle";
+    var total = lines.length * size * 1.2;
+    var top = y + (h - total) / 2 + size * 0.6;
+    lines.forEach(function (l, i) { ctx.fillText(l, x + pad, top + i * size * 1.2); });
   }
 
-  function renderUnclear(list) {
-    chips.innerHTML = "";
-    var words = (list || []).map(function (u) { return String(u && u.guess || "").trim(); }).filter(Boolean);
-    unclearBox.hidden = words.length === 0;
-    words.forEach(function (w) {
-      var b = document.createElement("button");
-      b.type = "button"; b.className = "chip"; b.textContent = w;
-      b.addEventListener("click", function () {
-        var i = out.value.indexOf(w);
-        if (i < 0) i = out.value.toLowerCase().indexOf(w.toLowerCase());
-        out.focus();
-        if (i >= 0) out.setSelectionRange(i, i + w.length);
-      });
-      chips.appendChild(b);
+  function draw() {
+    if (!state.img) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(state.img, 0, 0, canvas.width, canvas.height);
+    state.items.forEach(function (it) { if (it.on && String(it.answer).trim()) drawAnswer(it); });
+    // Answer key label, bottom right
+    var s = Math.max(10, Math.round(canvas.width * 0.011));
+    ctx.font = "600 " + s + "px Manrope, ui-sans-serif, system-ui, sans-serif";
+    ctx.textBaseline = "alphabetic";
+    ctx.fillStyle = "rgba(20, 22, 19, 0.55)";
+    var label = "Answer key · made with Keysheet";
+    ctx.fillText(label, canvas.width - ctx.measureText(label).width - s * 1.5, canvas.height - s * 1.2);
+  }
+  var drawQueued = false;
+  function scheduleDraw() { if (drawQueued) return; drawQueued = true; requestAnimationFrame(function () { drawQueued = false; draw(); }); }
+
+  // ---------- overlay boxes ----------
+  function placeBox(el, it) {
+    el.style.left = it.box.x * 100 + "%"; el.style.top = it.box.y * 100 + "%";
+    el.style.width = it.box.w * 100 + "%"; el.style.height = it.box.h * 100 + "%";
+  }
+
+  function select(id, from) {
+    state.sel = id;
+    Array.prototype.forEach.call(overlay.children, function (el) { el.classList.toggle("sel", Number(el.dataset.id) === id); });
+    Array.prototype.forEach.call(itemsEl.children, function (el) { el.classList.toggle("sel", Number(el.dataset.id) === id); });
+    if (from === "box") {
+      var card = itemsEl.querySelector('[data-id="' + id + '"]');
+      if (card) card.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+  }
+
+  function renderBoxes() {
+    overlay.innerHTML = "";
+    state.items.forEach(function (it, i) {
+      var el = document.createElement("div");
+      el.className = "abox" + (it.on ? "" : " off") + (state.sel === it.id ? " sel" : "");
+      el.dataset.id = it.id;
+      el.tabIndex = 0;
+      el.setAttribute("role", "button");
+      el.setAttribute("aria-label", "Answer box " + (i + 1) + (it.answer ? ": " + it.answer : ", empty"));
+      var n = document.createElement("span"); n.className = "num"; n.textContent = i + 1;
+      var h = document.createElement("span"); h.className = "handle"; h.setAttribute("aria-hidden", "true");
+      el.appendChild(n); el.appendChild(h);
+      placeBox(el, it);
+      bindDrag(el, it);
+      overlay.appendChild(el);
     });
   }
 
-  function showImage(blob, name, isExample) {
-    if (previewUrl) URL.revokeObjectURL(previewUrl);
-    previewUrl = URL.createObjectURL(blob);
-    preview.src = previewUrl;
-    preview.alt = isExample ? "Sample handwritten note on lined paper" : "Uploaded handwriting: " + name;
-    preview.hidden = false; dropEmpty.hidden = true;
-    currentFile = blob;
-    currentName = (name || "handwriting").replace(/\.[^.]+$/, "");
-    imgTag.textContent = isExample ? "Example" : "Your photo";
-    imgTag.hidden = false;
-    readBtn.disabled = !canRead;
-    setStep(canRead ? 2 : 1);
-  }
-
-  // Draw a sample note so the tool can be tried without a photo
-  function makeSampleNote() {
-    var c = document.createElement("canvas");
-    c.width = 900; c.height = 560;
-    var g = c.getContext("2d");
-    g.fillStyle = "#FFFDF6"; g.fillRect(0, 0, c.width, c.height);
-    g.strokeStyle = "#C9D8EA"; g.lineWidth = 1.5;
-    for (var y = 88; y < c.height; y += 64) { g.beginPath(); g.moveTo(0, y); g.lineTo(c.width, y); g.stroke(); }
-    g.strokeStyle = "#E7A6A6"; g.beginPath(); g.moveTo(72, 0); g.lineTo(72, c.height); g.stroke();
-    g.fillStyle = "#1F2A44";
-    var lines = EXAMPLE_TEXT.split("\n");
-    var tilt = [-0.012, 0.008, -0.006, 0.01, -0.009, 0.005];
-    lines.forEach(function (t, i) {
-      g.save();
-      g.translate(96 + (i % 2) * 6, 80 + i * 64);
-      g.rotate(tilt[i] || 0);
-      g.font = (i === 0 ? "500 44px " : "500 38px ") + "Caveat, 'Comic Sans MS', cursive";
-      g.fillText(t, 0, 0);
-      g.restore();
+  function bindDrag(el, it) {
+    var drag = null;
+    el.addEventListener("pointerdown", function (e) {
+      e.preventDefault();
+      select(it.id, "box");
+      el.focus({ preventScroll: true });
+      el.setPointerCapture(e.pointerId);
+      var r = overlay.getBoundingClientRect();
+      drag = { mode: e.target.classList.contains("handle") ? "size" : "move", px: e.clientX, py: e.clientY, w: r.width, h: r.height, b: { x: it.box.x, y: it.box.y, w: it.box.w, h: it.box.h } };
     });
-    return new Promise(function (res) { c.toBlob(res, "image/png"); });
-  }
-
-  function loadSample(asExample) {
-    var ready = document.fonts && document.fonts.load ? document.fonts.load("500 38px Caveat").catch(function () {}) : Promise.resolve();
-    return ready.then(makeSampleNote).then(function (blob) {
-      if (blob) showImage(blob, "sample-note.png", true);
-      if (asExample) {
-        out.value = EXAMPLE_TEXT; txtTag.textContent = "Example"; txtTag.hidden = false;
-        renderUnclear(EXAMPLE_UNCLEAR); updateCount();
+    el.addEventListener("pointermove", function (e) {
+      if (!drag) return;
+      var dx = (e.clientX - drag.px) / drag.w, dy = (e.clientY - drag.py) / drag.h;
+      if (drag.mode === "move") {
+        it.box.x = clamp(drag.b.x + dx, 0, 1 - it.box.w);
+        it.box.y = clamp(drag.b.y + dy, 0, 1 - it.box.h);
+      } else {
+        it.box.w = clamp(drag.b.w + dx, 0.02, 1 - it.box.x);
+        it.box.h = clamp(drag.b.h + dy, 0.012, 1 - it.box.y);
       }
+      placeBox(el, it); scheduleDraw();
     });
+    var end = function () { if (drag) { drag = null; setStep(Math.max(currentStep(), 4)); } };
+    el.addEventListener("pointerup", end);
+    el.addEventListener("pointercancel", end);
+    el.addEventListener("keydown", function (e) {
+      var k = e.key, step = 0.005;
+      if (["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].indexOf(k) < 0) return;
+      e.preventDefault();
+      var dx = k === "ArrowLeft" ? -step : k === "ArrowRight" ? step : 0;
+      var dy = k === "ArrowUp" ? -step : k === "ArrowDown" ? step : 0;
+      if (e.shiftKey) {
+        it.box.w = clamp(it.box.w + dx, 0.02, 1 - it.box.x);
+        it.box.h = clamp(it.box.h + dy, 0.012, 1 - it.box.y);
+      } else {
+        it.box.x = clamp(it.box.x + dx, 0, 1 - it.box.w);
+        it.box.y = clamp(it.box.y + dy, 0, 1 - it.box.h);
+      }
+      placeBox(el, it); scheduleDraw();
+    });
+    el.addEventListener("focus", function () { if (state.sel !== it.id) select(it.id, "box"); });
+  }
+
+  // ---------- answer list ----------
+  function renderItems() {
+    itemsEl.innerHTML = "";
+    if (!state.items.length) {
+      var p = document.createElement("p");
+      p.className = "items-empty";
+      p.textContent = state.img ? "No answers yet. Press Read and solve, or add a box by hand." : "Upload a worksheet to get started.";
+      itemsEl.appendChild(p);
+      return;
+    }
+    state.items.forEach(function (it, i) {
+      var card = document.createElement("div");
+      card.className = "item" + (state.sel === it.id ? " sel" : "");
+      card.dataset.id = it.id;
+
+      var top = document.createElement("div"); top.className = "item-top";
+      var n = document.createElement("span"); n.className = "num"; n.textContent = "Q" + (i + 1);
+      var q = document.createElement("p"); q.className = "q"; q.textContent = it.q || "Added by hand";
+      var rm = document.createElement("button"); rm.type = "button"; rm.className = "btn btn-ghost"; rm.textContent = "Remove";
+      rm.setAttribute("aria-label", "Remove answer " + (i + 1));
+      rm.addEventListener("click", function () {
+        state.items = state.items.filter(function (x) { return x.id !== it.id; });
+        if (state.sel === it.id) state.sel = null;
+        renderAll();
+      });
+      top.appendChild(n); top.appendChild(q); top.appendChild(rm);
+
+      var input = document.createElement("input");
+      input.type = "text"; input.value = it.answer; input.id = "ans-" + it.id;
+      input.setAttribute("aria-label", "Answer " + (i + 1));
+      input.placeholder = "Type the answer";
+      input.addEventListener("focus", function () { select(it.id, "list"); });
+      input.addEventListener("input", function () {
+        it.answer = input.value;
+        var box = overlay.querySelector('[data-id="' + it.id + '"]');
+        if (box) box.setAttribute("aria-label", "Answer box " + (i + 1) + (it.answer ? ": " + it.answer : ", empty"));
+        scheduleDraw();
+      });
+
+      card.appendChild(top);
+      card.appendChild(input);
+
+      if (it.why) {
+        var d = document.createElement("details");
+        var s = document.createElement("summary"); s.textContent = "How to get it";
+        var wp = document.createElement("p"); wp.textContent = it.why;
+        d.appendChild(s); d.appendChild(wp); card.appendChild(d);
+      }
+
+      var foot = document.createElement("div"); foot.className = "item-foot";
+      var lab = document.createElement("label"); lab.className = "opt";
+      var cb = document.createElement("input"); cb.type = "checkbox"; cb.checked = it.on; cb.id = "on-" + it.id;
+      cb.addEventListener("change", function () {
+        it.on = cb.checked;
+        var box = overlay.querySelector('[data-id="' + it.id + '"]');
+        if (box) box.classList.toggle("off", !it.on);
+        scheduleDraw();
+      });
+      lab.appendChild(cb); lab.appendChild(document.createTextNode(" Show on worksheet"));
+      foot.appendChild(lab);
+      if (it.flag) { var f = document.createElement("span"); f.className = "flag"; f.textContent = it.flag; foot.appendChild(f); }
+      card.appendChild(foot);
+
+      card.addEventListener("click", function (e) { if (e.target === card || e.target === q) select(it.id, "list"); });
+      itemsEl.appendChild(card);
+    });
+  }
+
+  function renderAll() { renderBoxes(); renderItems(); scheduleDraw(); }
+  function currentStep() { for (var i = 5; i >= 1; i--) if ($("st" + i).classList.contains("now")) return i; return 1; }
+
+  // ---------- loading a worksheet ----------
+  function setImage(source, file, name, isExample) {
+    var w = source.naturalWidth || source.width, h = source.naturalHeight || source.height;
+    var scale = Math.min(1, MAX_SIDE / Math.max(w, h));
+    canvas.width = Math.round(w * scale); canvas.height = Math.round(h * scale);
+    state.img = source; state.file = file;
+    state.name = (name || "worksheet").replace(/\.[^.]+$/, "");
+    stageEmpty.hidden = true; canvas.hidden = false; overlay.hidden = false;
+    sheetTag.textContent = isExample ? "Example" : "Your worksheet"; sheetTag.hidden = false;
+    solveBtn.disabled = !canSolve;
   }
 
   function acceptFile(f) {
     if (!f) return;
     var types = imageLimits ? imageLimits.mediaTypes : ["image/jpeg", "image/png", "image/webp", "image/gif"];
-    if (types.indexOf(f.type) < 0) { setStatus("That file isn't a supported image. Use a JPEG, PNG or WebP photo.", "bad"); return; }
-    if (imageLimits && f.size > imageLimits.maxInputBytes) { setStatus("That photo is too large. Try one under " + Math.floor(imageLimits.maxInputBytes / 1048576) + " MB.", "bad"); return; }
-    showImage(f, f.name, false);
-    setStatus(canRead ? "Photo ready. Press Read handwriting." : status.textContent);
+    if (types.indexOf(f.type) < 0) { setStatus(status, "That file isn't a supported image. Use a JPEG, PNG or WebP photo of one page.", "bad"); return; }
+    if (imageLimits && f.size > imageLimits.maxInputBytes) { setStatus(status, "That photo is too large. Try one under " + Math.floor(imageLimits.maxInputBytes / 1048576) + " MB.", "bad"); return; }
+    var url = URL.createObjectURL(f);
+    var img = new Image();
+    img.onload = function () {
+      setImage(img, f, f.name, false);
+      state.items = []; state.sel = null;
+      renderAll(); setStep(canSolve ? 2 : 1);
+      setStatus(status, canSolve ? "Worksheet ready. Press Read and solve." : status.textContent);
+    };
+    img.onerror = function () { setStatus(status, "That image couldn't be opened. Try another photo.", "bad"); };
+    img.src = url;
   }
 
-  // Upload: click, drop, paste
-  $("chooseBtn").addEventListener("click", function () { fileInput.click(); });
-  fileInput.addEventListener("change", function () { acceptFile(fileInput.files[0]); fileInput.value = ""; });
-  ["dragenter", "dragover"].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.add("over"); }); });
-  ["dragleave", "drop"].forEach(function (ev) { drop.addEventListener(ev, function (e) { e.preventDefault(); drop.classList.remove("over"); }); });
-  drop.addEventListener("drop", function (e) { acceptFile(e.dataTransfer.files[0]); });
-  document.addEventListener("paste", function (e) {
-    var items = (e.clipboardData && e.clipboardData.files) || [];
-    if (items.length && /^image\//.test(items[0].type)) { e.preventDefault(); acceptFile(items[0]); }
-  });
-  $("sampleBtn").addEventListener("click", function () { loadSample(false).then(function () { if (canRead) setStatus("Sample note ready. Press Read handwriting."); }); });
+  // ---------- sample worksheet ----------
+  var SAMPLE_QS = [
+    { t: "1.  1/2 + 1/4 =", a: "3/4", why: "1/2 is 2/4, and 2/4 + 1/4 = 3/4." },
+    { t: "2.  3/5 − 1/5 =", a: "2/5", why: "Same denominator, so subtract the tops: 3 − 1 = 2." },
+    { t: "3.  2/3 × 3/4 =", a: "1/2", why: "Multiply across to get 6/12, which simplifies to 1/2." },
+    { t: "4.  Write 0.75 as a fraction in simplest form.", a: "3/4", why: "0.75 is 75/100, and dividing both by 25 gives 3/4." },
+    { t: "5.  Which is larger, 5/8 or 3/5?", a: "5/8", why: "5/8 = 0.625 and 3/5 = 0.6, so 5/8 is larger." },
+    { t: "6.  Maya ate 3/8 of a pizza and Leo ate 1/4 of it. What fraction is left?", a: "3/8", why: "1/4 is 2/8. They ate 3/8 + 2/8 = 5/8, so 3/8 is left." }
+  ];
+  var SAMPLE_BOXES = [];
 
-  out.addEventListener("input", updateCount);
+  function makeSampleSheet() {
+    var c = document.createElement("canvas"); c.width = 1275; c.height = 1650;
+    var g = c.getContext("2d");
+    g.fillStyle = "#FFFFFF"; g.fillRect(0, 0, c.width, c.height);
+    g.fillStyle = "#111111";
+    g.font = "700 48px Georgia, serif"; g.fillText("Fractions practice", 110, 150);
+    g.font = "400 28px Georgia, serif";
+    g.fillText("Name", 110, 225); g.fillText("Date", 820, 225);
+    g.strokeStyle = "#333333"; g.lineWidth = 2;
+    g.beginPath(); g.moveTo(190, 228); g.lineTo(760, 228); g.moveTo(890, 228); g.lineTo(1165, 228); g.stroke();
+    g.font = "400 26px Georgia, serif"; g.fillStyle = "#444444";
+    g.fillText("Show your answer in the box. Simplify every fraction.", 110, 300);
+    SAMPLE_BOXES = [];
+    var y = 420;
+    g.font = "400 32px Georgia, serif"; g.fillStyle = "#111111";
+    SAMPLE_QS.forEach(function (q, i) {
+      var long = i >= 3;
+      if (long) {
+        // wrap the question onto up to two lines
+        var words = q.t.split(" "), line = "", lines = [];
+        words.forEach(function (w) { var t = line ? line + " " + w : w; if (g.measureText(t).width > 1050) { lines.push(line); line = w; } else line = t; });
+        lines.push(line);
+        lines.forEach(function (l, j) { g.fillText(l, 110, y + j * 44); });
+        var by = y + lines.length * 44 - 8;
+        var box = { x: 150, y: by, w: 420, h: 84 };
+      } else {
+        g.fillText(q.t, 110, y + 32);
+        var box = { x: 470, y: y - 20, w: 260, h: 84 };
+      }
+      g.strokeStyle = "#555555"; g.lineWidth = 2; g.strokeRect(box.x, box.y, box.w, box.h);
+      SAMPLE_BOXES.push({ x: box.x / c.width, y: box.y / c.height, w: box.w / c.width, h: box.h / c.height });
+      y = box.y + box.h + (long ? 90 : 70);
+    });
+    return c;
+  }
 
-  // Reading
+  function loadSample(withAnswers) {
+    var sheet = makeSampleSheet();
+    return new Promise(function (res) { sheet.toBlob(res, "image/png"); }).then(function (blob) {
+      setImage(sheet, blob, "fractions-practice.png", true);
+      state.sel = null;
+      state.items = withAnswers ? SAMPLE_QS.map(function (q, i) {
+        return { id: nextId++, q: q.t.replace(/^\d+\.\s+/, ""), answer: q.a, why: q.why, box: SAMPLE_BOXES[i], on: true, flag: "" };
+      }) : [];
+      renderAll();
+    });
+  }
+
+  // ---------- solving ----------
   var ERRORS = {
-    not_granted: "Reading was not allowed for this page. Allow Claude access to use it.",
-    sampling_disabled: "Claude isn't available on this account, so reading is turned off.",
+    not_granted: "Solving was not allowed for this page. Allow Claude access to use it.",
+    sampling_disabled: "Claude isn't available on this account, so solving is turned off.",
     rate_limited: "Too many requests right now. Wait a minute, then try again.",
     session_expired: "Your Claude session expired. Sign in to Claude again, then retry.",
-    image_rejected: "Claude couldn't open that image. Try a different photo.",
+    image_rejected: "Claude couldn't open that image. Try a clearer photo.",
     images_unavailable: "Images can't be sent from this view.",
-    refused: "Claude declined to read this image.",
-    invalid_json: "The reading came back in an unexpected format. Try again.",
+    refused: "Claude declined to work on this worksheet.",
+    invalid_json: "The result came back in an unexpected format. Try again.",
     empty_completion: "Nothing came back. Try a clearer photo.",
     prompt_too_large: "That request was too large. Try a smaller photo."
   };
 
-  function buildPrompt() {
-    var lines = $("keepLines").checked
-      ? "Keep the line breaks exactly as written."
-      : "Join lines that belong to the same sentence into paragraphs; keep list items and headings on their own lines.";
-    return [
-      "The attached image is a photo of handwriting. Transcribe it into plain text.",
-      "Rules:",
-      "- Write exactly what is written. Do not fix spelling or grammar, do not summarise, and do not add anything.",
-      "- If the handwriting contains questions or problems, transcribe them only. Never answer or solve them.",
-      "- " + lines,
-      "- Crossed-out words: leave them out.",
-      "- If a word is hard to read, write your best guess in the text and also list it in \"unclear\".",
-      "- If there is no handwriting in the image, return an empty \"text\" and explain in \"note\".",
-      "Reply with only this JSON object and nothing else:",
-      '{"text": "the transcription", "unclear": [{"guess": "word"}], "note": ""}'
-    ].join("\n");
+  var PROMPT = [
+    "The image is one page of a worksheet. Find every question that has a space for an answer (a box, a blank line, or empty space meant for writing).",
+    "For each one, give:",
+    "- question: the question text, at most 120 characters",
+    "- answer: the final answer only, short enough to write in the space (a number, a word, or one short sentence)",
+    "- explanation: one or two sentences showing how to get the answer",
+    "- box: where the answer should be written, as fractions of the full image size: x and y of the top left corner, plus w and h. All values between 0 and 1. Use the empty answer space itself, never the question text.",
+    "- unsure: true if you could not read the question clearly or are not confident in the answer, otherwise false",
+    "Skip name, date and class fields. Keep the questions in reading order.",
+    "Reply with only JSON in this shape:",
+    '{"items":[{"question":"","answer":"","explanation":"","box":{"x":0,"y":0,"w":0,"h":0},"unsure":false}]}'
+  ].join("\n");
+
+  function toItems(r) {
+    var list = r && Array.isArray(r.items) ? r.items : [];
+    return list.map(function (x, i) {
+      var b = x && x.box || {};
+      var w = clamp(num(b.w, 0.25), 0.02, 1), h = clamp(num(b.h, 0.04), 0.012, 1);
+      var box = { x: clamp(num(b.x, 0.6), 0, 1 - w), y: clamp(num(b.y, 0.1 + i * 0.06), 0, 1 - h), w: w, h: h };
+      return {
+        id: nextId++,
+        q: String(x && x.question || "").slice(0, 200),
+        answer: String(x && x.answer || ""),
+        why: String(x && x.explanation || ""),
+        box: box, on: true,
+        flag: x && x.unsure ? "Double check" : (!x || !x.answer ? "No answer" : "")
+      };
+    });
   }
 
-  readBtn.addEventListener("click", function () {
-    if (!sample || !currentFile) return;
+  solveBtn.addEventListener("click", function () {
+    if (!sample || !state.file) return;
     ctl = new AbortController();
-    readBtn.disabled = true; stopBtn.hidden = false;
-    skeleton.hidden = false; out.hidden = true; unclearBox.hidden = true;
+    solveBtn.disabled = true; stopBtn.hidden = false;
+    $("skeleton").hidden = false; itemsEl.hidden = true;
     setStep(2);
-    setStatus("Reading handwriting. This usually takes 10 to 40 seconds.");
-    sample.json(buildPrompt(), { images: currentFile, signal: ctl.signal })
+    setStatus(status, "Reading the worksheet and solving. This often takes 30 to 90 seconds.");
+    sample.json(PROMPT, { images: state.file, modelTier: "complex", signal: ctl.signal })
       .then(function (r) {
-        var text = r && typeof r.text === "string" ? r.text : "";
-        out.value = text; updateCount();
-        renderUnclear(r && Array.isArray(r.unclear) ? r.unclear : []);
-        txtTag.textContent = imgTag.textContent === "Example" ? "From sample" : "From your photo";
-        if (!text.trim()) {
-          setStatus((r && r.note) || "No handwriting found in this image.", "bad");
-          setStep(1);
-        } else {
-          var n = r.unclear && r.unclear.length ? r.unclear.length : 0;
-          setStatus(n ? "Done. " + n + (n === 1 ? " word needs" : " words need") + " a check." : "Done. Review the text, then export.", "ok");
-          setStep(3);
-        }
+        state.items = toItems(r); state.sel = null;
+        renderAll();
+        if (!state.items.length) { setStatus(status, "No questions with answer spaces were found. Try a straighter, brighter photo.", "bad"); return; }
+        var unsure = state.items.filter(function (x) { return x.flag; }).length;
+        setStatus(status, "Solved " + state.items.length + " questions." + (unsure ? " " + unsure + " need a closer look." : "") + " Check each answer and box.", "ok");
+        setStep(3);
       })
       .catch(function (e) {
-        if (e && e.code === "cancelled") { setStatus("Stopped."); return; }
+        if (e && e.code === "cancelled") { setStatus(status, "Stopped."); return; }
         var code = e && e.code;
-        setStatus(ERRORS[code] || "Something went wrong while reading. Try again.", "bad");
-        if (code === "not_granted" || code === "sampling_disabled" || code === "images_unavailable") { canRead = false; }
+        setStatus(status, ERRORS[code] || "Something went wrong while solving. Try again.", "bad");
+        if (code === "not_granted" || code === "sampling_disabled" || code === "images_unavailable") canSolve = false;
       })
       .then(function () {
-        skeleton.hidden = true; out.hidden = false; stopBtn.hidden = true;
-        readBtn.disabled = !canRead || !currentFile;
+        $("skeleton").hidden = true; itemsEl.hidden = false; stopBtn.hidden = true;
+        solveBtn.disabled = !canSolve || !state.file;
       });
   });
   stopBtn.addEventListener("click", function () { if (ctl) ctl.abort(); });
 
-  // Export
-  var exportStatus = $("exportStatus");
-  $("copyBtn").addEventListener("click", function () {
-    var text = out.value;
-    if (!text.trim()) { exportStatus.textContent = "There's no text to copy yet."; return; }
-    var done = function () { exportStatus.textContent = "Copied to clipboard."; setStep(4); };
-    var fallback = function () { out.hidden = false; out.focus(); out.select(); exportStatus.textContent = "Text selected. Press Ctrl+C or Cmd+C to copy."; };
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
-      else fallback();
-    } catch (err) { fallback(); }
+  // ---------- manual boxes, style ----------
+  $("addBtn").addEventListener("click", function () {
+    if (!state.img) { setStatus(status, "Upload a worksheet first.", "bad"); return; }
+    var it = { id: nextId++, q: "", answer: "", why: "", box: { x: 0.35, y: 0.45, w: 0.3, h: 0.05 }, on: true, flag: "" };
+    state.items.push(it); state.sel = it.id;
+    renderAll();
+    var input = $("ans-" + it.id); if (input) input.focus();
   });
-  $("dlBtn").addEventListener("click", function () {
-    if (!downloads || !out.value.trim()) { exportStatus.textContent = "There's no text to download yet."; return; }
-    downloads.save({ filename: currentName + ".txt", data: out.value })
-      .then(function (r) { exportStatus.textContent = r.status === "saved" ? "Saved " + currentName + ".txt." : "Sent."; setStep(4); })
-      .catch(function (e) { if (e && e.code !== "declined") exportStatus.textContent = "The download didn't work here. Use Copy text instead."; });
+  ["fontSel", "colorSel", "sizeSel"].forEach(function (id) { $(id).addEventListener("change", function () { scheduleDraw(); setStep(Math.max(currentStep(), 4)); }); });
+  $("guides").addEventListener("change", function () { stage.classList.toggle("hide-guides", !this.checked); });
+
+  // ---------- upload wiring ----------
+  $("chooseBtn").addEventListener("click", function () { $("file").click(); });
+  $("file").addEventListener("change", function () { acceptFile(this.files[0]); this.value = ""; });
+  ["dragenter", "dragover"].forEach(function (ev) { stage.addEventListener(ev, function (e) { e.preventDefault(); stage.classList.add("over"); }); });
+  ["dragleave", "drop"].forEach(function (ev) { stage.addEventListener(ev, function (e) { e.preventDefault(); stage.classList.remove("over"); }); });
+  stage.addEventListener("drop", function (e) { acceptFile(e.dataTransfer.files[0]); });
+  document.addEventListener("paste", function (e) {
+    var files = (e.clipboardData && e.clipboardData.files) || [];
+    if (files.length && /^image\//.test(files[0].type)) { e.preventDefault(); acceptFile(files[0]); }
+  });
+  $("sampleBtn").addEventListener("click", function () {
+    loadSample(false).then(function () {
+      setStep(canSolve ? 2 : 1);
+      setStatus(status, canSolve ? "Sample worksheet ready. Press Read and solve." : status.textContent);
+    });
   });
 
-  // Start: show a worked example, then check what this view can do
+  // ---------- export ----------
+  function saveBlob(blob, filename) {
+    if (downloads) {
+      return downloads.save({ filename: filename, data: blob }).then(function (r) {
+        setStatus(exportStatus, r.status === "saved" ? "Saved " + filename + "." : "Sent.", "ok"); setStep(5);
+      }, function (e) {
+        var c = e && e.code;
+        if (c === "declined") return;
+        if (c === "rejected_extension" || c === "extension_not_enabled") setStatus(exportStatus, "This view can't save that file type. Try Export image.", "bad");
+        else if (c === "rate_limited") setStatus(exportStatus, "A save is already waiting for you. Finish that one first.", "bad");
+        else setStatus(exportStatus, "The file couldn't be saved here.", "bad");
+      });
+    }
+    if (!window.claude) {
+      // Plain browser (for example GitHub Pages): a normal download link works
+      var url = URL.createObjectURL(blob), a = document.createElement("a");
+      a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+      setStatus(exportStatus, "Downloaded " + filename + ".", "ok"); setStep(5);
+      return Promise.resolve();
+    }
+    setStatus(exportStatus, "Saving files isn't available in this view.", "bad");
+    return Promise.resolve();
+  }
+
+  function withCleanCanvas(fn) {
+    // export exactly what the preview shows, without guide boxes (those are HTML, not on the canvas)
+    draw();
+    return fn(canvas);
+  }
+
+  $("pdfBtn").addEventListener("click", function () {
+    if (!state.img) { setStatus(exportStatus, "Upload a worksheet first.", "bad"); return; }
+    if (!window.jspdf || !window.jspdf.jsPDF) { setStatus(exportStatus, "The PDF tool didn't load. Use Export image instead.", "bad"); return; }
+    setStatus(exportStatus, "Building PDF…");
+    withCleanCanvas(function (c) {
+      var landscape = c.width > c.height;
+      var doc = new window.jspdf.jsPDF({ orientation: landscape ? "landscape" : "portrait", unit: "pt", format: "a4" });
+      var pw = doc.internal.pageSize.getWidth(), ph = doc.internal.pageSize.getHeight();
+      var s = Math.min(pw / c.width, ph / c.height);
+      var w = c.width * s, h = c.height * s;
+      doc.addImage(c.toDataURL("image/jpeg", 0.92), "JPEG", (pw - w) / 2, (ph - h) / 2, w, h);
+      return saveBlob(doc.output("blob"), state.name + "-answer-key.pdf");
+    });
+  });
+
+  $("pngBtn").addEventListener("click", function () {
+    if (!state.img) { setStatus(exportStatus, "Upload a worksheet first.", "bad"); return; }
+    withCleanCanvas(function (c) {
+      c.toBlob(function (b) { if (b) saveBlob(b, state.name + "-answer-key.png"); }, "image/png");
+    });
+  });
+
+  // ---------- start ----------
   setStep(1);
-  loadSample(true);
+  var fontsReady = document.fonts && document.fonts.load
+    ? Promise.all([document.fonts.load("600 20px Manrope"), document.fonts.load('500 20px "Geist Mono"')]).catch(function () {})
+    : Promise.resolve();
+  fontsReady.then(function () { return loadSample(true); }).then(function () { setStep(4); });
 
   if (!window.claude || typeof window.claude.use !== "function") {
-    setStatus("Reading needs a server connected to the Claude API. Here you can upload and edit, but not read.", "bad");
+    setStatus(status, "Solving needs a server connected to the Claude API. Here you can place, edit and export answers by hand.", "bad");
   } else {
     window.claude.use("sample").then(function (s) {
       sample = s;
-      if (!s) { setStatus("Reading isn't available in this view.", "bad"); return null; }
+      if (!s) { setStatus(status, "Solving isn't available in this view.", "bad"); return null; }
       return s.limits().catch(function () { return null; });
     }).then(function (lim) {
       if (!sample) return;
       imageLimits = lim && lim.images ? lim.images : null;
-      if (!imageLimits) { setStatus("This view can't send images to Claude, so reading is off.", "bad"); return; }
-      canRead = true;
-      fileInput.accept = imageLimits.mediaTypes.join(",");
-      readBtn.disabled = !currentFile;
-      setStep(currentFile ? 2 : 1);
-      setStatus("Ready. Try the example note, or upload your own photo.");
+      if (!imageLimits) { setStatus(status, "This view can't send images to Claude, so solving is off.", "bad"); return; }
+      canSolve = true;
+      $("file").accept = imageLimits.mediaTypes.join(",");
+      solveBtn.disabled = !state.file;
+      setStatus(status, "Ready. The example shows a finished key. Upload your own worksheet, or press Read and solve on the sample.");
     });
-    window.claude.use("downloads").then(function (d) { downloads = d; $("dlBtn").hidden = !d; });
+    window.claude.use("downloads").then(function (d) { downloads = d; });
   }
 })();
 </script>
