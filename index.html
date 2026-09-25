@@ -121,6 +121,8 @@
   .nav-links a:hover { background: var(--sunk); color: var(--ink); }
   .nav-links a[aria-current="true"] { color: var(--ink); background: var(--sunk); }
   .nav .btn { border-radius: 9999px; }
+  .nav-signin { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; text-decoration: none; margin-right: -12px; }
+  .nav-signin:hover { color: var(--accent); }
 
   .burger {
     display: none; position: relative; width: 40px; height: 40px;
@@ -150,10 +152,11 @@
   .menu-open .overlay li:nth-child(2) { transition-delay: 100ms; }
   .menu-open .overlay li:nth-child(3) { transition-delay: 150ms; }
   .menu-open .overlay li:nth-child(4) { transition-delay: 200ms; }
+  .menu-open .overlay li:nth-child(5) { transition-delay: 250ms; }
   .overlay a:not(.btn) { font-size: 1.875rem; line-height: 2.25rem; font-weight: 600; text-decoration: none; }
 
   @media (max-width: 760px) {
-    .nav-links, .nav > .btn { display: none; }
+    .nav-links, .nav > .btn, .nav-signin { display: none; }
     .burger { display: block; }
     .nav { gap: 48px; }
   }
@@ -349,6 +352,7 @@
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
+    <a class="nav-signin" href="signin.html">Sign in</a>
     <a class="btn btn-primary btn-sm" href="#start">Start free trial</a>
     <button class="burger" type="button" aria-expanded="false" aria-controls="overlay" aria-label="Open menu"><span></span><span></span></button>
   </nav>
@@ -358,6 +362,7 @@
     <li><a href="#how">How it works</a></li>
     <li><a href="#proof">Kitchens</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="signin.html">Sign in</a></li>
     <li><a class="btn btn-primary" href="#start">Start free trial</a></li>
   </ul>
 </div>

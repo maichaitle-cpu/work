@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Parline Sign In</title>
+<meta name="description" content="Sign in to Parline to count inventory and review drafted orders.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231D5B86'/%3E%3Cpath d='M9 22V10h7a4 4 0 010 8H9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #F5F6F3;
+    --surface: #FFFFFF;
+    --sunk: #ECEEEA;
+    --ink: #141613;
+    --muted: #596058;
+    --line: #D9DDD6;
+    --accent: #1D5B86;
+    --accent-hover: #174B6F;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #E3ECF3;
+    --error: #B3261E;
+    --warn-bg: #FBF1DC;
+    --warn-ink: #6B4A0E;
+    --ease: cubic-bezier(0.32, 0.72, 0, 1);
+    --sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #131209; --surface: #1F1F1F; --sunk: #181818; --ink: #F1F1EC; --muted: #A3A69E;
+      --line: #313131; --accent: #8DB9DE; --accent-hover: #A7CAE7; --accent-ink: #0E1A24;
+      --accent-soft: #272727; --error: #F2B8B5; --warn-bg: #313131; --warn-ink: #F0D39A;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #131209; --surface: #1F1F1F; --sunk: #181818; --ink: #F1F1EC; --muted: #A3A69E;
+    --line: #313131; --accent: #8DB9DE; --accent-hover: #A7CAE7; --accent-ink: #0E1A24;
+    --accent-soft: #272727; --error: #F2B8B5; --warn-bg: #313131; --warn-ink: #F0D39A;
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { min-height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+    display: flex; flex-direction: column;
+    padding-inline: 16px;
+  }
+  h1 { margin: 0; font-size: 1.875rem; line-height: 2.25rem; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
+  p { margin: 0; text-wrap: pretty; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent-hover); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+
+  .draft { margin-inline: -16px; padding: 8px 16px; text-align: center; font-size: 0.75rem; line-height: 1rem; color: var(--muted); border-bottom: 1px solid var(--line); }
+
+  .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 24px; width: 100%; max-width: 1120px; margin: 0 auto; }
+  .brand { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--ink); text-decoration: none; }
+  .brand:hover { color: var(--ink); }
+  .brand svg { width: 24px; height: 24px; }
+  .top a:not(.brand) { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; }
+
+  main { flex: 1; display: grid; place-items: start center; padding-block: 32px 64px; }
+  @media (min-height: 760px) { main { place-items: center; } }
+
+  .card {
+    width: 100%; max-width: 400px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 32px; display: grid; gap: 24px;
+  }
+  @media (max-width: 440px) { .card { padding: 24px; } }
+  .card-head { display: grid; gap: 8px; }
+  .card-head p { color: var(--muted); }
+
+  form { display: grid; gap: 16px; }
+  .field { display: grid; gap: 4px; }
+  .label-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  label { font-size: 0.875rem; line-height: 1.25rem; font-weight: 600; }
+  .label-row a, .label-row button.linkish { font-size: 0.875rem; line-height: 1.25rem; font-weight: 500; }
+  input[type="email"], input[type="password"], input[type="text"] {
+    width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--line);
+    background: var(--surface); color: var(--ink); font: 400 1rem/1.5rem var(--sans);
+    transition: border-color 700ms var(--ease);
+  }
+  input:hover { border-color: var(--muted); }
+  input[aria-invalid="true"] { border-color: var(--error); }
+  .pw-wrap { position: relative; }
+  .pw-wrap input { padding-right: 64px; }
+  .pw-toggle {
+    position: absolute; right: 4px; top: 4px; bottom: 4px;
+    padding: 0 8px; border: 0; border-radius: 6px; background: transparent;
+    color: var(--muted); font: 600 0.875rem/1.25rem var(--sans); cursor: pointer;
+    transition: background-color 700ms var(--ease), color 700ms var(--ease);
+  }
+  .pw-toggle:hover { background: var(--sunk); color: var(--ink); }
+  .hint { font-size: 0.75rem; line-height: 1rem; color: var(--muted); }
+  .err { font-size: 0.875rem; line-height: 1.25rem; color: var(--error); }
+  .caps { font-size: 0.75rem; line-height: 1rem; padding: 4px 8px; border-radius: 6px; background: var(--warn-bg); color: var(--warn-ink); justify-self: start; }
+
+  .check { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; line-height: 1.25rem; }
+  .check input { width: 16px; height: 16px; margin: 0; accent-color: var(--accent); }
+  .check label { font-weight: 500; }
+
+  .btn {
+    display: inline-flex; justify-content: center; align-items: center; gap: 8px; width: 100%;
+    padding: 8px 12px; border-radius: 8px; border: 1px solid transparent;
+    font: 600 1rem/1.5rem var(--sans); cursor: pointer; text-decoration: none;
+    transition: background-color 700ms var(--ease), transform 700ms var(--ease), border-color 700ms var(--ease), opacity 700ms var(--ease);
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+  .btn-secondary:hover { background: var(--sunk); border-color: var(--muted); }
+  .btn[aria-busy="true"] { opacity: 0.7; cursor: progress; }
+
+  .linkish { border: 0; background: none; padding: 0; color: var(--accent); cursor: pointer; font: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .linkish:hover { color: var(--accent-hover); }
+
+  .divider { display: flex; align-items: center; gap: 12px; font-size: 0.75rem; line-height: 1rem; color: var(--muted); }
+  .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  .notice { padding: 12px; border-radius: 8px; background: var(--accent-soft); font-size: 0.875rem; line-height: 1.25rem; }
+  .notice.bad { background: transparent; border: 1px solid var(--error); color: var(--error); }
+
+  .after { max-width: 400px; width: 100%; margin: 24px auto 0; display: grid; gap: 8px; text-align: center; font-size: 0.875rem; line-height: 1.25rem; color: var(--muted); }
+
+  footer { padding-block: 24px; font-size: 0.75rem; line-height: 1rem; color: var(--muted); text-align: center; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0ms !important; }
+  }
+</style>
+</head>
+<body>
+<div class="draft">Draft page. Sign in is not connected to a server, so nothing you type here is sent or stored.</div>
+
+<header class="top">
+  <a class="brand" href="index.html" aria-label="Parline home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M9 22V10h7a4 4 0 010 8H9" fill="none" stroke="var(--accent-ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Parline
+  </a>
+  <a href="index.html#start">Start free trial</a>
+</header>
+
+<main>
+  <div>
+    <!-- Sign in view -->
+    <section class="card" id="signinView" aria-labelledby="signin-h">
+      <div class="card-head">
+        <h1 id="signin-h">Sign in to Parline</h1>
+        <p>Pick up your count where you left off.</p>
+      </div>
+
+      <form id="signinForm" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="username" inputmode="email" placeholder="you@yourrestaurant.com" aria-describedby="emailErr">
+          <p class="err" id="emailErr" hidden></p>
+        </div>
+
+        <div class="field">
+          <div class="label-row">
+            <label for="password">Password</label>
+            <button type="button" class="linkish" id="toReset">Forgot password?</button>
+          </div>
+          <div class="pw-wrap">
+            <input id="password" name="password" type="password" autocomplete="current-password" aria-describedby="pwErr capsNote">
+            <button type="button" class="pw-toggle" id="pwToggle" aria-pressed="false" aria-controls="password">Show</button>
+          </div>
+          <p class="caps" id="capsNote" hidden>Caps Lock is on</p>
+          <p class="err" id="pwErr" hidden></p>
+        </div>
+
+        <div class="check">
+          <input id="remember" name="remember" type="checkbox" checked>
+          <label for="remember">Keep me signed in for 30 days</label>
+        </div>
+
+        <button class="btn btn-primary" type="submit" id="signinBtn">Sign in</button>
+        <p class="notice" id="signinMsg" role="status" aria-live="polite" hidden></p>
+      </form>
+
+      <div class="divider">or</div>
+      <button class="btn btn-secondary" type="button" id="magicBtn">Email me a sign in link</button>
+      <p class="hint">Handy for staff who count on a shared kitchen phone and don't want to type a password in the cooler.</p>
+    </section>
+
+    <!-- Reset view -->
+    <section class="card" id="resetView" aria-labelledby="reset-h" hidden>
+      <div class="card-head">
+        <h1 id="reset-h">Reset your password</h1>
+        <p>Enter the email you sign in with. We'll send a link that works for 1 hour.</p>
+      </div>
+      <form id="resetForm" novalidate>
+        <div class="field">
+          <label for="resetEmail">Email</label>
+          <input id="resetEmail" name="resetEmail" type="email" autocomplete="username" inputmode="email" placeholder="you@yourrestaurant.com" aria-describedby="resetErr">
+          <p class="err" id="resetErr" hidden></p>
+        </div>
+        <button class="btn btn-primary" type="submit">Send reset link</button>
+        <p class="notice" id="resetMsg" role="status" aria-live="polite" hidden></p>
+      </form>
+      <button type="button" class="linkish" id="toSignin" style="justify-self:start">Back to sign in</button>
+    </section>
+
+    <div class="after">
+      <p>New to Parline? <a href="index.html#start">Start a 14 day free trial</a></p>
+    </div>
+  </div>
+</main>
+
+<footer>Parline. Placeholder product for this draft.</footer>
+
+<script>
+(function () {
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var DEMO = "This is a demo page with no server behind it, so nothing was sent.";
+
+  function $(id) { return document.getElementById(id); }
+  function setErr(input, errEl, text) {
+    if (text) { input.setAttribute("aria-invalid", "true"); errEl.textContent = text; errEl.hidden = false; }
+    else { input.removeAttribute("aria-invalid"); errEl.textContent = ""; errEl.hidden = true; }
+  }
+  function checkEmail(input, errEl) {
+    var v = input.value.trim();
+    if (!v) { setErr(input, errEl, "Enter your email."); return false; }
+    if (!EMAIL_RE.test(v)) { setErr(input, errEl, "That email is missing something. Check for a typo, like name@restaurant.com."); return false; }
+    setErr(input, errEl, ""); return true;
+  }
+  function showMsg(el, text, bad) { el.textContent = text; el.classList.toggle("bad", !!bad); el.hidden = false; }
+
+  var email = $("email"), emailErr = $("emailErr");
+  var pw = $("password"), pwErr = $("pwErr");
+  var btn = $("signinBtn"), msg = $("signinMsg");
+
+  // Show / hide password
+  $("pwToggle").addEventListener("click", function () {
+    var show = pw.type === "password";
+    pw.type = show ? "text" : "password";
+    this.textContent = show ? "Hide" : "Show";
+    this.setAttribute("aria-pressed", String(show));
+    pw.focus();
+  });
+
+  // Caps Lock warning
+  function caps(e) { if (e.getModifierState) $("capsNote").hidden = !e.getModifierState("CapsLock"); }
+  pw.addEventListener("keydown", caps);
+  pw.addEventListener("keyup", caps);
+  pw.addEventListener("blur", function () { $("capsNote").hidden = true; });
+
+  // Clear errors while typing
+  email.addEventListener("input", function () { setErr(email, emailErr, ""); msg.hidden = true; });
+  pw.addEventListener("input", function () { setErr(pw, pwErr, ""); msg.hidden = true; });
+
+  $("signinForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    msg.hidden = true;
+    var ok = checkEmail(email, emailErr);
+    if (!pw.value) { setErr(pw, pwErr, "Enter your password."); ok = false; } else { setErr(pw, pwErr, ""); }
+    if (!ok) { (email.getAttribute("aria-invalid") ? email : pw).focus(); return; }
+
+    btn.setAttribute("aria-busy", "true"); btn.disabled = true; btn.textContent = "Signing in…";
+    setTimeout(function () {
+      btn.removeAttribute("aria-busy"); btn.disabled = false; btn.textContent = "Sign in";
+      showMsg(msg, "Details look complete. " + DEMO + " Connect this form to your auth service to sign people in.");
+      pw.value = "";
+    }, 700);
+  });
+
+  $("magicBtn").addEventListener("click", function () {
+    msg.hidden = true;
+    if (!checkEmail(email, emailErr)) { email.focus(); return; }
+    showMsg(msg, "A sign in link would go to " + email.value.trim() + ". " + DEMO);
+  });
+
+  // Switch between sign in and reset views
+  var signinView = $("signinView"), resetView = $("resetView");
+  $("toReset").addEventListener("click", function () {
+    $("resetEmail").value = email.value.trim();
+    signinView.hidden = true; resetView.hidden = false; $("resetMsg").hidden = true;
+    $("resetEmail").focus();
+  });
+  $("toSignin").addEventListener("click", function () {
+    resetView.hidden = true; signinView.hidden = false; email.focus();
+  });
+
+  var resetEmail = $("resetEmail"), resetErr = $("resetErr");
+  resetEmail.addEventListener("input", function () { setErr(resetEmail, resetErr, ""); $("resetMsg").hidden = true; });
+  $("resetForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!checkEmail(resetEmail, resetErr)) { resetEmail.focus(); return; }
+    showMsg($("resetMsg"), "If " + resetEmail.value.trim() + " has an account, a reset link would be sent there. " + DEMO);
+  });
+})();
+</script>
+</body>
+</html>
